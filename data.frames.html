@@ -151,6 +151,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#sleep-health-data" id="toc-sleep-health-data" class="nav-link active" data-scroll-target="#sleep-health-data"><span class="header-section-number">1</span> Sleep Health Data</a>
   <ul class="collapse">
   <li><a href="#description-of-variables" id="toc-description-of-variables" class="nav-link" data-scroll-target="#description-of-variables"><span class="header-section-number">1.1</span> Description of Variables</a></li>
+  <li><a href="#summary-of-sleephlth-data-frame" id="toc-summary-of-sleephlth-data-frame" class="nav-link" data-scroll-target="#summary-of-sleephlth-data-frame"><span class="header-section-number">1.2</span> Summary of <code>sleephlth</code> Data Frame</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -178,7 +179,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Below are some possible data frames for use in analysis projects.</p>
 <section id="sleep-health-data" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="sleep-health-data"><span class="header-section-number">1</span> Sleep Health Data</h2>
-<p>Describes trends in sleep health/quality</p>
+<p>the data frame <code>sleephlth</code> describes trends in sleep health/quality</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>sleephlth <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/SUNY Geneseo/Classes/Fall 2023/DANL 200 (Team Pr)/dan-noone.github.io/Sleep_health_and_lifestyle_dataset.csv"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>nvars <span class="ot">&lt;-</span> <span class="fu">format</span>(<span class="fu">round</span>(<span class="fu">ncol</span>(sleephlth), <span class="dv">0</span>), </span>
@@ -202,37 +203,295 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="description-of-variables" class="level3" data-number="1.1">
 <h3 data-number="1.1" class="anchored" data-anchor-id="description-of-variables"><span class="header-section-number">1.1</span> Description of Variables</h3>
-<pre><code>- **Person ID:** Unique identifier for each individual
-
-- Gender: Gender of the person
-
-- Age: The age of the person in years
-
-- Occupation: Occupation of the person
-
-- Sleep Duration: Length of time person sleeps per day (in hours)
-
-- Quality of Sleep: Subjective rating from 1-10 of quality of sleep
-
-- Physical Activity: Length of time person engages in physical activity per day (minutes per day)
-
-- Stress Level: Subjective rating of stress level experienced by person from 1-10
-
-- BMI Category: BMI category of the person
-  -Underweight
-  -Normal
-  -Overweight
-  
-- Blood Pressure: Blood pressure measurement of the person, systolic over diastolic pressure
-
-- Heart Rate: The resting heart rate of the person in beats per minute
-
-- Daily Steps: The number of steps person takes per day
-
-- Sleep Disorder: The presence or absence of a sleep disorder in the person
-  -None
-  -Insomnia
-  -Sleep Apnea</code></pre>
+<ul>
+<li><p><code>Person ID</code>: Unique identifier for each individual</p></li>
+<li><p><code>Gender</code>: Gender of the person</p></li>
+<li><p><code>Age</code>: The age of the person in years</p></li>
+<li><p><code>Occupation</code>: Occupation of the person</p></li>
+<li><p><code>Sleep Duration</code>: Length of time person sleeps per day (in hours)</p></li>
+<li><p><code>Quality of Sleep</code>: Subjective rating from 1-10 of quality of sleep</p></li>
+<li><p><code>Physical Activity</code>: Length of time person engages in physical activity per day (minutes per day)</p></li>
+<li><p><code>Stress Level</code>: Subjective rating of stress level experienced by person from 1-10</p></li>
+<li><p><code>BMI Category</code>: BMI category of the person</p>
+<ul>
+<li>Underweight</li>
+<li>Normal</li>
+<li>Overweight</li>
+</ul></li>
+<li><p><code>Blood Pressure</code>: Blood pressure measurement of the person, systolic over diastolic pressure</p></li>
+<li><p><code>Heart Rate</code>: The resting heart rate of the person in beats per minute</p></li>
+<li><p><code>Daily Steps</code>: The number of steps person takes per day</p></li>
+<li><p><code>Sleep Disorder</code>: The presence or absence of a sleep disorder in the person</p>
+<ul>
+<li>None</li>
+<li>Insomnia</li>
+<li>Sleep Apnea</li>
+</ul></li>
+</ul>
+</section>
+<section id="summary-of-sleephlth-data-frame" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="summary-of-sleephlth-data-frame"><span class="header-section-number">1.2</span> Summary of <code>sleephlth</code> Data Frame</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>slphlth_sum <span class="ot">&lt;-</span> skimr<span class="sc">::</span><span class="fu">skim</span>(sleephlth)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>slphlth_sum</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="table table-sm table-striped small">
+<caption>Data summary</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">sleephlth</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Number of rows</td>
+<td style="text-align: left;">374</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Number of columns</td>
+<td style="text-align: left;">13</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">_______________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Column type frequency:</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">character</td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">________________________</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Group variables</td>
+<td style="text-align: left;">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: character</strong></p>
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 13%">
+<col style="width: 19%">
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 8%">
+<col style="width: 12%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">min</th>
+<th style="text-align: right;">max</th>
+<th style="text-align: right;">empty</th>
+<th style="text-align: right;">n_unique</th>
+<th style="text-align: right;">whitespace</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Gender</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Occupation</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BMI.Category</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Blood.Pressure</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sleep.Disorder</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 9%">
+<col style="width: 12%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 6%">
+<col style="width: 7%">
+<col style="width: 6%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 5%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">skim_variable</th>
+<th style="text-align: right;">n_missing</th>
+<th style="text-align: right;">complete_rate</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">sd</th>
+<th style="text-align: right;">p0</th>
+<th style="text-align: right;">p25</th>
+<th style="text-align: right;">p50</th>
+<th style="text-align: right;">p75</th>
+<th style="text-align: right;">p100</th>
+<th style="text-align: left;">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Person.ID</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">187.50</td>
+<td style="text-align: right;">108.11</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: right;">94.25</td>
+<td style="text-align: right;">187.5</td>
+<td style="text-align: right;">280.75</td>
+<td style="text-align: right;">374.0</td>
+<td style="text-align: left;">▇▇▇▇▇</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Age</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">42.18</td>
+<td style="text-align: right;">8.67</td>
+<td style="text-align: right;">27.0</td>
+<td style="text-align: right;">35.25</td>
+<td style="text-align: right;">43.0</td>
+<td style="text-align: right;">50.00</td>
+<td style="text-align: right;">59.0</td>
+<td style="text-align: left;">▆▆▇▃▅</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sleep.Duration</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">7.13</td>
+<td style="text-align: right;">0.80</td>
+<td style="text-align: right;">5.8</td>
+<td style="text-align: right;">6.40</td>
+<td style="text-align: right;">7.2</td>
+<td style="text-align: right;">7.80</td>
+<td style="text-align: right;">8.5</td>
+<td style="text-align: left;">▇▆▇▇▆</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Quality.of.Sleep</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">7.31</td>
+<td style="text-align: right;">1.20</td>
+<td style="text-align: right;">4.0</td>
+<td style="text-align: right;">6.00</td>
+<td style="text-align: right;">7.0</td>
+<td style="text-align: right;">8.00</td>
+<td style="text-align: right;">9.0</td>
+<td style="text-align: left;">▁▇▆▇▅</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Physical.Activity.Level</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">59.17</td>
+<td style="text-align: right;">20.83</td>
+<td style="text-align: right;">30.0</td>
+<td style="text-align: right;">45.00</td>
+<td style="text-align: right;">60.0</td>
+<td style="text-align: right;">75.00</td>
+<td style="text-align: right;">90.0</td>
+<td style="text-align: left;">▇▇▇▇▇</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Stress.Level</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5.39</td>
+<td style="text-align: right;">1.77</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: right;">4.00</td>
+<td style="text-align: right;">5.0</td>
+<td style="text-align: right;">7.00</td>
+<td style="text-align: right;">8.0</td>
+<td style="text-align: left;">▇▃▂▃▃</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Heart.Rate</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">70.17</td>
+<td style="text-align: right;">4.14</td>
+<td style="text-align: right;">65.0</td>
+<td style="text-align: right;">68.00</td>
+<td style="text-align: right;">70.0</td>
+<td style="text-align: right;">72.00</td>
+<td style="text-align: right;">86.0</td>
+<td style="text-align: left;">▇▇▂▁▁</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Daily.Steps</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">6816.84</td>
+<td style="text-align: right;">1617.92</td>
+<td style="text-align: right;">3000.0</td>
+<td style="text-align: right;">5600.00</td>
+<td style="text-align: right;">7000.0</td>
+<td style="text-align: right;">8000.00</td>
+<td style="text-align: right;">10000.0</td>
+<td style="text-align: left;">▁▅▇▆▂</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 
 
 <!-- -->
@@ -666,14 +925,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(hrbrthemes)</span>
 <span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
 <span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>Below are some possible data frames for use in analysis projects.</span>
 <span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sleep Health Data</span></span>
 <span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>Describes trends in sleep health/quality</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>the data frame <span class="in">`sleephlth`</span> describes trends in sleep health/quality</span>
 <span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>sleephlth <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"~/SUNY Geneseo/Classes/Fall 2023/DANL 200 (Team Pr)/dan-noone.github.io/Sleep_health_and_lifestyle_dataset.csv"</span>)</span>
@@ -692,41 +951,45 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="fu">### Description of Variables</span></span>
-<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="in">```         </span></span>
-<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="in">- **Person ID:** Unique identifier for each individual</span></span>
-<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="in">- Gender: Gender of the person</span></span>
-<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="in">- Age: The age of the person in years</span></span>
-<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a><span class="in">- Occupation: Occupation of the person</span></span>
-<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a><span class="in">- Sleep Duration: Length of time person sleeps per day (in hours)</span></span>
-<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a><span class="in">- Quality of Sleep: Subjective rating from 1-10 of quality of sleep</span></span>
-<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a><span class="in">- Physical Activity: Length of time person engages in physical activity per day (minutes per day)</span></span>
-<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a><span class="in">- Stress Level: Subjective rating of stress level experienced by person from 1-10</span></span>
-<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a><span class="in">- BMI Category: BMI category of the person</span></span>
-<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a><span class="in">  -Underweight</span></span>
-<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a><span class="in">  -Normal</span></span>
-<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a><span class="in">  -Overweight</span></span>
-<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a><span class="in">  </span></span>
-<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a><span class="in">- Blood Pressure: Blood pressure measurement of the person, systolic over diastolic pressure</span></span>
-<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a><span class="in">- Heart Rate: The resting heart rate of the person in beats per minute</span></span>
-<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a><span class="in">- Daily Steps: The number of steps person takes per day</span></span>
-<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a><span class="in">- Sleep Disorder: The presence or absence of a sleep disorder in the person</span></span>
-<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a><span class="in">  -None</span></span>
-<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a><span class="in">  -Insomnia</span></span>
-<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a><span class="in">  -Sleep Apnea</span></span>
-<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="in">`Person ID`</span>: Unique identifier for each individual</span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="in">`Gender`</span>: Gender of the person</span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="in">`Age`</span>: The age of the person in years</span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="in">`Occupation`</span>: Occupation of the person</span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="in">`Sleep Duration`</span>: Length of time person sleeps per day (in hours)</span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="in">`Quality of Sleep`</span>: Subjective rating from 1-10 of quality of sleep</span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="in">`Physical Activity`</span>: Length of time person engages in physical activity per day (minutes per day)</span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="in">`Stress Level`</span>: Subjective rating of stress level experienced by person from 1-10</span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="in">`BMI Category`</span>: BMI category of the person</span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a><span class="ss">      - </span>Underweight</span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a><span class="ss">      - </span>Normal</span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a><span class="ss">      - </span>Overweight </span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="in">`Blood Pressure`</span>: Blood pressure measurement of the person, systolic over diastolic pressure</span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="in">`Heart Rate`</span>: The resting heart rate of the person in beats per minute</span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="in">`Daily Steps`</span>: The number of steps person takes per day</span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span><span class="in">`Sleep Disorder`</span>: The presence or absence of a sleep disorder in the person</span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a><span class="ss">      - </span>None</span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a><span class="ss">      - </span>Insomnia</span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a><span class="ss">      - </span>Sleep Apnea</span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a><span class="fu">### Summary of `sleephlth` Data Frame</span></span>
 <span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a>slphlth_sum <span class="ot">&lt;-</span> skimr<span class="sc">::</span><span class="fu">skim</span>(sleephlth)</span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a>slphlth_sum</span>
+<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
