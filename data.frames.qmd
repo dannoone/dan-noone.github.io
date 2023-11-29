@@ -30,7 +30,7 @@ Below are some possible data frames for use in analysis projects.
 
 ## Sleep Health Data
 
-the data frame `sleephlth` describes trends in sleep health/quality
+the data frame `sleephlth` describes trends in sleep health/quality <br> [source](https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset)
 
 ```{r}
 sleephlth <- read.csv("~/SUNY Geneseo/Classes/Fall 2023/DANL 200 (Team Pr)/dan-noone.github.io/Sleep_health_and_lifestyle_dataset.csv")
