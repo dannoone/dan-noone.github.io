@@ -47,35 +47,55 @@ theme_set(theme_ipsum()+
 
 # Introduction
 
-About this project :clap:
+The data frame being analyzed concerns sleep health data relating to different aspects of lifestyle. The data was found the website Kaggle found [here](https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset).
 
-```{r}
-1 + 1
-```
+## Description of Variables
 
+- `Person ID`: Unique identifier for each individual
 
-# Data
+- `Gender`: Gender of the person
 
-The data.frame `mpg` contains a subset of the fuel economy data that the EPA makes available on [https://fueleconomy.gov/](https://fueleconomy.gov/). It contains only models which had a new release every year between 1999 and 2008 - this was used as a proxy for the popularity of the car. :oncoming_automobile:
+- `Age`: The age of the person in years
+
+- `Occupation`: Occupation of the person
+
+- `Sleep Duration`: Length of time person sleeps per day (in hours)
+
+- `Quality of Sleep`: Subjective rating from 1-10 of quality of sleep
+
+- `Physical Activity`: Length of time person engages in physical activity per day (minutes per day)
+
+- `Stress Level`: Subjective rating of stress level experienced by person from 1-10
+
+- `BMI Category`: BMI category of the person
+    - Underweight
+    - Normal
+    - Overweight
+  
+- `Blood Pressure`: Blood pressure measurement of the person, systolic over diastolic pressure
+
+- `Heart Rate`: The resting heart rate of the person in beats per minute
+
+- `Daily Steps`: The number of steps person takes per day
+
+- `Sleep Disorder`: The presence or absence of a sleep disorder in the person
+    - None
+    - Insomnia
+    - Sleep Apnea
 
 
 ## Summary Statistics
 
 ```{r}
-mpg <- ggplot2::mpg
+sleephlth <- read.csv("~/SUNY Geneseo/Classes/Fall 2023/DANL 200 (Team Pr)/dan-noone.github.io/Sleep_health_and_lifestyle_dataset.csv")
 ```
 
 ```{r}
-#| results: asis
-#| echo: false
-rmarkdown::paged_table(mpg) 
+sleephlth_sum <- skim(sleephlth)
+sleephlth_sum
 ```
 
 
-```{r}
-skim(mpg) %>% 
-  select(-n_missing)
-```
 
 
 ## MPG and a Type of Cars

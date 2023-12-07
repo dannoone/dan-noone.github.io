@@ -23,14 +23,14 @@ execute:
 library(tidyverse)
 library(hrbrthemes)
 library(skimr)
-library(ggthemes)
+
 ```
 
 Below are some possible data frames for use in analysis projects.
 
 ## Sleep Health Data
 
-the data frame `sleephlth` describes trends in sleep health/quality <br> [source](https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset)
+Describes trends in sleep health/quality
 
 ```{r}
 sleephlth <- read.csv("~/SUNY Geneseo/Classes/Fall 2023/DANL 200 (Team Pr)/dan-noone.github.io/Sleep_health_and_lifestyle_dataset.csv")
@@ -44,47 +44,44 @@ nobs <- format(round(nrow(sleephlth), 0),
 
 Number of Variables: `r nvars` Number of Observations: `r nobs`
 
-```{r}
+```{r, include=FALSE}
 rmarkdown::paged_table(sleephlth)
 ```
 
 ### Description of Variables
-      
-  - `Person ID`: Unique identifier for each individual
 
-  - `Gender`: Gender of the person
+```         
+- **Person ID:** Unique identifier for each individual
 
-  - `Age`: The age of the person in years
+- Gender: Gender of the person
 
-  - `Occupation`: Occupation of the person
+- Age: The age of the person in years
 
-  - `Sleep Duration`: Length of time person sleeps per day (in hours)
+- Occupation: Occupation of the person
 
-  - `Quality of Sleep`: Subjective rating from 1-10 of quality of sleep
+- Sleep Duration: Length of time person sleeps per day (in hours)
 
-  - `Physical Activity`: Length of time person engages in physical activity per day (minutes per day)
+- Quality of Sleep: Subjective rating from 1-10 of quality of sleep
 
-  - `Stress Level`: Subjective rating of stress level experienced by person from 1-10
+- Physical Activity: Length of time person engages in physical activity per day (minutes per day)
 
-  - `BMI Category`: BMI category of the person
-      - Underweight
-      - Normal
-      - Overweight 
+- Stress Level: Subjective rating of stress level experienced by person from 1-10
+
+- BMI Category: BMI category of the person
+  -Underweight
+  -Normal
+  -Overweight
   
-  - `Blood Pressure`: Blood pressure measurement of the person, systolic over diastolic pressure
+- Blood Pressure: Blood pressure measurement of the person, systolic over diastolic pressure
 
-  - `Heart Rate`: The resting heart rate of the person in beats per minute
+- Heart Rate: The resting heart rate of the person in beats per minute
 
-  - `Daily Steps`: The number of steps person takes per day
+- Daily Steps: The number of steps person takes per day
 
-  - `Sleep Disorder`: The presence or absence of a sleep disorder in the person
-      - None
-      - Insomnia
-      - Sleep Apnea
-      
-### Summary of `sleephlth` Data Frame
-
-```{r}
-slphlth_sum <- skimr::skim(sleephlth)
-slphlth_sum
+- Sleep Disorder: The presence or absence of a sleep disorder in the person
+  -None
+  -Insomnia
+  -Sleep Apnea
 ```
+
+
