@@ -51,7 +51,7 @@ rmarkdown::paged_table(sleephlth)
 ### Description of Variables
 
 ```         
-- **Person ID:** Unique identifier for each individual
+- Person ID: Unique identifier for each individual
 
 - Gender: Gender of the person
 

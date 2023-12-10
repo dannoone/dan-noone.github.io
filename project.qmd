@@ -3,10 +3,6 @@ title: DANL Project
 subtitle: "Data-Driven Mastery: Unlocking Business Potential"
 author: 
   - __Daniel Noone__
-  - __Angelina Batista__
-  - __Elizabeth Dutan__
-  - __Edward Eforo__
-  - __Jaxson Marsh__
 
 toc: true
 toc-title: "Table of Contents"
