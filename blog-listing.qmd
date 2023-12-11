@@ -1,5 +1,5 @@
 ---
-title: "Insightful Analytics<br><br>"
+title: "Exploratory Data Analysis"
 listing:
   contents: posts
   type: default

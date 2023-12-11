@@ -19,8 +19,8 @@ website:
 format:
   html:
     theme: 
-      light: flatly
-      dark: darkly
+      light: materia
+      dark: solar
     mainfont: system-ui; 
     highlight-style: atom-one
     css: styles.css

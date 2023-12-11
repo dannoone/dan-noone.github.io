@@ -25,7 +25,7 @@ about:
 
 ## Who is Daniel Noone?
 
-  Daniel Noone majors in Data Analytics at SUNY Geneseo
+  Daniel Noone is a Junior at SUNY Geneseo and is majoring in Data Analytics. <br> He was born and raised in Ontario, New York and loves to spend time outdoors.
 
 ## Education
 
@@ -35,6 +35,6 @@ B.S. in Data Analytics | Aug 2022 - May 2025 <br>
 
 ## Experience
 
-Experience programming in R, as well as basic level knowledge of Python.
+Experience programming in R, as well as basic level knowledge of Python. Extensive experience with Microsoft Office programs such as Excel, Word, and PowerPoint.
 
 
