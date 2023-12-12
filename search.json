@@ -58,9 +58,9 @@
   {
     "objectID": "posts/welcome/index.html",
     "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "title": "Welcome All!",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "Welcome to my blog powered by Quarto and GitHub!!\n\nAs a Data Analytics major, it is helpful to hone my abilities by doing exploratory data analysis. With that, I will be posting little projects here and there on my website, feel free to take a look!"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -102,7 +102,7 @@
     "href": "blog-listing.html",
     "title": "Exploratory Data Analysis",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nSpotify Listener Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nBeer Market Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nNYC Restaurant Inspections\n\n\n\n\n\n\n\n\n\nDec 10, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nSpotify Listener Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nHW5 - NFL Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n6 min\n\n\n\n\n\n\n  \n\n\n\n\nBeer Market Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nNYC Restaurant Inspections\n\n\n\n\n\n\n\n\n\nDec 10, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome All!\n\n\n\n\n\n\n\n\n\nDec 9, 2023\n\n\nDaniel Noone\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "data.frames.html",
@@ -278,5 +278,75 @@
     "title": "Beer Market Data",
     "section": "container and brand",
     "text": "container and brand\n\nbeer3 &lt;- beer %&gt;% \n  group_by(brand, container) %&gt;% \n  summarise(n = n())\nbeer3.5 &lt;- beer3 %&gt;% \n  group_by(brand) %&gt;% \n  slice_max(order_by = n, n = 2)\nggplot(data = beer3.5)+\n  geom_bar(aes(x = brand, y = n, fill = container), stat = 'identity', position = 'dodge')+\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))+\n  labs(title = 'Frequency of Cans and Bottles for Each Brand',\n       x = 'Brand',\n       y = 'Count')\n\n\n\nView(beer3.5)\n\n\nComments on analyses…\n\nThe bar chart above depicts the frequency of two container types (can or non refillable bottle) per each brand\n\nAll brands seem to sell more cans than bottles\n\nOf them Bud Light sells the most cans\n\nBud light also sells the most bottles"
+  },
+  {
+    "objectID": "posts/DANL 200 HW5 - NFL Data/danl200-hw5-noone-daniel.html",
+    "href": "posts/DANL 200 HW5 - NFL Data/danl200-hw5-noone-daniel.html",
+    "title": "HW5 - NFL Data",
+    "section": "",
+    "text": "My repository can be found here"
+  },
+  {
+    "objectID": "posts/DANL 200 HW5 - NFL Data/danl200-hw5-noone-daniel.html#description-of-variables-in-nfl-data-frame",
+    "href": "posts/DANL 200 HW5 - NFL Data/danl200-hw5-noone-daniel.html#description-of-variables-in-nfl-data-frame",
+    "title": "HW5 - NFL Data",
+    "section": "Description of Variables in NFL Data Frame:",
+    "text": "Description of Variables in NFL Data Frame:\n\nplay_id: Play Id number (numeric), when combined with game_id provides id for single play\ngame_id: 10 digit id for an NFL game\ndrive: Drive number (numeric)\nweek: Season week\nposteam: abv for team with possession\nqtr: Quarter in the game (qtr 5 means overtime)\nhalf_seconds_remaining: seconds remaining in the half\ndown: Down for a given play\npass: 1 if a pass play, 0 if not\nwp: Estimate for winning probability for posteam given situation at beginning of the play"
+  },
+  {
+    "objectID": "posts/DANL 200 HW5 - NFL Data/danl200-hw5-noone-daniel.html#summary-statistics-for-nfl-data-frame",
+    "href": "posts/DANL 200 HW5 - NFL Data/danl200-hw5-noone-daniel.html#summary-statistics-for-nfl-data-frame",
+    "title": "HW5 - NFL Data",
+    "section": "Summary Statistics for NFL Data Frame",
+    "text": "Summary Statistics for NFL Data Frame\n\nskim(NFL)\n\n\nData summary\n\n\nName\nNFL\n\n\nNumber of rows\n50147\n\n\nNumber of columns\n10\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n2\n\n\nnumeric\n8\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\ngame_id\n0\n1.00\n13\n15\n0\n284\n0\n\n\nposteam\n3720\n0.93\n2\n3\n0\n32\n0\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nplay_id\n0\n1.00\n2057.86\n1194.22\n1\n1039.00\n2034.00\n3065.50\n5523\n▇▇▇▅▁\n\n\ndrive\n450\n0.99\n11.48\n6.59\n1\n6.00\n11.00\n17.00\n35\n▇▇▇▂▁\n\n\nweek\n0\n1.00\n9.91\n5.61\n1\n5.00\n10.00\n15.00\n22\n▇▆▆▆▃\n\n\nqtr\n0\n1.00\n2.58\n1.14\n1\n2.00\n3.00\n4.00\n5\n▆▇▆▇▁\n\n\ndown\n8543\n0.83\n2.00\n1.00\n1\n1.00\n2.00\n3.00\n4\n▇▆▁▃▂\n\n\nhalf_seconds_remaining\n0\n1.00\n796.94\n564.41\n0\n255.00\n774.00\n1285.00\n1800\n▇▅▅▅▅\n\n\npass\n0\n1.00\n0.45\n0.50\n0\n0.00\n0.00\n1.00\n1\n▇▁▁▁▆\n\n\nwp\n284\n0.99\n0.51\n0.29\n0\n0.29\n0.52\n0.73\n1\n▆▆▇▆▆"
+  },
+  {
+    "objectID": "posts/DANL 200 HW5 - NFL Data/danl200-hw5-noone-daniel.html#q2a",
+    "href": "posts/DANL 200 HW5 - NFL Data/danl200-hw5-noone-daniel.html#q2a",
+    "title": "HW5 - NFL Data",
+    "section": "Q2a",
+    "text": "Q2a\n\nIn data.frame, NFL2022_stuffs, remove observations for which values of posteam is missing.\n\nAnswer:\n\nNFL &lt;- NFL %&gt;% \n  filter(!(is.na(posteam)))"
+  },
+  {
+    "objectID": "posts/DANL 200 HW5 - NFL Data/danl200-hw5-noone-daniel.html#q2b",
+    "href": "posts/DANL 200 HW5 - NFL Data/danl200-hw5-noone-daniel.html#q2b",
+    "title": "HW5 - NFL Data",
+    "section": "Q2b",
+    "text": "Q2b\n\nSummarize the mean value of pass for each posteam when all the following conditions hold:\n\nwp is greater than 20% and less than 75%;\ndown is less than or equal to 2; and\nhalf_seconds_remaining is greater than 120.\n\n\nAnswer:\n\nNFL_2b &lt;- NFL %&gt;% \n  filter(wp &gt; 0.2 & wp &lt; 0.75 & down &lt;= 2 & half_seconds_remaining &gt; 120)"
+  },
+  {
+    "objectID": "posts/DANL 200 HW5 - NFL Data/danl200-hw5-noone-daniel.html#q2c",
+    "href": "posts/DANL 200 HW5 - NFL Data/danl200-hw5-noone-daniel.html#q2c",
+    "title": "HW5 - NFL Data",
+    "section": "Q2c",
+    "text": "Q2c\n\nProvide both (1) a ggplot code with geom_point() using the resulting data.frame in Q2b and (2) a simple comments to describe the mean value of pass for each posteam.\n\nIn the ggplot, reorder the posteam categories based on the mean value of pass in ascending or in descending order.\n\n\nAnswer\n\nNFL_2c &lt;- NFL_2b %&gt;%\n  group_by(posteam) %&gt;% \n  mutate(mean_pass = mean(pass)) %&gt;% \n  ungroup() %&gt;% \n  mutate(posteam_fct = reorder(posteam, mean_pass))\n\nggplot(data = NFL_2c, mapping = aes(x = mean_pass, y = posteam_fct))+\n  geom_point()+\n  labs(title = 'Possessing Team and Pass Plays',\n       x = 'Percentage of Pass Plays',\n       y = 'Team with possession')+\n  theme(axis.text.y = element_text(hjust = 1))+\n  theme_minimal()\n\n\n\n\nOn the scatter plot there is a positive relationship between posteam and the percentage of pass plays  Teams such as CIN, KC, LAC. and BUF have a higher occurance of pass plays,  While teams such as ATL, WAS, CHI, and NO have a lower occurance of pass plays"
+  },
+  {
+    "objectID": "posts/DANL 200 HW5 - NFL Data/danl200-hw5-noone-daniel.html#q2d",
+    "href": "posts/DANL 200 HW5 - NFL Data/danl200-hw5-noone-daniel.html#q2d",
+    "title": "HW5 - NFL Data",
+    "section": "Q2d",
+    "text": "Q2d\n\nConsider the following data.frame, NFL2022_epa:\n\n\nNFL2022_epa &lt;- read_csv('https://bcdanl.github.io/data/NFL2022_epa.csv')\n\n\nCreate the data.frame, NFL2022_stuffs_EPA, that includes\n\nAll the variables in the data.frame, NFL;\nThe variables, passer, receiver, and epa, from the data.frame, NFL2022_epa. by joining the two data.frames.\n\nIn the resulting data.frame, NFL2022_stuffs_EPA, remove observations with NA in passer.\n\nAnswer:\n\nNFL2022_stuffs_EPA &lt;- NFL %&gt;% \n  left_join(NFL2022_epa)\nView(NFL2022_stuffs_EPA)\n\nNFL2022_stuffs_EPA &lt;- NFL2022_stuffs_EPA %&gt;% \n  filter(!(is.na(passer)))"
+  },
+  {
+    "objectID": "posts/DANL 200 HW5 - NFL Data/danl200-hw5-noone-daniel.html#q2e",
+    "href": "posts/DANL 200 HW5 - NFL Data/danl200-hw5-noone-daniel.html#q2e",
+    "title": "HW5 - NFL Data",
+    "section": "Q2e",
+    "text": "Q2e\n\nProvide both (1) a single ggplot and (2) a simple comment to describe the NFL weekly trend of weekly mean value of epa for each of the following two passers,\n\n\"J.Allen\"\n\"P.Mahomes\"\n\n\nAnswer:\n\nNFL_2e &lt;- NFL2022_stuffs_EPA %&gt;% \n  filter(passer == \"J.Allen\" | passer == \"P.Mahomes\") %&gt;% \n  group_by(passer, week) %&gt;% \n  summarise(mean_epa = mean(epa))\n\nggplot(data = NFL_2e,\n       mapping = aes(x = week, y = mean_epa, color = passer))+\n  geom_line(size = 1, linejoin = 'round')+\n  geom_point(size = 1.5)+\n  theme(legend.position = 'top')+\n  labs(title = \"Mean EPA for Two NFL Passers\",\n       x = 'Week',\n       y = 'Mean EPA')+\n  scale_color_manual(values = c('blue', 'red'))\n\n\n\n\nP.Mahomes seems to have a higher mean EPA most of the weeks, while J.Allen seems to lag behind"
+  },
+  {
+    "objectID": "posts/DANL 200 HW5 - NFL Data/danl200-hw5-noone-daniel.html#q2f",
+    "href": "posts/DANL 200 HW5 - NFL Data/danl200-hw5-noone-daniel.html#q2f",
+    "title": "HW5 - NFL Data",
+    "section": "Q2f",
+    "text": "Q2f\n\nCalculate the difference between the mean value of epa for \"J.Allen\" the mean value of epa for \"P.Mahomes\" for each value of week\n\nAnswer:\n\nNFL_2f &lt;- NFL_2e %&gt;% \n  spread(passer, mean_epa) %&gt;% \n  mutate(mean_epa_dif = J.Allen - P.Mahomes)"
+  },
+  {
+    "objectID": "posts/DANL 200 HW5 - NFL Data/danl200-hw5-noone-daniel.html#q2g",
+    "href": "posts/DANL 200 HW5 - NFL Data/danl200-hw5-noone-daniel.html#q2g",
+    "title": "HW5 - NFL Data",
+    "section": "Q2g",
+    "text": "Q2g\n\nSummarize the resulting data.frame in Q2d, with the following four variables:\n\nposteam: String abbreviation for the team with possession.\npasser: Name of the player who passed a ball to a receiver by initially taking a three-step drop, and backpedaling into the pocket to make a pass. (Mostly, they are quarterbacks.)\nmean_epa: Mean value of epa in 2022 for each passer\nn_pass: Number of observations for each passer\n\nThen find the top 10 NFL passers in 2022 in terms of the mean value of epa, conditioning that n_pass must be greater than or equal to the third quantile level of n_pass.\n\nAnswer:\n\nNFL_2g &lt;- NFL2022_stuffs_EPA %&gt;% \n  group_by(posteam, passer) %&gt;% \n  summarise(mean_epa = mean(epa),\n            n_pass = n())\n\nQ3_n_pass &lt;- quantile(NFL_2g$n_pass, 0.75)\n\nNFL_2g_2 &lt;- NFL_2g %&gt;% \n  filter(n_pass &gt;= Q3_n_pass) %&gt;% \n  arrange(-mean_epa) %&gt;% \n  head(10)"
   }
 ]
