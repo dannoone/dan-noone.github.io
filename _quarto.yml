@@ -11,8 +11,6 @@ website:
         href: project.qmd
       - text: Blog
         href: blog-listing.qmd
-      - text: "Data Frames"
-        href: data.frames.qmd
   page-footer: 
     center: "Powered with GitHub and Quarto<br>© Daniel Noone, 2023"
 

@@ -63,104 +63,6 @@
     "text": "Welcome to my blog powered by Quarto and GitHub!!\n\nAs a Data Analytics major, it is helpful to hone my abilities by doing exploratory data analysis. With that, I will be posting little projects here and there on my website, feel free to take a look!"
   },
   {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
-    "section": "",
-    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Daniel A. Noone",
-    "section": "",
-    "text": "Daniel Noone is a Junior at SUNY Geneseo and is majoring in Data Analytics.  He was born and raised in Ontario, New York and loves to spend time outdoors."
-  },
-  {
-    "objectID": "index.html#who-is-daniel-noone",
-    "href": "index.html#who-is-daniel-noone",
-    "title": "Daniel A. Noone",
-    "section": "",
-    "text": "Daniel Noone is a Junior at SUNY Geneseo and is majoring in Data Analytics.  He was born and raised in Ontario, New York and loves to spend time outdoors."
-  },
-  {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Daniel A. Noone",
-    "section": "Education",
-    "text": "Education\nState University of New York at Geneseo | Geneseo, NY  B.S. in Data Analytics | Aug 2022 - May 2025"
-  },
-  {
-    "objectID": "index.html#experience",
-    "href": "index.html#experience",
-    "title": "Daniel A. Noone",
-    "section": "Experience",
-    "text": "Experience\nExperience programming in R, as well as basic level knowledge of Python. Extensive experience with Microsoft Office programs such as Excel, Word, and PowerPoint."
-  },
-  {
-    "objectID": "blog-listing.html",
-    "href": "blog-listing.html",
-    "title": "Exploratory Data Analysis",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nSpotify Listener Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nHW5 - NFL Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n6 min\n\n\n\n\n\n\n  \n\n\n\n\nBeer Market Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nNYC Restaurant Inspections\n\n\n\n\n\n\n\n\n\nDec 10, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome All!\n\n\n\n\n\n\n\n\n\nDec 9, 2023\n\n\nDaniel Noone\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "data.frames.html",
-    "href": "data.frames.html",
-    "title": "Possible Data Frames",
-    "section": "",
-    "text": "Below are some possible data frames for use in analysis projects."
-  },
-  {
-    "objectID": "data.frames.html#sleep-health-data",
-    "href": "data.frames.html#sleep-health-data",
-    "title": "Possible Data Frames",
-    "section": "1 Sleep Health Data",
-    "text": "1 Sleep Health Data\nDescribes trends in sleep health/quality\n\nsleephlth &lt;- read.csv(\"~/SUNY Geneseo/Classes/Fall 2023/DANL 200 (Team Pr)/dan-noone.github.io/Sleep_health_and_lifestyle_dataset.csv\")\nnvars &lt;- format(round(ncol(sleephlth), 0), \n                nsmall=0, \n                big.mark=\",\") \nnobs &lt;- format(round(nrow(sleephlth), 0), \n                nsmall=0, \n                big.mark=\",\")\n\nNumber of Variables: 13 Number of Observations: 374\n\n1.1 Description of Variables\n- Person ID: Unique identifier for each individual\n\n- Gender: Gender of the person\n\n- Age: The age of the person in years\n\n- Occupation: Occupation of the person\n\n- Sleep Duration: Length of time person sleeps per day (in hours)\n\n- Quality of Sleep: Subjective rating from 1-10 of quality of sleep\n\n- Physical Activity: Length of time person engages in physical activity per day (minutes per day)\n\n- Stress Level: Subjective rating of stress level experienced by person from 1-10\n\n- BMI Category: BMI category of the person\n  -Underweight\n  -Normal\n  -Overweight\n  \n- Blood Pressure: Blood pressure measurement of the person, systolic over diastolic pressure\n\n- Heart Rate: The resting heart rate of the person in beats per minute\n\n- Daily Steps: The number of steps person takes per day\n\n- Sleep Disorder: The presence or absence of a sleep disorder in the person\n  -None\n  -Insomnia\n  -Sleep Apnea"
-  },
-  {
-    "objectID": "posts/nyc_inspections/starwars_df.html",
-    "href": "posts/nyc_inspections/starwars_df.html",
-    "title": "Starwars",
-    "section": "",
-    "text": "Let’s analyze the starwars data:\nstarwars &lt;- read_csv(\"https://bcdanl.github.io/data/starwars.csv\")"
-  },
-  {
-    "objectID": "posts/nyc_inspections/starwars_df.html#variable-description-for-starwars-data.frame",
-    "href": "posts/nyc_inspections/starwars_df.html#variable-description-for-starwars-data.frame",
-    "title": "Starwars",
-    "section": "Variable Description for starwars data.frame",
-    "text": "Variable Description for starwars data.frame\nThe following describes the variables in the starwars data.frame.\n\nfilms List of films the character appeared in\nname Name of the character\nspecies Name of species\nheight Height (cm)\nmass Weight (kg)\nhair_color, skin_color, eye_color Hair, skin, and eye colors\nbirth_year Year born (BBY = Before Battle of Yavin)\nsex The biological sex of the character, namely male, female, hermaphroditic, or none (as in the case for Droids).\ngender The gender role or gender identity of the character as determined by their personality or the way they were programmed (as in the case for Droids).\nhomeworld Name of homeworld"
-  },
-  {
-    "objectID": "posts/nyc_inspections/starwars_df.html#human-vs.-droid",
-    "href": "posts/nyc_inspections/starwars_df.html#human-vs.-droid",
-    "title": "Starwars",
-    "section": "Human vs. Droid",
-    "text": "Human vs. Droid\n\nggplot(data = \n         starwars %&gt;% \n         filter(species %in% c(\"Human\", \"Droid\"))) +\n  geom_boxplot(aes(x = species, y = mass, \n                   fill = species),\n               show.legend = FALSE)"
-  },
-  {
-    "objectID": "posts/starwars/starwars_df.html",
-    "href": "posts/starwars/starwars_df.html",
-    "title": "Starwars",
-    "section": "",
-    "text": "Let’s analyze the starwars data:\nstarwars &lt;- read_csv(\"https://bcdanl.github.io/data/starwars.csv\")"
-  },
-  {
-    "objectID": "posts/starwars/starwars_df.html#variable-description-for-starwars-data.frame",
-    "href": "posts/starwars/starwars_df.html#variable-description-for-starwars-data.frame",
-    "title": "Starwars",
-    "section": "Variable Description for starwars data.frame",
-    "text": "Variable Description for starwars data.frame\nThe following describes the variables in the starwars data.frame.\n\nfilms List of films the character appeared in\nname Name of the character\nspecies Name of species\nheight Height (cm)\nmass Weight (kg)\nhair_color, skin_color, eye_color Hair, skin, and eye colors\nbirth_year Year born (BBY = Before Battle of Yavin)\nsex The biological sex of the character, namely male, female, hermaphroditic, or none (as in the case for Droids).\ngender The gender role or gender identity of the character as determined by their personality or the way they were programmed (as in the case for Droids).\nhomeworld Name of homeworld"
-  },
-  {
-    "objectID": "posts/starwars/starwars_df.html#human-vs.-droid",
-    "href": "posts/starwars/starwars_df.html#human-vs.-droid",
-    "title": "Starwars",
-    "section": "Human vs. Droid",
-    "text": "Human vs. Droid\n\nggplot(data = \n         starwars %&gt;% \n         filter(species %in% c(\"Human\", \"Droid\"))) +\n  geom_boxplot(aes(x = species, y = mass, \n                   fill = species),\n               show.legend = FALSE)"
-  },
-  {
     "objectID": "posts/nyc_inspections/NYC_RES_INS.html#description-of-variables-for-nyc_rest_ins-data-frame",
     "href": "posts/nyc_inspections/NYC_RES_INS.html#description-of-variables-for-nyc_rest_ins-data-frame",
     "title": "NYC Restaurant Inspections",
@@ -196,55 +98,6 @@
     "text": "GRADE and CRITICAL FLAG\nGraphical representation of the proportion of each value of GRADE per value of CRITICAL FLAG\n\nnyc3 &lt;- nyc_rest_ins %&gt;% \n  group_by(GRADE, CRITICAL.FLAG, BORO) %&gt;% \n  summarise(n = n()) %&gt;% \n  mutate(prop = n/sum(n))\nView(nyc3)\n\nggplot(data = nyc3)+\n  geom_bar(mapping = aes(x = CRITICAL.FLAG, y = prop, fill = GRADE), stat = 'identity', position = 'dodge')\n\n\n\n\n\nComments on analyses…\n\nThe proportion of each value of GRADE seems to be almost equal per value of CRITICAL FLAG\nThe proportion of grade A seems to be slightly less for restaurants with No Critical Flags\nThe proportions of grades B and C appear to be slightly less for restautants with Critical Flags"
   },
   {
-    "objectID": "posts/Spotify_all/Spotify_All.html#description-of-variables-for-spotify-data-frame",
-    "href": "posts/Spotify_all/Spotify_All.html#description-of-variables-for-spotify-data-frame",
-    "title": "Spotify Listener Data",
-    "section": "Description of Variables for `spotify Data Frame:",
-    "text": "Description of Variables for `spotify Data Frame:\n\npid: A unique ID for a specific playlist\nplaylist_name: The name of a specific playlist\npos: Position of the track within a playlist (starting from 0)\nartist_name: Name of the artist on the track\ntrack_name: name of the track\nduration_ms: duration of the track (in milliseconds)\nalbum_name: name of the track’s album"
-  },
-  {
-    "objectID": "posts/Spotify_all/Spotify_All.html#summary-stattistics-for-spotify",
-    "href": "posts/Spotify_all/Spotify_All.html#summary-stattistics-for-spotify",
-    "title": "Spotify Listener Data",
-    "section": "Summary Stattistics for spotify:",
-    "text": "Summary Stattistics for spotify:\n\nskim(spotify)\n\n\nData summary\n\n\nName\nspotify\n\n\nNumber of rows\n198005\n\n\nNumber of columns\n7\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n4\n\n\nnumeric\n3\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\nplaylist_name\n0\n1\n2\n55\n0\n2184\n0\n\n\nartist_name\n0\n1\n1\n117\n0\n18866\n0\n\n\ntrack_name\n0\n1\n1\n216\n0\n64115\n0\n\n\nalbum_name\n0\n1\n1\n255\n0\n35497\n0\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\npid\n0\n1\n323435.50\n466890.21\n0\n738\n1476\n999210\n999998\n▇▁▁▁▃\n\n\npos\n0\n1\n54.39\n48.35\n0\n17\n40\n79\n248\n▇▃▂▁▁\n\n\nduration_ms\n0\n1\n234740.84\n132918.60\n0\n198000\n224693\n258533\n20744575\n▇▁▁▁▁"
-  },
-  {
-    "objectID": "posts/Spotify_all/Spotify_All.html#summary-statistics-for-spotify",
-    "href": "posts/Spotify_all/Spotify_All.html#summary-statistics-for-spotify",
-    "title": "Spotify Listener Data",
-    "section": "Summary Statistics for spotify:",
-    "text": "Summary Statistics for spotify:\n\nskim(spotify)\n\n\nData summary\n\n\nName\nspotify\n\n\nNumber of rows\n198005\n\n\nNumber of columns\n7\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n4\n\n\nnumeric\n3\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\nplaylist_name\n0\n1\n2\n55\n0\n2184\n0\n\n\nartist_name\n0\n1\n1\n117\n0\n18866\n0\n\n\ntrack_name\n0\n1\n1\n216\n0\n64115\n0\n\n\nalbum_name\n0\n1\n1\n255\n0\n35497\n0\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\npid\n0\n1\n323435.50\n466890.21\n0\n738\n1476\n999210\n999998\n▇▁▁▁▃\n\n\npos\n0\n1\n54.39\n48.35\n0\n17\n40\n79\n248\n▇▃▂▁▁\n\n\nduration_ms\n0\n1\n234740.84\n132918.60\n0\n198000\n224693\n258533\n20744575\n▇▁▁▁▁"
-  },
-  {
-    "objectID": "posts/Spotify_all/Spotify_All.html#top-5-artists-in-artist_name",
-    "href": "posts/Spotify_all/Spotify_All.html#top-5-artists-in-artist_name",
-    "title": "Spotify Listener Data",
-    "section": "Top 5 Artists in artist_name",
-    "text": "Top 5 Artists in artist_name\n\nspot1 &lt;- spotify %&gt;% \n  group_by(artist_name) %&gt;% \n  summarise(n = n()) %&gt;% \n  arrange(-n) %&gt;% \n  head(5) %&gt;% \n  mutate(prop = n/sum(n),\n         art_fct = reorder(artist_name, prop))\nView(spot1)\n\nggplot(data = spot1)+\n  geom_bar(aes(x = art_fct, y = prop, fill = artist_name), stat = 'identity')+\n  theme(axis.text.x=element_text(angle=45,hjust=1,vjust=0.5))+\n  ggtitle('Frequency of Top 5 Artists')+\n  xlab('Artist Name')+\n  ylab('Proportion')\n\n\n\nlength(unique(spotify$artist_name))\n\n[1] 18866\n\n\n\nComments on analyses…\n\nOut of the 18866 different artist names in the spotify data frame, the top five are…\n\nDrake\nKanye West\nKendrick Lamar\nRihanna\nThe Weeknd\n\n\nThese are also in order of greatest to least frequency out of the top 5*"
-  },
-  {
-    "objectID": "posts/Spotify_all/Spotify_All.html#top-5-songs-in-track_name",
-    "href": "posts/Spotify_all/Spotify_All.html#top-5-songs-in-track_name",
-    "title": "Spotify Listener Data",
-    "section": "Top 5 songs in track_name",
-    "text": "Top 5 songs in track_name\n\nspot2 &lt;- spotify %&gt;% \n  group_by(track_name) %&gt;% \n  summarise(n = n()) %&gt;% \n  arrange(-n) %&gt;% \n  head(5) %&gt;% \n  mutate(prop = n/sum(n),\n         track_fct = reorder(track_name, prop))\n\nggplot(data = spot2)+\n  geom_bar(aes(x = track_fct, y = prop), stat = 'identity', fill = 'blue')+\n  theme(axis.text.x=element_text(angle=45,hjust=1,vjust=0.5))+\n  ggtitle('Top 5 Songs')+\n  xlab('Song Name')+\n  ylab('Proportion')\n\n\n\nlength(unique(spotify$track_name))\n\n[1] 64115\n\n\n\nComments on analyses…\n\nThere are a total of 64115 unique values in track_name\nOut of those 64115 values, the top 5 are…\n\nCloser\nOne Dance\nHUMBLE\nHome\nRoses\n\n\nIn order of decreasing proportion within the top 5 songs*"
-  },
-  {
-    "objectID": "posts/Spotify_all/Spotify_All.html#most-popular-song-in-track_name-for-each-of-the-top-5-artists-in-artist_name",
-    "href": "posts/Spotify_all/Spotify_All.html#most-popular-song-in-track_name-for-each-of-the-top-5-artists-in-artist_name",
-    "title": "Spotify Listener Data",
-    "section": "Most Popular Song in track_name for Each of the Top 5 Artists in artist_name",
-    "text": "Most Popular Song in track_name for Each of the Top 5 Artists in artist_name\n\nspot3 &lt;- spotify %&gt;% \n  filter(artist_name %in% spot1$art_fct) %&gt;% \n  group_by(artist_name, track_name) %&gt;% \n  summarise(n = n())\nspot3.5 &lt;- spot3 %&gt;% \n  group_by(artist_name) %&gt;% \n  slice_max(order_by = n, n = 1) %&gt;%  #Selects the top n value for each value of artist, the top n rows of top n values\n  ungroup() %&gt;% \n  arrange(-n)\n  \nggplot(data = spot3.5) + \n  geom_bar(aes(x = artist_name, y = n, fill = track_name), stat = 'identity')+\n  labs(title = 'Most Popular Song For Each Top 5 Artist',\n       x = 'Artist',\n       y = 'Count')+\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))\n\n\n\n\n\nComments on analyses…\n\nAbove is the top songtrack_name value and it’s count in the spotify data frame for each of the top 5 values of artist_name\n\nDrake : One Dance\nKanye West : GOLD DIGGER\nKendrick Lamar : HUMBLE\nRihanna : Needed Me\nThe Weeknd : Starboy"
-  },
-  {
-    "objectID": "posts/Beer_Mkts/beer_mkts.html",
-    "href": "posts/Beer_Mkts/beer_mkts.html",
-    "title": "Beer Market Data",
-    "section": "",
-    "text": "Analyzing the beer Data Frame:\n\nbeer &lt;- read.csv('https://bcdanl.github.io/data/beer_markets.csv')\n\n\nrmarkdown::paged_table(beer)"
-  },
-  {
     "objectID": "posts/Beer_Mkts/beer_mkts.html#description-of-variables-for-beer-data-frame",
     "href": "posts/Beer_Mkts/beer_mkts.html#description-of-variables-for-beer-data-frame",
     "title": "Beer Market Data",
@@ -278,6 +131,55 @@
     "title": "Beer Market Data",
     "section": "container and brand",
     "text": "container and brand\n\nbeer3 &lt;- beer %&gt;% \n  group_by(brand, container) %&gt;% \n  summarise(n = n())\nbeer3.5 &lt;- beer3 %&gt;% \n  group_by(brand) %&gt;% \n  slice_max(order_by = n, n = 2)\nggplot(data = beer3.5)+\n  geom_bar(aes(x = brand, y = n, fill = container), stat = 'identity', position = 'dodge')+\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))+\n  labs(title = 'Frequency of Cans and Bottles for Each Brand',\n       x = 'Brand',\n       y = 'Count')\n\n\n\nView(beer3.5)\n\n\nComments on analyses…\n\nThe bar chart above depicts the frequency of two container types (can or non refillable bottle) per each brand\n\nAll brands seem to sell more cans than bottles\n\nOf them Bud Light sells the most cans\n\nBud light also sells the most bottles"
+  },
+  {
+    "objectID": "data.frames.html",
+    "href": "data.frames.html",
+    "title": "Possible Data Frames",
+    "section": "",
+    "text": "Below are some possible data frames for use in analysis projects."
+  },
+  {
+    "objectID": "data.frames.html#sleep-health-data",
+    "href": "data.frames.html#sleep-health-data",
+    "title": "Possible Data Frames",
+    "section": "1 Sleep Health Data",
+    "text": "1 Sleep Health Data\nDescribes trends in sleep health/quality\n\nsleephlth &lt;- read.csv(\"~/SUNY Geneseo/Classes/Fall 2023/DANL 200 (Team Pr)/dan-noone.github.io/Sleep_health_and_lifestyle_dataset.csv\")\nnvars &lt;- format(round(ncol(sleephlth), 0), \n                nsmall=0, \n                big.mark=\",\") \nnobs &lt;- format(round(nrow(sleephlth), 0), \n                nsmall=0, \n                big.mark=\",\")\n\nNumber of Variables: 13 Number of Observations: 374\n\n1.1 Description of Variables\n- Person ID: Unique identifier for each individual\n\n- Gender: Gender of the person\n\n- Age: The age of the person in years\n\n- Occupation: Occupation of the person\n\n- Sleep Duration: Length of time person sleeps per day (in hours)\n\n- Quality of Sleep: Subjective rating from 1-10 of quality of sleep\n\n- Physical Activity: Length of time person engages in physical activity per day (minutes per day)\n\n- Stress Level: Subjective rating of stress level experienced by person from 1-10\n\n- BMI Category: BMI category of the person\n  -Underweight\n  -Normal\n  -Overweight\n  \n- Blood Pressure: Blood pressure measurement of the person, systolic over diastolic pressure\n\n- Heart Rate: The resting heart rate of the person in beats per minute\n\n- Daily Steps: The number of steps person takes per day\n\n- Sleep Disorder: The presence or absence of a sleep disorder in the person\n  -None\n  -Insomnia\n  -Sleep Apnea"
+  },
+  {
+    "objectID": "blog-listing.html",
+    "href": "blog-listing.html",
+    "title": "Exploratory Data Analysis",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nSpotify Listener Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nHW5 - NFL Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n6 min\n\n\n\n\n\n\n  \n\n\n\n\nBeer Market Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nNYC Restaurant Inspections\n\n\n\n\n\n\n\n\n\nDec 10, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome All!\n\n\n\n\n\n\n\n\n\nDec 9, 2023\n\n\nDaniel Noone\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Daniel A. Noone",
+    "section": "",
+    "text": "Daniel Noone is a Junior at SUNY Geneseo and is majoring in Data Analytics.  He was born and raised in Ontario, New York and loves to spend time outdoors."
+  },
+  {
+    "objectID": "index.html#who-is-daniel-noone",
+    "href": "index.html#who-is-daniel-noone",
+    "title": "Daniel A. Noone",
+    "section": "",
+    "text": "Daniel Noone is a Junior at SUNY Geneseo and is majoring in Data Analytics.  He was born and raised in Ontario, New York and loves to spend time outdoors."
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Daniel A. Noone",
+    "section": "Education",
+    "text": "Education\nState University of New York at Geneseo | Geneseo, NY  B.S. in Data Analytics | Aug 2022 - May 2025"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Daniel A. Noone",
+    "section": "Experience",
+    "text": "Experience\nExperience programming in R, as well as basic level knowledge of Python. Extensive experience with Microsoft Office programs such as Excel, Word, and PowerPoint."
   },
   {
     "objectID": "posts/DANL 200 HW5 - NFL Data/danl200-hw5-noone-daniel.html",
@@ -348,5 +250,40 @@
     "title": "HW5 - NFL Data",
     "section": "Q2g",
     "text": "Q2g\n\nSummarize the resulting data.frame in Q2d, with the following four variables:\n\nposteam: String abbreviation for the team with possession.\npasser: Name of the player who passed a ball to a receiver by initially taking a three-step drop, and backpedaling into the pocket to make a pass. (Mostly, they are quarterbacks.)\nmean_epa: Mean value of epa in 2022 for each passer\nn_pass: Number of observations for each passer\n\nThen find the top 10 NFL passers in 2022 in terms of the mean value of epa, conditioning that n_pass must be greater than or equal to the third quantile level of n_pass.\n\nAnswer:\n\nNFL_2g &lt;- NFL2022_stuffs_EPA %&gt;% \n  group_by(posteam, passer) %&gt;% \n  summarise(mean_epa = mean(epa),\n            n_pass = n())\n\nQ3_n_pass &lt;- quantile(NFL_2g$n_pass, 0.75)\n\nNFL_2g_2 &lt;- NFL_2g %&gt;% \n  filter(n_pass &gt;= Q3_n_pass) %&gt;% \n  arrange(-mean_epa) %&gt;% \n  head(10)"
+  },
+  {
+    "objectID": "posts/Spotify_all/Spotify_All.html#description-of-variables-for-spotify-data-frame",
+    "href": "posts/Spotify_all/Spotify_All.html#description-of-variables-for-spotify-data-frame",
+    "title": "Spotify Listener Data",
+    "section": "Description of Variables for `spotify Data Frame:",
+    "text": "Description of Variables for `spotify Data Frame:\n\npid: A unique ID for a specific playlist\nplaylist_name: The name of a specific playlist\npos: Position of the track within a playlist (starting from 0)\nartist_name: Name of the artist on the track\ntrack_name: name of the track\nduration_ms: duration of the track (in milliseconds)\nalbum_name: name of the track’s album"
+  },
+  {
+    "objectID": "posts/Spotify_all/Spotify_All.html#summary-statistics-for-spotify",
+    "href": "posts/Spotify_all/Spotify_All.html#summary-statistics-for-spotify",
+    "title": "Spotify Listener Data",
+    "section": "Summary Statistics for spotify:",
+    "text": "Summary Statistics for spotify:\n\nskim(spotify)\n\n\nData summary\n\n\nName\nspotify\n\n\nNumber of rows\n198005\n\n\nNumber of columns\n7\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n4\n\n\nnumeric\n3\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\nplaylist_name\n0\n1\n2\n55\n0\n2184\n0\n\n\nartist_name\n0\n1\n1\n117\n0\n18866\n0\n\n\ntrack_name\n0\n1\n1\n216\n0\n64115\n0\n\n\nalbum_name\n0\n1\n1\n255\n0\n35497\n0\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\npid\n0\n1\n323435.50\n466890.21\n0\n738\n1476\n999210\n999998\n▇▁▁▁▃\n\n\npos\n0\n1\n54.39\n48.35\n0\n17\n40\n79\n248\n▇▃▂▁▁\n\n\nduration_ms\n0\n1\n234740.84\n132918.60\n0\n198000\n224693\n258533\n20744575\n▇▁▁▁▁"
+  },
+  {
+    "objectID": "posts/Spotify_all/Spotify_All.html#top-5-artists-in-artist_name",
+    "href": "posts/Spotify_all/Spotify_All.html#top-5-artists-in-artist_name",
+    "title": "Spotify Listener Data",
+    "section": "Top 5 Artists in artist_name",
+    "text": "Top 5 Artists in artist_name\n\nspot1 &lt;- spotify %&gt;% \n  group_by(artist_name) %&gt;% \n  summarise(n = n()) %&gt;% \n  arrange(-n) %&gt;% \n  head(5) %&gt;% \n  mutate(prop = n/sum(n),\n         art_fct = reorder(artist_name, prop))\nView(spot1)\n\nggplot(data = spot1)+\n  geom_bar(aes(x = art_fct, y = prop, fill = artist_name), stat = 'identity')+\n  theme(axis.text.x=element_text(angle=45,hjust=1,vjust=0.5))+\n  ggtitle('Frequency of Top 5 Artists')+\n  xlab('Artist Name')+\n  ylab('Proportion')\n\n\n\nlength(unique(spotify$artist_name))\n\n[1] 18866\n\n\n\nComments on analyses…\n\nOut of the 18866 different artist names in the spotify data frame, the top five are…\n\nDrake\nKanye West\nKendrick Lamar\nRihanna\nThe Weeknd\n\n\nThese are also in order of greatest to least frequency out of the top 5*"
+  },
+  {
+    "objectID": "posts/Spotify_all/Spotify_All.html#top-5-songs-in-track_name",
+    "href": "posts/Spotify_all/Spotify_All.html#top-5-songs-in-track_name",
+    "title": "Spotify Listener Data",
+    "section": "Top 5 songs in track_name",
+    "text": "Top 5 songs in track_name\n\nspot2 &lt;- spotify %&gt;% \n  group_by(track_name) %&gt;% \n  summarise(n = n()) %&gt;% \n  arrange(-n) %&gt;% \n  head(5) %&gt;% \n  mutate(prop = n/sum(n),\n         track_fct = reorder(track_name, prop))\n\nggplot(data = spot2)+\n  geom_bar(aes(x = track_fct, y = prop), stat = 'identity', fill = 'blue')+\n  theme(axis.text.x=element_text(angle=45,hjust=1,vjust=0.5))+\n  ggtitle('Top 5 Songs')+\n  xlab('Song Name')+\n  ylab('Proportion')\n\n\n\nlength(unique(spotify$track_name))\n\n[1] 64115\n\n\n\nComments on analyses…\n\nThere are a total of 64115 unique values in track_name\nOut of those 64115 values, the top 5 are…\n\nCloser\nOne Dance\nHUMBLE\nHome\nRoses\n\n\nIn order of decreasing proportion within the top 5 songs*"
+  },
+  {
+    "objectID": "posts/Spotify_all/Spotify_All.html#most-popular-song-in-track_name-for-each-of-the-top-5-artists-in-artist_name",
+    "href": "posts/Spotify_all/Spotify_All.html#most-popular-song-in-track_name-for-each-of-the-top-5-artists-in-artist_name",
+    "title": "Spotify Listener Data",
+    "section": "Most Popular Song in track_name for Each of the Top 5 Artists in artist_name",
+    "text": "Most Popular Song in track_name for Each of the Top 5 Artists in artist_name\n\nspot3 &lt;- spotify %&gt;% \n  filter(artist_name %in% spot1$art_fct) %&gt;% \n  group_by(artist_name, track_name) %&gt;% \n  summarise(n = n())\nspot3.5 &lt;- spot3 %&gt;% \n  group_by(artist_name) %&gt;% \n  slice_max(order_by = n, n = 1) %&gt;%  #Selects the top n value for each value of artist, the top n rows of top n values\n  ungroup() %&gt;% \n  arrange(-n)\n  \nggplot(data = spot3.5) + \n  geom_bar(aes(x = artist_name, y = n, fill = track_name), stat = 'identity')+\n  labs(title = 'Most Popular Song For Each Top 5 Artist',\n       x = 'Artist',\n       y = 'Count')+\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))\n\n\n\n\n\nComments on analyses…\n\nAbove is the top songtrack_name value and it’s count in the spotify data frame for each of the top 5 values of artist_name\n\nDrake : One Dance\nKanye West : GOLD DIGGER\nKendrick Lamar : HUMBLE\nRihanna : Needed Me\nThe Weeknd : Starboy"
   }
 ]
