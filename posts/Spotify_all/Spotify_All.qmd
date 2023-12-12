@@ -45,7 +45,7 @@ spotify <- read.csv('https://bcdanl.github.io/data/spotify_all.csv')
 rmarkdown::paged_table(spotify)
 ```
 
-## Description of Variables for ``spotify` Data Frame:
+## Description of Variables for `spotify` Data Frame:
 
   - `pid`: A unique ID for a specific playlist
 

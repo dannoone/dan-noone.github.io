@@ -3,9 +3,8 @@
     "listing": "/blog-listing.html",
     "items": [
       "/posts/Spotify_all/Spotify_All.html",
+      "/posts/Beer_Mkts/beer_mkts.html",
       "/posts/nyc_inspections/NYC_RES_INS.html",
-      "/posts/starwars/starwars_df.html",
-      "/posts/post-with-code/index.html",
       "/posts/welcome/index.html"
     ]
   }

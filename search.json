@@ -102,7 +102,7 @@
     "href": "blog-listing.html",
     "title": "Exploratory Data Analysis",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nSpotify Listener Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nNYC Restaurant Inspections\n\n\n\n\n\n\n\n\n\nDec 10, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nStarwars\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nYour Name\n\n\n3 min\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nSpotify Listener Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nBeer Market Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nNYC Restaurant Inspections\n\n\n\n\n\n\n\n\n\nDec 10, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "data.frames.html",
@@ -236,5 +236,47 @@
     "title": "Spotify Listener Data",
     "section": "Most Popular Song in track_name for Each of the Top 5 Artists in artist_name",
     "text": "Most Popular Song in track_name for Each of the Top 5 Artists in artist_name\n\nspot3 &lt;- spotify %&gt;% \n  filter(artist_name %in% spot1$art_fct) %&gt;% \n  group_by(artist_name, track_name) %&gt;% \n  summarise(n = n())\nspot3.5 &lt;- spot3 %&gt;% \n  group_by(artist_name) %&gt;% \n  slice_max(order_by = n, n = 1) %&gt;%  #Selects the top n value for each value of artist, the top n rows of top n values\n  ungroup() %&gt;% \n  arrange(-n)\n  \nggplot(data = spot3.5) + \n  geom_bar(aes(x = artist_name, y = n, fill = track_name), stat = 'identity')+\n  labs(title = 'Most Popular Song For Each Top 5 Artist',\n       x = 'Artist',\n       y = 'Count')+\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))\n\n\n\n\n\nComments on analyses…\n\nAbove is the top songtrack_name value and it’s count in the spotify data frame for each of the top 5 values of artist_name\n\nDrake : One Dance\nKanye West : GOLD DIGGER\nKendrick Lamar : HUMBLE\nRihanna : Needed Me\nThe Weeknd : Starboy"
+  },
+  {
+    "objectID": "posts/Beer_Mkts/beer_mkts.html",
+    "href": "posts/Beer_Mkts/beer_mkts.html",
+    "title": "Beer Market Data",
+    "section": "",
+    "text": "Analyzing the beer Data Frame:\n\nbeer &lt;- read.csv('https://bcdanl.github.io/data/beer_markets.csv')\n\n\nrmarkdown::paged_table(beer)"
+  },
+  {
+    "objectID": "posts/Beer_Mkts/beer_mkts.html#description-of-variables-for-beer-data-frame",
+    "href": "posts/Beer_Mkts/beer_mkts.html#description-of-variables-for-beer-data-frame",
+    "title": "Beer Market Data",
+    "section": "Description of Variables for beer Data Frame:",
+    "text": "Description of Variables for beer Data Frame:\n\nhh: Identification number of the household;\nX_purchase_desc: details of item purchased by hh\nquantity: number of items purchased by hh\nbrand: Brand of beer purchased by hh\n\nBud Light,\nBusch Light,\nCoors Light,\nMiller Lite, or\nNatural Light\n\ndollar_spent: Dollar value total of purchase;\nbeer_floz: volume of beer (fl oz);\nprice_per_floz: price per fl oz\ncontainer: Type of container of beer\npromo: Was the item promoted? (coupon, etc…)\nmarket: Scan-track market (or state if rural);\nOther demographic data is present in further variables as well…"
+  },
+  {
+    "objectID": "posts/Beer_Mkts/beer_mkts.html#summary-statistics-of-beer-data-frame",
+    "href": "posts/Beer_Mkts/beer_mkts.html#summary-statistics-of-beer-data-frame",
+    "title": "Beer Market Data",
+    "section": "Summary Statistics of beer Data Frame:",
+    "text": "Summary Statistics of beer Data Frame:\n\nskim(beer)\n\n\nData summary\n\n\nName\nbeer\n\n\nNumber of rows\n73115\n\n\nNumber of columns\n24\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n13\n\n\nlogical\n6\n\n\nnumeric\n5\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\nX_purchase_desc\n0\n1\n12\n29\n0\n115\n0\n\n\nbrand\n0\n1\n9\n13\n0\n5\n0\n\n\ncontainer\n0\n1\n3\n30\n0\n7\n0\n\n\nmarket\n0\n1\n5\n20\n0\n92\n0\n\n\nbuyertype\n0\n1\n4\n7\n0\n3\n0\n\n\nincome\n0\n1\n5\n8\n0\n5\n0\n\n\nage\n0\n1\n3\n5\n0\n4\n0\n\n\nemployment\n0\n1\n4\n4\n0\n3\n0\n\n\ndegree\n0\n1\n2\n7\n0\n4\n0\n\n\ncow\n0\n1\n4\n25\n0\n4\n0\n\n\nrace\n0\n1\n5\n8\n0\n5\n0\n\n\ntvcable\n0\n1\n4\n7\n0\n3\n0\n\n\nnpeople\n0\n1\n1\n5\n0\n5\n0\n\n\n\nVariable type: logical\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\ncount\n\n\n\n\npromo\n0\n1\n0.20\nFAL: 58563, TRU: 14552\n\n\nchildrenUnder6\n0\n1\n0.07\nFAL: 68109, TRU: 5006\n\n\nchildren6to17\n0\n1\n0.20\nFAL: 58155, TRU: 14960\n\n\nmicrowave\n0\n1\n0.99\nTRU: 72676, FAL: 439\n\n\ndishwasher\n0\n1\n0.73\nTRU: 53258, FAL: 19857\n\n\nsinglefamilyhome\n0\n1\n0.81\nTRU: 59058, FAL: 14057\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nhh\n0\n1\n17407721.61\n11582147.34\n2000235.00\n8223438.00\n8413624.00\n30171315.00\n30440718.00\n▂▇▁▁▇\n\n\nquantity\n0\n1\n1.32\n1.15\n1.00\n1.00\n1.00\n1.00\n48.00\n▇▁▁▁▁\n\n\ndollar_spent\n0\n1\n13.78\n8.72\n0.51\n8.97\n12.99\n16.38\n159.13\n▇▁▁▁▁\n\n\nbeer_floz\n0\n1\n265.93\n199.52\n12.00\n144.00\n216.00\n360.00\n9216.00\n▇▁▁▁▁\n\n\nprice_per_floz\n0\n1\n0.06\n0.01\n0.00\n0.05\n0.06\n0.06\n0.23\n▃▇▁▁▁"
+  },
+  {
+    "objectID": "posts/Beer_Mkts/beer_mkts.html#distribution-of-brand",
+    "href": "posts/Beer_Mkts/beer_mkts.html#distribution-of-brand",
+    "title": "Beer Market Data",
+    "section": "Distribution of brand",
+    "text": "Distribution of brand\n\nbeer1 &lt;- beer %&gt;% \n  group_by(brand) %&gt;% \n  summarise(n = n()) %&gt;% \n  arrange(-n) %&gt;% \n  mutate(prop = n/sum(n),\n         brand_fct = reorder(brand, prop))\n\nggplot(data = beer1)+\n  geom_bar(aes(x = brand_fct, y = prop), stat = 'identity', fill = 'blue')+\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))+\n  labs(title = 'Frequency of Beer Brands',\n       x = 'Brand',\n       y = 'Proportion')\n\n\n\n\n\nComments on analyses…\n\nThe brands above are in an increasing order of proportion among the brands in beer data frame\n\nThe brands are ordered as follows…\n\nBusch Light\nNatural Light\nCoors Light\nMiller Lite\nBud Light"
+  },
+  {
+    "objectID": "posts/Beer_Mkts/beer_mkts.html#brand-and-dollar-spent",
+    "href": "posts/Beer_Mkts/beer_mkts.html#brand-and-dollar-spent",
+    "title": "Beer Market Data",
+    "section": "brand and dollar spent",
+    "text": "brand and dollar spent\n\nbeer2 &lt;- beer %&gt;% \n  group_by(brand) %&gt;% \n  summarise(dollar_spent_tot = sum(dollar_spent)) %&gt;% \n  mutate(brand_fct = reorder(brand, dollar_spent_tot)) %&gt;% \n  arrange(-dollar_spent_tot)\nView(beer2)\n\nggplot(beer2)+\n  geom_bar(aes(x = brand_fct, y = dollar_spent_tot), stat = 'identity', fill = 'red')+\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))+\n  labs(title = 'Dollars Spent Per Brand',\n       x = 'Brand',\n       y = 'Dollars Spent')\n\n\n\n\n\nComments on analyses….\n\nThe order is the same as the distribution of brand within the beer data frame\n\nJust now the y-axis is measuring dollars spent by each value of hh on each brand\n\nBud Light seems to be most popular all around"
+  },
+  {
+    "objectID": "posts/Beer_Mkts/beer_mkts.html#container-and-brand",
+    "href": "posts/Beer_Mkts/beer_mkts.html#container-and-brand",
+    "title": "Beer Market Data",
+    "section": "container and brand",
+    "text": "container and brand\n\nbeer3 &lt;- beer %&gt;% \n  group_by(brand, container) %&gt;% \n  summarise(n = n())\nbeer3.5 &lt;- beer3 %&gt;% \n  group_by(brand) %&gt;% \n  slice_max(order_by = n, n = 2)\nggplot(data = beer3.5)+\n  geom_bar(aes(x = brand, y = n, fill = container), stat = 'identity', position = 'dodge')+\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))+\n  labs(title = 'Frequency of Cans and Bottles for Each Brand',\n       x = 'Brand',\n       y = 'Count')\n\n\n\nView(beer3.5)\n\n\nComments on analyses…\n\nThe bar chart above depicts the frequency of two container types (can or non refillable bottle) per each brand\n\nAll brands seem to sell more cans than bottles\n\nOf them Bud Light sells the most cans\n\nBud light also sells the most bottles"
   }
 ]
