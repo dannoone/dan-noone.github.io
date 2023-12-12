@@ -102,7 +102,7 @@
     "href": "blog-listing.html",
     "title": "Exploratory Data Analysis",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nNYC Restaurant Inspections\n\n\n\n\n\n\n\n\n\nDec 10, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nStarwars\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nYour Name\n\n\n3 min\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nSpotify Listener Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nNYC Restaurant Inspections\n\n\n\n\n\n\n\n\n\nDec 10, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nStarwars\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nYour Name\n\n\n3 min\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\n\n\nOct 30, 2023\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\n\n\nOct 27, 2023\n\n\nYOUR NAME\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "data.frames.html",
@@ -194,5 +194,47 @@
     "title": "NYC Restaurant Inspections",
     "section": "GRADE and CRITICAL FLAG",
     "text": "GRADE and CRITICAL FLAG\nGraphical representation of the proportion of each value of GRADE per value of CRITICAL FLAG\n\nnyc3 &lt;- nyc_rest_ins %&gt;% \n  group_by(GRADE, CRITICAL.FLAG, BORO) %&gt;% \n  summarise(n = n()) %&gt;% \n  mutate(prop = n/sum(n))\nView(nyc3)\n\nggplot(data = nyc3)+\n  geom_bar(mapping = aes(x = CRITICAL.FLAG, y = prop, fill = GRADE), stat = 'identity', position = 'dodge')\n\n\n\n\n\nComments on analyses…\n\nThe proportion of each value of GRADE seems to be almost equal per value of CRITICAL FLAG\nThe proportion of grade A seems to be slightly less for restaurants with No Critical Flags\nThe proportions of grades B and C appear to be slightly less for restautants with Critical Flags"
+  },
+  {
+    "objectID": "posts/Spotify_all/Spotify_All.html#description-of-variables-for-spotify-data-frame",
+    "href": "posts/Spotify_all/Spotify_All.html#description-of-variables-for-spotify-data-frame",
+    "title": "Spotify Listener Data",
+    "section": "Description of Variables for `spotify Data Frame:",
+    "text": "Description of Variables for `spotify Data Frame:\n\npid: A unique ID for a specific playlist\nplaylist_name: The name of a specific playlist\npos: Position of the track within a playlist (starting from 0)\nartist_name: Name of the artist on the track\ntrack_name: name of the track\nduration_ms: duration of the track (in milliseconds)\nalbum_name: name of the track’s album"
+  },
+  {
+    "objectID": "posts/Spotify_all/Spotify_All.html#summary-stattistics-for-spotify",
+    "href": "posts/Spotify_all/Spotify_All.html#summary-stattistics-for-spotify",
+    "title": "Spotify Listener Data",
+    "section": "Summary Stattistics for spotify:",
+    "text": "Summary Stattistics for spotify:\n\nskim(spotify)\n\n\nData summary\n\n\nName\nspotify\n\n\nNumber of rows\n198005\n\n\nNumber of columns\n7\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n4\n\n\nnumeric\n3\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\nplaylist_name\n0\n1\n2\n55\n0\n2184\n0\n\n\nartist_name\n0\n1\n1\n117\n0\n18866\n0\n\n\ntrack_name\n0\n1\n1\n216\n0\n64115\n0\n\n\nalbum_name\n0\n1\n1\n255\n0\n35497\n0\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\npid\n0\n1\n323435.50\n466890.21\n0\n738\n1476\n999210\n999998\n▇▁▁▁▃\n\n\npos\n0\n1\n54.39\n48.35\n0\n17\n40\n79\n248\n▇▃▂▁▁\n\n\nduration_ms\n0\n1\n234740.84\n132918.60\n0\n198000\n224693\n258533\n20744575\n▇▁▁▁▁"
+  },
+  {
+    "objectID": "posts/Spotify_all/Spotify_All.html#summary-statistics-for-spotify",
+    "href": "posts/Spotify_all/Spotify_All.html#summary-statistics-for-spotify",
+    "title": "Spotify Listener Data",
+    "section": "Summary Statistics for spotify:",
+    "text": "Summary Statistics for spotify:\n\nskim(spotify)\n\n\nData summary\n\n\nName\nspotify\n\n\nNumber of rows\n198005\n\n\nNumber of columns\n7\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n4\n\n\nnumeric\n3\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\nplaylist_name\n0\n1\n2\n55\n0\n2184\n0\n\n\nartist_name\n0\n1\n1\n117\n0\n18866\n0\n\n\ntrack_name\n0\n1\n1\n216\n0\n64115\n0\n\n\nalbum_name\n0\n1\n1\n255\n0\n35497\n0\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\npid\n0\n1\n323435.50\n466890.21\n0\n738\n1476\n999210\n999998\n▇▁▁▁▃\n\n\npos\n0\n1\n54.39\n48.35\n0\n17\n40\n79\n248\n▇▃▂▁▁\n\n\nduration_ms\n0\n1\n234740.84\n132918.60\n0\n198000\n224693\n258533\n20744575\n▇▁▁▁▁"
+  },
+  {
+    "objectID": "posts/Spotify_all/Spotify_All.html#top-5-artists-in-artist_name",
+    "href": "posts/Spotify_all/Spotify_All.html#top-5-artists-in-artist_name",
+    "title": "Spotify Listener Data",
+    "section": "Top 5 Artists in artist_name",
+    "text": "Top 5 Artists in artist_name\n\nspot1 &lt;- spotify %&gt;% \n  group_by(artist_name) %&gt;% \n  summarise(n = n()) %&gt;% \n  arrange(-n) %&gt;% \n  head(5) %&gt;% \n  mutate(prop = n/sum(n),\n         art_fct = reorder(artist_name, prop))\nView(spot1)\n\nggplot(data = spot1)+\n  geom_bar(aes(x = art_fct, y = prop, fill = artist_name), stat = 'identity')+\n  theme(axis.text.x=element_text(angle=45,hjust=1,vjust=0.5))+\n  ggtitle('Frequency of Top 5 Artists')+\n  xlab('Artist Name')+\n  ylab('Proportion')\n\n\n\nlength(unique(spotify$artist_name))\n\n[1] 18866\n\n\n\nComments on analyses…\n\nOut of the 18866 different artist names in the spotify data frame, the top five are…\n\nDrake\nKanye West\nKendrick Lamar\nRihanna\nThe Weeknd\n\n\nThese are also in order of greatest to least frequency out of the top 5*"
+  },
+  {
+    "objectID": "posts/Spotify_all/Spotify_All.html#top-5-songs-in-track_name",
+    "href": "posts/Spotify_all/Spotify_All.html#top-5-songs-in-track_name",
+    "title": "Spotify Listener Data",
+    "section": "Top 5 songs in track_name",
+    "text": "Top 5 songs in track_name\n\nspot2 &lt;- spotify %&gt;% \n  group_by(track_name) %&gt;% \n  summarise(n = n()) %&gt;% \n  arrange(-n) %&gt;% \n  head(5) %&gt;% \n  mutate(prop = n/sum(n),\n         track_fct = reorder(track_name, prop))\n\nggplot(data = spot2)+\n  geom_bar(aes(x = track_fct, y = prop), stat = 'identity', fill = 'blue')+\n  theme(axis.text.x=element_text(angle=45,hjust=1,vjust=0.5))+\n  ggtitle('Top 5 Songs')+\n  xlab('Song Name')+\n  ylab('Proportion')\n\n\n\nlength(unique(spotify$track_name))\n\n[1] 64115\n\n\n\nComments on analyses…\n\nThere are a total of 64115 unique values in track_name\nOut of those 64115 values, the top 5 are…\n\nCloser\nOne Dance\nHUMBLE\nHome\nRoses\n\n\nIn order of decreasing proportion within the top 5 songs*"
+  },
+  {
+    "objectID": "posts/Spotify_all/Spotify_All.html#most-popular-song-in-track_name-for-each-of-the-top-5-artists-in-artist_name",
+    "href": "posts/Spotify_all/Spotify_All.html#most-popular-song-in-track_name-for-each-of-the-top-5-artists-in-artist_name",
+    "title": "Spotify Listener Data",
+    "section": "Most Popular Song in track_name for Each of the Top 5 Artists in artist_name",
+    "text": "Most Popular Song in track_name for Each of the Top 5 Artists in artist_name\n\nspot3 &lt;- spotify %&gt;% \n  filter(artist_name %in% spot1$art_fct) %&gt;% \n  group_by(artist_name, track_name) %&gt;% \n  summarise(n = n())\nspot3.5 &lt;- spot3 %&gt;% \n  group_by(artist_name) %&gt;% \n  slice_max(order_by = n, n = 1) %&gt;%  #Selects the top n value for each value of artist, the top n rows of top n values\n  ungroup() %&gt;% \n  arrange(-n)\n  \nggplot(data = spot3.5) + \n  geom_bar(aes(x = artist_name, y = n, fill = track_name), stat = 'identity')+\n  labs(title = 'Most Popular Song For Each Top 5 Artist',\n       x = 'Artist',\n       y = 'Count')+\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))\n\n\n\n\n\nComments on analyses…\n\nAbove is the top songtrack_name value and it’s count in the spotify data frame for each of the top 5 values of artist_name\n\nDrake : One Dance\nKanye West : GOLD DIGGER\nKendrick Lamar : HUMBLE\nRihanna : Needed Me\nThe Weeknd : Starboy"
   }
 ]
