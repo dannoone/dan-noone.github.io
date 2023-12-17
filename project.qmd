@@ -285,8 +285,7 @@ ggplot(data = so2_alt_per_state)+
   theme_dark()+
   labs(title = 'Sulfur Dioxide Levels in ppb per State',
        x = 'Mean ppb Value',
-       y = 'State',
-       fill = 'State')+
+       y = 'State',)+
   scale_fill_viridis_d(option = 'inferno')
 ```
 
