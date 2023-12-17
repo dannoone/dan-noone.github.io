@@ -242,7 +242,7 @@ __Analyses__
 
 ## The average measurement of the `OZONE` measurement per each `State.Name` value
 
-  - The average measurment of ozone in parts per million (ppm) per each state in the top ten most frequent
+  - The average measurement of ozone in parts per million (ppm) per each state in the top ten most frequent
 
 
 ```{r}
@@ -257,7 +257,8 @@ ggplot(data = ozone_alt_per_state)+
   labs(title = 'Ozone Levels in ppm per State',
        x = ' Mean ppm Value',
        y = 'State',
-       fill = 'State')
+       fill = 'State')+
+  scale_fill_viridis_d(option = 'inferno')
 ```
 
 
