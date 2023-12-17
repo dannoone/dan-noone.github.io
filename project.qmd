@@ -1,6 +1,6 @@
 ---
-title: DANL Project
-subtitle: "Data-Driven Mastery: Unlocking Business Potential"
+title: DANL 200 Project
+subtitle: "Air Quality Data as per the EPA"
 author: 
   - __Daniel Noone__
 
@@ -38,6 +38,130 @@ theme_set(theme_ipsum()+
                 )
           )
 ```
+
+
+# The `Air Quality` Data Sets:
+
+  - These data sets were obtained from the EPA website [here](https://aqs.epa.gov/aqsweb/airdata/download_files.html#Daily)
+  
+  - These data sets (four in total) measure daily levels of four different gasses in different locations
+    - The gasses measured are Ozone, SO2 (sulfur dioxide), CO (carbon monoxide), and NO2 (nitrogen dioxide)
+    - These gasses play a large role in the measurement of the Air Quality Index (AQI)
+    - They are considered to be atmospheric pollutants
+    
+  - This project will take a look at and analyze the daily trend of these levels in the most prevalent states in the data sets
+  
+  
+## Loading the data sets
+
+```{r}
+ozone <- read.csv("C:\\Users\\Dan\\OneDrive\\Documents\\SUNY Geneseo\\Classes\\Fall 2023\\DANL 200 (Team Pr)\\ozone_measures.csv")
+so2 <- read.csv("C:\\Users\\Dan\\OneDrive\\Documents\\SUNY Geneseo\\Classes\\Fall 2023\\DANL 200 (Team Pr)\\so2_measures.csv")
+co <- read.csv("C:\\Users\\Dan\\OneDrive\\Documents\\SUNY Geneseo\\Classes\\Fall 2023\\DANL 200 (Team Pr)\\co_measures.csv")
+no2 <- read.csv("C:\\Users\\Dan\\OneDrive\\Documents\\SUNY Geneseo\\Classes\\Fall 2023\\DANL 200 (Team Pr)\\no2_measures.csv")
+```
+
+```{r}
+rmarkdown::paged_table(ozone)
+rmarkdown::paged_table(so2)
+rmarkdown::paged_table(co)
+rmarkdown::paged_table(no2)
+```
+
+## Altering the Four Data Sets
+
+  - The data sets include a lot of information that is not needed for my analysis
+    - Here I will alter the data sets to include only the information of importance
+    - These data sets will be used for further analysis in this project
+  
+  - For the purpose of continuity, the top 10 most frequent states in `ozone` data set will also be analyzed in the other three data sets
+
+### The `ozone` data set to the `ozone_alt` data set
+```{r}
+st_top10_oz <- ozone %>% 
+  group_by(State.Name) %>% 
+  summarise(n = n()) %>% 
+  arrange(-n) %>% 
+  head(10) %>% 
+  mutate(state_fct = reorder(State.Name, n))
+
+ozone_alt <- ozone %>% 
+  select(State.Name, Date.Local, Parameter.Name, Units.of.Measure, Observation.Count) %>% 
+  filter(State.Name %in% st_top10_oz$state_fct)
+```
+
+
+ - The new data set `ozone_alt` includes data for only the 10 most prevalent states in the `ozone` data set
+ 
+```{r}
+rmarkdown::paged_table(st_top10_oz)
+rmarkdown::paged_table(ozone_alt)
+```
+
+
+### The `so2` data set to the `so2_alt` data set
+```{r}
+st_top10_so2 <- so2 %>% 
+  filter(State.Name %in% st_top10_oz$State.Name) %>%
+  group_by(State.Name) %>% 
+  summarise(n = n()) %>% 
+  arrange(-n) %>% 
+  mutate(state_fct = reorder(State.Name, n))
+
+so2_alt <- so2 %>% 
+  select(State.Name, Date.Local, Parameter.Name, Units.of.Measure, Observation.Count) %>% 
+  filter(State.Name %in% st_top10_so2$state_fct)
+```
+
+
+- The new data set `so2_alt` includes data for again, only the 10 most prevalent states in the `ozone` data set
+
+```{r}
+rmarkdown::paged_table(st_top10_so2)
+rmarkdown::paged_table(so2_alt)
+```
+
+
+### The `co` data set to the `co_alt` data set
+```{r}
+st_top10_co <- co %>% 
+  filter(State.Name %in% st_top10_oz$State.Name) %>% 
+  group_by(State.Name) %>% 
+  summarise(n = n()) %>% 
+  arrange(-n) %>% 
+  mutate(state_fct = reorder(State.Name, n))
+
+co_alt <- co %>% 
+  select(State.Name, Date.Local, Parameter.Name, Units.of.Measure, Observation.Count) %>% 
+  filter(State.Name %in% st_top10_co$state_fct)
+```
+
+```{r}
+rmarkdown::paged_table(st_top10_co)
+rmarkdown::paged_table(co_alt)
+```
+
+
+### The `no2` data set to the `no2_alt` data set
+```{r}
+st_top10_no2 <- no2 %>% 
+  filter(State.Name %in% st_top10_oz$State.Name) %>% 
+  group_by(State.Name) %>% 
+  summarise(n = n()) %>% 
+  arrange(-n) %>% 
+  mutate(state_fct = reorder(State.Name, n))
+
+no2_alt <- no2 %>% 
+  select(State.Name, Date.Local, Parameter.Name, Units.of.Measure, Observation.Count) %>% 
+  filter(State.Name %in% st_top10_no2$state_fct)
+```
+
+```{r}
+rmarkdown::paged_table(st_top10_no2)
+rmarkdown::paged_table(no2_alt)
+```
+
+
 
 
 
