@@ -61,10 +61,10 @@ theme_set(theme_ipsum()+
 ## Loading the data sets
 
 ```{r}
-ozone <- read.csv("C:\\Users\\Dan\\OneDrive\\Documents\\SUNY Geneseo\\Classes\\Fall 2023\\DANL 200 (Team Pr)\\ozone_measures.csv")
-so2 <- read.csv("C:\\Users\\Dan\\OneDrive\\Documents\\SUNY Geneseo\\Classes\\Fall 2023\\DANL 200 (Team Pr)\\so2_measures.csv")
-co <- read.csv("C:\\Users\\Dan\\OneDrive\\Documents\\SUNY Geneseo\\Classes\\Fall 2023\\DANL 200 (Team Pr)\\co_measures.csv")
-no2 <- read.csv("C:\\Users\\Dan\\OneDrive\\Documents\\SUNY Geneseo\\Classes\\Fall 2023\\DANL 200 (Team Pr)\\no2_measures.csv")
+ozone <- read.csv("C:\\Users\\Dan\\OneDrive\\Documents\\SUNY Geneseo\\Classes\\Fall 2023\\DANL 200 (Team Pr)\\dan-noone.github.io\\ozone_measures.csv")
+so2 <- read.csv("C:\\Users\\Dan\\OneDrive\\Documents\\SUNY Geneseo\\Classes\\Fall 2023\\DANL 200 (Team Pr)\\dan-noone.github.io\\so2_measures.csv")
+co <- read.csv("C:\\Users\\Dan\\OneDrive\\Documents\\SUNY Geneseo\\Classes\\Fall 2023\\DANL 200 (Team Pr)\\dan-noone.github.io\\co_measures.csv")
+no2 <- read.csv("C:\\Users\\Dan\\OneDrive\\Documents\\SUNY Geneseo\\Classes\\Fall 2023\\DANL 200 (Team Pr)\\dan-noone.github.io\\no2_measures.csv")
 ```
 
 ```{r}
@@ -257,8 +257,7 @@ ggplot(data = ozone_alt_per_state)+
   labs(title = 'Ozone Levels in ppm per State',
        x = ' Mean ppm Value',
        y = 'State',
-       fill = 'State')+
-  scale_fill_viridis_d(option = 'inferno')
+       fill = 'State')
 ```
 
 
