@@ -49,7 +49,7 @@ theme_set(theme_ipsum()+
     - These gasses play a large role in the measurement of the Air Quality Index (AQI)
     - They are considered to be atmospheric pollutants
     
-  - This project will take a look at and analyze the daily trend of these levels in the most prevalent states in the data sets
+  - This project will take a look at and analyze the measurements of these four atmospheric gasses per state
   
   
 ## Loading the data sets
@@ -72,9 +72,9 @@ rmarkdown::paged_table(no2)
 
   - The data sets include a lot of information that is not needed for my analysis
     - Here I will alter the data sets to include only the information of importance
-    - These data sets will be used for further analysis in this project
+    - The data sets will then be row bound using rbind() to create a single data set from the four
   
-  - For the purpose of continuity, the top 10 most frequent states in `ozone` data set will also be analyzed in the other three data sets
+  - For the purpose of continuity, the top 10 most frequent states in `ozone` data set will also be selected in the other three data sets
 
 ### The `ozone` data set to the `ozone_alt` data set
 ```{r}
@@ -162,7 +162,177 @@ rmarkdown::paged_table(no2_alt)
 ```
 
 
+## Binding all four data sets (`ozone_alt`, `so2_alt`, `co_alt`, and `no2_alt`) to create the `air_qual` data set
 
+  - Since the variables are the same, all four data sets can be row bound together using `rbind()`
+```{r}
+air_qual <- rbind(ozone_alt, so2_alt, co_alt, no2_alt)
+rmarkdown::paged_table(air_qual)
+```
+
+
+# Analyzing the Four Data Sets
+
+  - In this section, using the altered and consolidated set, the data is looked at closer and analyzed further
+
+## Description of the Variables
+
+  - `State.Name`: A character variable whose values are one of the 10 states most frequent in the `ozone` data set
+    1. Arizona
+    2. California
+    3. Colorado
+    4. Florida
+    5. Illinois
+    6. Indiana
+    7. Ohio
+    8. Pennsylvania
+    9. Texas
+    10. Utah
+    
+  - `Date.Local`: The date the measurement of the atmospheric gas was taken
+  
+  - `Parameter.Name`: The atmospheric gas being measured
+  
+  - `Units.of.Measure`: Units in which the atmospheric gas was measured
+  
+    - Parts Per Million : Ozone, Carbon Monoxide
+    - Parts Per Billion : Sulfur Dioxide, Nitrogen Dioxide
+  
+  - `Observation.Count`: The measurement of the gas in the units provided in `Units.of.Measure`
+
+## Distribution of each value of `State.Name` per value of `Parameter.Name`
+
+  - The distribution of each state in the ten provided, per each atmospheric gas being measured
+  
+```{r}
+air_qual_state_dist <- air_qual %>% 
+  group_by(State.Name, Parameter.Name) %>% 
+  summarise(n = n())
+View(air_qual_state_dist)
+
+ggplot(data = air_qual_state_dist)+
+  geom_bar(aes(y = State.Name, x = n, fill = State.Name), stat = 'identity')+
+  facet_wrap(.~Parameter.Name)+
+  theme_gray()+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  labs(title = 'State Distribution per Gas',
+       x = 'Count',
+       y = 'State')
+```
+
+
+__Analyses__
+
+  - Depicted in the above figure is a faceted bar chart depicting the count of each state in which each atmospheric gas was measured
+  
+    - It seems as though carbon monoxide (CO), nitrogen dioxide (NO2), and ozone were measured most often in California
+    - Sulfur dioxide (SO2) was measured most frequently in Ohio and secondly in Texas
+
+
+## The average measurement of the `OZONE` measurement per each `State.Name` value
+
+  - The average measurment of ozone in parts per million (ppm) per each state in the top ten most frequent
+
+
+```{r}
+ozone_alt_per_state <- ozone_alt %>% 
+  group_by(State.Name) %>% 
+  summarise(mean_ppm = mean(Observation.Count)) %>% 
+  mutate(state_fct = reorder(State.Name, mean_ppm))
+
+ggplot(data = ozone_alt_per_state)+
+  geom_bar(aes(y = state_fct, x = mean_ppm, fill = state_fct), stat = 'identity')+
+  theme_gray()+
+  labs(title = 'Ozone Levels in ppm per State',
+       x = ' Mean ppm Value',
+       y = 'State')
+```
+
+
+__Analyses__
+
+  - In the bar chart shown above, there doesn't seem to be much of a variation between states as it pertains to ozone levels
+    - The only difference seems to be that Colorado has slightly lower ozone levels
+    
+
+## The average measurement of the `SULFUR DIOXIDE` measurment per each `State.Name` value
+
+  - The average measurment of sulfur dioxide (SO2) in parts per billion (ppb) per each state in the top ten most frequent
+  
+
+```{r}
+so2_alt_per_state <- so2_alt %>% 
+  group_by(State.Name) %>% 
+  summarise(mean_ppb = mean(Observation.Count)) %>% 
+  mutate(state_fct = reorder(State.Name, mean_ppb))
+
+ggplot(data = so2_alt_per_state)+
+  geom_bar(aes(x = mean_ppb, y = state_fct, fill = state_fct), stat = 'identity')+
+  theme_gray()+
+  labs(title = 'Sulfur Dioxide Levels in ppb per State',
+       x = 'Mean ppb Value',
+       y = 'State')
+```
+
+
+__Analyses__
+
+  - Again there isn't too much variation, however there is more variation in Sulfur Dioxide (SO2) levels state-to-state than were seen with ozone levels
+    - States like California, Pennsylvania, and Ohio seem to have the lowest levels of SO2
+      - While, states like Arizone, Utah, and Illinois seem to have the highest levels of SO2
+
+
+## The average measurement of the `CARBON MONOXIDE` measurment per each `State.Name` value
+
+  - The average measurment of carbon monoxide (CO) in parts per million (ppm) per each state in the top ten most frequent
+
+
+```{r}
+co_alt_per_state <- co_alt %>% 
+  group_by(State.Name) %>% 
+  summarise(mean_ppm = mean(Observation.Count)) %>% 
+  mutate(state_fct = reorder(State.Name, mean_ppm))
+
+ggplot(data = co_alt_per_state)+
+  geom_bar(aes(x = mean_ppm, y = state_fct, fill = state_fct), stat = 'identity')+
+  theme_gray()+
+  labs(title = 'Carbon Monoxide Levels in ppm per State',
+       x = 'Mean ppm Value',
+       y = 'State')
+```
+
+
+__Analyses__
+
+  - Not a ton of variation, however there is still some to look at
+    - States such as Florida, California, and Ohio seem to have lower levels of carbon monoxide
+    - On the other hand, states such as Utah, Illinois, and Colorado seem to have higher levels of carbon monoxide
+    
+    
+## The average measurement of the `NITROGEN DIOXIDE` measurment per each `State.Name` value
+
+  - The average measurment of nirogen dioxide (NO2) in parts per billion (ppb) per each state in the top ten most frequent
+
+
+```{r}
+no2_alt_per_state <- no2_alt %>% 
+  group_by(State.Name) %>% 
+  summarise(mean_ppb = mean(Observation.Count)) %>% 
+  mutate(state_fct = reorder(State.Name, mean_ppb))
+
+ggplot(data = no2_alt_per_state)+
+  geom_bar(aes(x = mean_ppb, y = state_fct, fill = state_fct), stat = 'identity')+
+  theme_gray()+
+  labs(title = 'Nitrogen Dioxide Levels in ppb per State',
+       x = 'Mean ppb Value',
+       y = ' State')
+```
+
+
+__Analyses__
+
+  - States such as Colorado, Texas, and Pennsylvania seem to have lower levels of nitrogen dioxide
+    - While, states such as Illinois, Arizona, and Indiana seem to have higher levels of nitrogen dioxide
 
 
 
