@@ -285,7 +285,8 @@ ggplot(data = so2_alt_per_state)+
   theme_dark()+
   labs(title = 'Sulfur Dioxide Levels in ppb per State',
        x = 'Mean ppb Value',
-       y = 'State',)+
+       y = 'State',
+       fill = 'State')+
   scale_fill_viridis_d(option = 'inferno')
 ```
 
@@ -406,7 +407,9 @@ ggplot(data = air_qual_ppb)+
   - These four gases (Ozone, SO2, CO, and NO2) are considered to be [Criteria Air Pollutants](https://www.epa.gov/sites/default/files/2015-10/documents/ace3_criteria_air_pollutants.pdf) by the EPA
     - Being __Criteria Air Pollutants__ (along with Lead (Pb), and Particulate Matter (PM)), they pose adverse health and environmental effects.
 
-    
+![](smog.webp)  
+
+
 ### Ozone
 
   - Ground-level ozone (as measured in the data), comes from reaction between pollutants
