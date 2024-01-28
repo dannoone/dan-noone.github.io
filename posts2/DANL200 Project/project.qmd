@@ -1,9 +1,9 @@
 ---
 title: DANL 200 Project
-subtitle: "Air Quality Data as per the EPA"
+subtitle: "Air Quality Data as per the EPA regarding Criteria Air Pollutants"
 author: Daniel Noone
 date: "01/28/2024"
-categories: [Climate, DANL Project, Data Exploration]
+categories: [Climate, Air Quality, EPA]
 image: 'smog.webp' 
 
 toc: true
