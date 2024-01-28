@@ -7,8 +7,8 @@ website:
   navbar:
     pinned: true
     left:
-      - text: 'DANL200 Project'
-        href: project.qmd
+      - text: 'Class Projects'
+        href: class_projects.qmd
       - text: Blog
         href: blog-listing.qmd
   page-footer: 
