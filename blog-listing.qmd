@@ -1,7 +1,7 @@
 ---
 title: "Exploratory Data Analysis"
 listing:
-  contents: posts
+  contents: personal_posts
   type: default
   sort:
     - "date desc"

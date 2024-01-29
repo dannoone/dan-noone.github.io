@@ -9,16 +9,16 @@ website:
     left:
       - text: 'Class Projects'
         href: class_projects.qmd
-      - text: Blog
+      - text: Personal Projects
         href: blog-listing.qmd
   page-footer: 
-    center: "Powered with GitHub and Quarto<br>© Daniel Noone, 2023"
+    center: "Powered with GitHub, Quarto and Rstudio<br>© Daniel Noone, 2023"
 
 format:
   html:
     theme: 
-      light: materia
-      dark: solar
+      light: lux
+      dark: slate
     mainfont: system-ui; 
     highlight-style: atom-one
     css: styles.css
