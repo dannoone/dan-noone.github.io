@@ -9,8 +9,14 @@ website:
     left:
       - text: 'Class Projects'
         href: class_projects.qmd
-      - text: Personal Projects
+      - text: 'Personal Projects'
         href: blog-listing.qmd
+      - text: 'Class Blog Posts'
+        href: class_blog.qmd
+      - text: "Python Data Analysis"
+        menu: 
+          - basic-python-intro.ipynb
+          - danl-210-quarto.qmd
   page-footer: 
     center: "Powered with GitHub, Quarto and Rstudio<br>© Daniel Noone, 2023"
 
