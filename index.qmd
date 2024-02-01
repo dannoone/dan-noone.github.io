@@ -37,4 +37,3 @@ B.S. in Data Analytics | Aug 2022 - May 2025 <br>
 
 Experience programming in R, as well as basic level knowledge of Python. Extensive experience with Microsoft Office programs such as Excel, Word, and PowerPoint.
 
-
