@@ -207,7 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>These values can be singular such as a numeric value of 10, but there can also be multiple values of the same or varying data types <br></p></li>
 <li><p>an equal sign <code>=</code> is used to assign values to their respective variables (or objects)</p></li>
 </ul>
-<div class="cell">
+<div class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Single value</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -222,7 +222,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 data-number="3"><span class="header-section-number">3</span> Data Types in Python</h1>
 <p>There are multiple different data types recognized by the python language.</p>
 <p>The most basic types are as follows:</p>
-<div class="cell">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Integer, numeric values with no decimals</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -256,7 +256,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="operators" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Operators</h1>
 <p>Mathematical operations can also be done in python using preset operators:</p>
-<div class="cell">
+<div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Addition</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">5</span> <span class="op">+</span> <span class="dv">5</span> <span class="co"># x would have value of 10</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x <span class="op">+</span> <span class="dv">5</span> <span class="co"># y would have value of 15</span></span>
@@ -291,7 +291,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>If else</li>
 <li>etc…</li>
 </ul>
-<div class="cell">
+<div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Can use if and elif and else to formulate conditional operations</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># For example...</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -306,6 +306,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">'You failed, David!'</span>)</span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="cf">elif</span> name <span class="op">!=</span> <span class="st">'David'</span> <span class="kw">and</span> score <span class="op">&lt;</span> <span class="dv">90</span>:</span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">'You failed, stranger!'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Great job, David!</code></pre>
+</div>
 </div>
 <p>-&gt; Here the result is <code>'Great job, David!'</code> since the name is <code>'David'</code> and the score is <code>99</code></p>
 </section>
@@ -317,15 +320,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>int()</code> will convert to integer type</li>
 <li><code>float()</code> will convert to float type</li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span> <span class="co"># integer type</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="st">'20'</span> <span class="co"># string type</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> <span class="fl">1.55</span> <span class="co"># float type</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>x_ <span class="op">=</span> <span class="bu">float</span>(x) <span class="co"># makes 10 into float type = 10.0</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>y_ <span class="op">=</span> <span class="bu">int</span>(y) <span class="co"># makes '20' into int type = 20</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>z_ <span class="op">=</span> <span class="bu">int</span>(z) <span class="co"># makes 1.55 into int type = 1 (DOES NOT ROUND)</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>x_str <span class="op">=</span> <span class="bu">str</span>(x) <span class="co"># makes 10 into str type = '10'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span> <span class="co"># integer type</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="st">'20'</span> <span class="co"># string type</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> <span class="fl">1.55</span> <span class="co"># float type</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>x_ <span class="op">=</span> <span class="bu">float</span>(x) <span class="co"># makes 10 into float type = 10.0</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>y_ <span class="op">=</span> <span class="bu">int</span>(y) <span class="co"># makes '20' into int type = 20</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>z_ <span class="op">=</span> <span class="bu">int</span>(z) <span class="co"># makes 1.55 into int type = 1 (DOES NOT ROUND)</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>x_str <span class="op">=</span> <span class="bu">str</span>(x) <span class="co"># makes 10 into str type = '10'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="slicing-methods" class="level1" data-number="7">
@@ -346,18 +349,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>[start : end: step]</code> - will return from start to end by a certain step amount</li>
 </ul></li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>string <span class="op">=</span> <span class="st">'abcdefghij'</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>string[:<span class="dv">5</span>] <span class="co"># returns 'abcde' (first 5 characters of string)</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>string[<span class="dv">5</span>:] <span class="co"># returns 'fghij' (last 5 characters of string)</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>string[<span class="dv">0</span>:<span class="dv">5</span>:<span class="dv">2</span>] <span class="co"># returns 'ace' (first 5 characters, but in steps of 2)</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>list_ <span class="op">=</span> [<span class="st">'apple'</span>,<span class="st">'banana'</span>,<span class="st">'pear'</span>,<span class="st">'strawberry'</span>,<span class="st">'papaya'</span>,<span class="st">'pineapple'</span>]</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>list_[:<span class="dv">3</span>] <span class="co"># returns ['apple', 'banana', 'pear'] (first 3 elements of list)</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>list_[<span class="dv">3</span>:] <span class="co"># returns ['strawberry', 'papaya', 'pineapple'] (last 3 elements of list)</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>list_[<span class="dv">0</span>::<span class="dv">2</span>] <span class="co"># returns ['apple', 'pear', 'papaya'] (whole list by steps of 2)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>string <span class="op">=</span> <span class="st">'abcdefghij'</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>string[:<span class="dv">5</span>] <span class="co"># returns 'abcde' (first 5 characters of string)</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>string[<span class="dv">5</span>:] <span class="co"># returns 'fghij' (last 5 characters of string)</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>string[<span class="dv">0</span>:<span class="dv">5</span>:<span class="dv">2</span>] <span class="co"># returns 'ace' (first 5 characters, but in steps of 2)</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>list_ <span class="op">=</span> [<span class="st">'apple'</span>,<span class="st">'banana'</span>,<span class="st">'pear'</span>,<span class="st">'strawberry'</span>,<span class="st">'papaya'</span>,<span class="st">'pineapple'</span>]</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>list_[:<span class="dv">3</span>] <span class="co"># returns ['apple', 'banana', 'pear'] (first 3 elements of list)</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>list_[<span class="dv">3</span>:] <span class="co"># returns ['strawberry', 'papaya', 'pineapple'] (last 3 elements of list)</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>list_[<span class="dv">0</span>::<span class="dv">2</span>] <span class="co"># returns ['apple', 'pear', 'papaya'] (whole list by steps of 2)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="96">
+<pre><code>['apple', 'pear', 'papaya']</code></pre>
+</div>
 </div>
 </section>
 <section id="importing-modules-packages-and-libraries" class="level1" data-number="8">
@@ -371,23 +377,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Then have to call module along with any functions associated</li>
 </ul></li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># could then use pandas.read_csv() to read a csv</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># could then use pandas.read_csv() to read a csv</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li><code>import</code> <code>as</code> is called on a module to give it a name to make things more efficient</li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Then could use pd.read_csv() instead of pandas.read_csv()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Then could use pd.read_csv() instead of pandas.read_csv()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li><code>from</code> and <code>import</code> is used to load a specific function from a module</li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pandas <span class="im">import</span> read_csv</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># then can just use read_csv() as if it were a base function</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pandas <span class="im">import</span> read_csv</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># then can just use read_csv() as if it were a base function</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>In order to install a module, package or library - have to call <code>pip install</code> in terminal or <code>!pip install</code> if on Google Colab
@@ -395,8 +401,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>!pip install is also used for Rstudio</li>
 </ul></li>
 </ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install itables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># !pip install itables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
