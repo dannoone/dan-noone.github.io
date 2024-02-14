@@ -13,11 +13,6 @@ website:
         href: blog-listing.qmd
       - text: 'Class Blog Posts'
         href: class_blog.qmd
-      - text: "Python Data Analysis"
-        menu: 
-          - basic-python-intro.ipynb
-          - danl210-python_only.qmd
-          - danl210-reticulate.qmd
   page-footer: 
     center: "Powered with GitHub, Quarto and Rstudio<br>© Daniel Noone, 2023"
 

@@ -151,7 +151,7 @@
     "href": "blog-listing.html",
     "title": "Exploratory Data Analysis",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nWeb Scraping using Beautiful Soup\n\n\nFrom a tutorial on YouTube\n\n\n\n\n\n\nFeb 9, 2024\n\n\nDaniel Noone\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "class_projects.html",
@@ -375,7 +375,7 @@
     "href": "class_blog.html",
     "title": "Class Blog Posts",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nSpotify Listener Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nHW5 - NFL Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n6 min\n\n\n\n\n\n\n  \n\n\n\n\nBeer Market Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nNYC Restaurant Inspections\n\n\n\n\n\n\n\n\n\nDec 10, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome All!\n\n\n\n\n\n\n\n\n\nDec 9, 2023\n\n\nDaniel Noone\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nPython Basics\n\n\nA quick look at the basics of python programming\n\n\n\n\n\n\nFeb 10, 2024\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nSpotify Listener Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nHW5 - NFL Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n6 min\n\n\n\n\n\n\n  \n\n\n\n\nBeer Market Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nNYC Restaurant Inspections\n\n\n\n\n\n\n\n\n\nDec 10, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome All!\n\n\n\n\n\n\n\n\n\nDec 9, 2023\n\n\nDaniel Noone\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "danl-210-quarto-reticulate.html",
@@ -467,5 +467,47 @@
     "title": "Python Basics with Pandas",
     "section": "2.1 Import Python libraries",
     "text": "2.1 Import Python libraries\n\n\nCode\nimport pandas as pd\n\n\n\n\nCode\noj = pd.read_csv('https://bcdanl.github.io/data/dominick_oj.csv')\n\n\n\n\nCode!\noj\n\n\n\n\n\n\n\n\n\nsales\nprice\nbrand\nad\n\n\n\n\n0\n8256.0\n3.87\ntropicana\n0\n\n\n1\n6144.0\n3.87\ntropicana\n0\n\n\n2\n3840.0\n3.87\ntropicana\n0\n\n\n3\n8000.0\n3.87\ntropicana\n0\n\n\n4\n8896.0\n3.87\ntropicana\n0\n\n\n...\n...\n...\n...\n...\n\n\n28942\n2944.0\n2.00\ndominicks\n0\n\n\n28943\n4928.0\n1.94\ndominicks\n0\n\n\n28944\n13440.0\n1.59\ndominicks\n0\n\n\n28945\n55680.0\n1.49\ndominicks\n0\n\n\n28946\n7040.0\n1.75\ndominicks\n0\n\n\n\n\n28947 rows × 4 columns\n\n\n\n\n\nCode\noj.describe()\n\n\n\n\n\n\n\n\n\nsales\nprice\nad\n\n\n\n\ncount\n28947.000000\n28947.000000\n28947.000000\n\n\nmean\n17312.213356\n2.282488\n0.237261\n\n\nstd\n27477.660437\n0.648001\n0.425411\n\n\nmin\n64.000000\n0.520000\n0.000000\n\n\n25%\n4864.000000\n1.790000\n0.000000\n\n\n50%\n8384.000000\n2.170000\n0.000000\n\n\n75%\n17408.000000\n2.730000\n0.000000\n\n\nmax\n716416.000100\n3.870000\n1.000000\n\n\n\n\n\n\n\n\n2.1.1 Interactive DataFrame with itables library\nIn *.ipynb on Google Colab, we can use itables or just Google Colab’s default to print DataFrame.\n\n\nCode\n# !pip install itables\nfrom itables import init_notebook_mode, show\ninit_notebook_mode(all_interactive=False)\n\nshow(oj)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nsales\nprice\nbrand\nad\n\n\n\n\nLoading... (need help?)"
+  },
+  {
+    "objectID": "personal_posts/web_scraping1/wep_scrape_tutorial.html",
+    "href": "personal_posts/web_scraping1/wep_scrape_tutorial.html",
+    "title": "Web Scraping using Beautiful Soup",
+    "section": "",
+    "text": "First you have to import the required modules\n\nfrom bs4 import BeautifulSoup\nimport requests\n\n\n\nHave to set the URL to the website and"
+  },
+  {
+    "objectID": "posts/Py_Basics/HW1_Python_Basics.html",
+    "href": "posts/Py_Basics/HW1_Python_Basics.html",
+    "title": "Daniel Noone",
+    "section": "",
+    "text": "---\ntitle: 'Python Basics'\nauthor: 'Daniel Noone'\ndate: '02-10-2024'\ncategories: [Python]\n---\n\nSyntaxError: invalid syntax (&lt;ipython-input-1-4b089545c646&gt;, line 1)"
+  },
+  {
+    "objectID": "posts/Py_Basics/python_basics_HW1.html",
+    "href": "posts/Py_Basics/python_basics_HW1.html",
+    "title": "Python Basics",
+    "section": "",
+    "text": "1 Introduction\nThis blog post is meant to give a brief introduction of some of the main topics in basic python programming\n\n\n2 Variables & Assignment\n\nIn python programming, variables are just names for values not actual storage places. \nThese values can be singular such as a numeric value of 10, but there can also be multiple values of the same or varying data types \nan equal sign = is used to assign values to their respective variables (or objects)\n\n\n# Single value\nx = 10\n\n# Multiple values\ny = [1,2,3]\n\n#Multiple types\nz = ['a','b','c',1,2,3]\n\n\n\n3 Data Types in Python\nThere are multiple different data types recognized by the python language.\nThe most basic types are as follows:\n\n# Integer, numeric values with no decimals\nx = 10\n\n# Float, numeric values with decimals\ny = 10.99\n\n# String, character values surrounded by '' or \"\"\nz = 'hello, world' #OR \nz = \"hello, world\"\n\n# Boolean, logical values\nx = True\ny = False\n\n# Nothing, no value\nz = None\n\n# List, data container for any data type (even multiple types at once)\nlist_ = [10, 1.55, 'apple', True, False, None]\n\n# Tuple, non mutable data container\ntup = (2, 3 , 4)\n\n# Set\nset_ = {'a', 'b'}\n\n# Dictionary\ndict_ = {'first': 'a', 'second': 'b'}\n\n\n\n4 Operators\nMathematical operations can also be done in python using preset operators:\n\n# Addition\nx = 5 + 5 # x would have value of 10\ny = x + 5 # y would have value of 15\n\n# Subtraction\nx = 5 - 1 # x would have value of 4\ny = x - 2 # y would have value of 2\n\n# Multiplication and Exponents (* for multiplication, ** for exponents)\nx = 5 * 2**2 # x would have value of 20\ny = x**2 * 5 # y would have value of 2000\n\n# Division and Integer Division (if want int type out of operation, use //)\nx = 4/2 # x would have value of 2.0\ny = x/2 # y would have value of 1.0\n\nx = 8//2 # x would have value of 4 (int type not float)\ny = x//2 # y would have value of 2 (again, int not float)\n\n# Can also perform string concatenation\nstr_one = 'hello,'\nstr_two = ' world'\nstr_ = str_one + str_two # Result of summation is concatenation of str_one and str_two \n                          # = 'hello, world'\n\n\n\n5 Conditionals\nCan perform conditional operations in python\n\nIf statements\nIf else\netc…\n\n\n# Can use if and elif and else to formulate conditional operations\n# For example...\n\nname = 'David'\nscore = 99\n\nif name == 'David' and score &gt;= 90:\n  print('Great job, David!')\nelif name != 'David' and score &gt;= 90:\n  print('Great job, stranger!')\nelif name == 'David' and score &lt; 90:\n  print('You failed, David!')\nelif name != 'David' and score &lt; 90:\n  print('You failed, stranger!')\n\n-&gt; Here the result is 'Great job, David!' since the name is 'David' and the score is 99\n\n\n6 Casting Variables\nCasting is when we explicitly assign a data type to a variable\n\nstr() will convert to string type\nint() will convert to integer type\nfloat() will convert to float type\n\n\nx = 10 # integer type\ny = '20' # string type\nz = 1.55 # float type\n\nx_ = float(x) # makes 10 into float type = 10.0\ny_ = int(y) # makes '20' into int type = 20\nz_ = int(z) # makes 1.55 into int type = 1 (DOES NOT ROUND)\nx_str = str(x) # makes 10 into str type = '10'\n\n\n\n7 Slicing Methods\n\nPython uses indexing to slice data\nThe index starts at 0, not 1\n\n\n\nAs seen in the image, negative values can also be used\nThe syntax is as follows\n\n[:] - will return the whole value\n[start :] - will return from a starting index value until the end\n[: end] - will return from the start until the end index value\n[start : end] - Will return from start value to end value\n[start : end: step] - will return from start to end by a certain step amount\n\n\n\nstring = 'abcdefghij'\n\nstring[:5] # returns 'abcde' (first 5 characters of string)\nstring[5:] # returns 'fghij' (last 5 characters of string)\nstring[0:5:2] # returns 'ace' (first 5 characters, but in steps of 2)\n\nlist_ = ['apple','banana','pear','strawberry','papaya','pineapple']\n\nlist_[:3] # returns ['apple', 'banana', 'pear'] (first 3 elements of list)\nlist_[3:] # returns ['strawberry', 'papaya', 'pineapple'] (last 3 elements of list)\nlist_[0::2] # returns ['apple', 'pear', 'papaya'] (whole list by steps of 2)\n\n\n\n8 Importing Modules, Packages and Libraries\n\nModule - a bunch of related code saved in a file with extension .py\nPackage - directory of a collection of modules\nLibrary - a collection of packages\nimport is called on a module to be able to use it\n\nThen have to call module along with any functions associated\n\n\n\nimport pandas\n# could then use pandas.read_csv() to read a csv\n\n\nimport as is called on a module to give it a name to make things more efficient\n\n\nimport pandas as pd\n# Then could use pd.read_csv() instead of pandas.read_csv()\n\n\nfrom and import is used to load a specific function from a module\n\n\nfrom pandas import read_csv\n# then can just use read_csv() as if it were a base function\n\n\nIn order to install a module, package or library - have to call pip install in terminal or !pip install if on Google Colab\n\n!pip install is also used for Rstudio\n\n\n\n# !pip install itables"
+  },
+  {
+    "objectID": "posts/Py_Basics/python_basics_HW1.html#variables-assignment",
+    "href": "posts/Py_Basics/python_basics_HW1.html#variables-assignment",
+    "title": "Python Basics",
+    "section": "",
+    "text": "In python programming, variables are just names for values not actual storage places. \nThese values can be singular such as a numeric value of 10, but there can also be multiple values of the same or varying data types \nan equal sign = is used to assign values to their respective variables (or objects)\n\n\n# Single value\nx = 10\n\n# Multiple values\ny = [1,2,3]\n\n#Multiple types\nz = ['a','b','c',1,2,3]"
+  },
+  {
+    "objectID": "posts/Py_Basics/python_basics_HW1.html#operators",
+    "href": "posts/Py_Basics/python_basics_HW1.html#operators",
+    "title": "Python Basics",
+    "section": "3.1 Operators",
+    "text": "3.1 Operators\nMathematical operations can also be done in python using preset operators:\n\n# Addition\nx = 5 + 5 # x would have value of 10\ny = x + 5 # y would have value of 15\n\n# Subtraction\nx = 5 - 1 # x would have value of 4\ny = x - 2 # y would have value of 2\n\n# Multiplication and Exponents (* for multiplication, ** for exponents)\nx = 5 * 2**2 # x would have value of 20\ny = x**2 * 5 # y would have value of 2000\n\n# Division and Integer Division (if want int type out of operation, use //)\nx = 4/2 # x would have value of 2.0\ny = x/2 # y would have value of 1.0\n\nx = 8//2 # x would have value of 4 (int type not float)\ny = x//2 # y would have value of 2 (again, int not float)\n\n# Can also perform string concatenation\nstr_one = 'hello,'\nstr_two = ' world'\nstr = str_one + str_two # Result of summation is concatenation of str_one and str_two \n                          # = 'hello, world'"
+  },
+  {
+    "objectID": "posts/Py_Basics/python_basics_HW1.html#conditions",
+    "href": "posts/Py_Basics/python_basics_HW1.html#conditions",
+    "title": "Python Basics",
+    "section": "3.2 Conditions",
+    "text": "3.2 Conditions\nCan perform conditional operations in python * If statements * If else * etc…"
   }
 ]
