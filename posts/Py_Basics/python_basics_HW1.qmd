@@ -6,7 +6,7 @@ date: '02-10-2024'
 categories: [Python]
 image: py.jfif
 
-highlight-style: breezedark
+highlight-style: monokai
 fig-width: 9
 
 toc: TRUE
