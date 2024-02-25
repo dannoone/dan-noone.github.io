@@ -1,9 +1,0 @@
----
-output: html_document
----
-
-<script>
-  window.onload = function() {
-    alert("Disclaimer: This website is used for class work as well, so it's not always in a state that is meant to be easy to view, as it is altered often.");
-  };
-</script>

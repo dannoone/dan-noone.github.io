@@ -63,10 +63,14 @@ theme_set(theme_ipsum()+
 ## Loading the data sets
 
 ```{r}
-ozone <- read.csv("C:\\Users\\Dan\\OneDrive\\Documents\\SUNY Geneseo\\Classes\\Fall 2023\\DANL 200 (Team Pr)\\dan-noone.github.io\\ozone_measures.csv")
-so2 <- read.csv("C:\\Users\\Dan\\OneDrive\\Documents\\SUNY Geneseo\\Classes\\Fall 2023\\DANL 200 (Team Pr)\\dan-noone.github.io\\so2_measures.csv")
-co <- read.csv("C:\\Users\\Dan\\OneDrive\\Documents\\SUNY Geneseo\\Classes\\Fall 2023\\DANL 200 (Team Pr)\\dan-noone.github.io\\co_measures.csv")
-no2 <- read.csv("C:\\Users\\Dan\\OneDrive\\Documents\\SUNY Geneseo\\Classes\\Fall 2023\\DANL 200 (Team Pr)\\dan-noone.github.io\\no2_measures.csv")
+ozone <- read.csv("C:\\Users\\Dan\\OneDrive\\Documents\\dan-noone.github.io\\posts2\\DANL200 Project\\ozone_measures.csv")
+
+so2 <- read.csv("C:\\Users\\Dan\\OneDrive\\Documents\\dan-noone.github.io\\posts2\\DANL200 Project\\so2_measures.csv")
+
+co <- read.csv("C:\\Users\\Dan\\OneDrive\\Documents\\dan-noone.github.io\\posts2\\DANL200 Project\\co_measures.csv")
+
+no2 <- read.csv("C:\\Users\\Dan\\OneDrive\\Documents\\dan-noone.github.io\\posts2\\DANL200 Project\\no2_measures.csv")
+
 ```
 
 ```{r}

@@ -63,130 +63,11 @@
     "text": "Welcome to my blog powered by Quarto and GitHub!!\n\nAs a Data Analytics major, it is helpful to hone my abilities by doing exploratory data analysis. With that, I will be posting little projects here and there on my website, feel free to take a look!"
   },
   {
-    "objectID": "posts/nyc_inspections/NYC_RES_INS.html#description-of-variables-for-nyc_rest_ins-data-frame",
-    "href": "posts/nyc_inspections/NYC_RES_INS.html#description-of-variables-for-nyc_rest_ins-data-frame",
-    "title": "NYC Restaurant Inspections",
-    "section": "Description of Variables for nyc_rest_ins data frame",
-    "text": "Description of Variables for nyc_rest_ins data frame\n\nCAMIS: A unique identifier number for each restaurant\nDBA: Stands for “doing business as”, name of the restaurant\nBORO: Indentifies the NYC Borough that the restaurant is located in\n\nManhattan\nBronx\nBrooklyn\nQueens\nStaten Island\n\nSTREET: Street address of the restaurant\nCUISINE DESCRIPTION: Type of cuisine the restaurant sells\nINSPECTION DATE: The date the inspection was performed\nACTION: Indicated the action(s) taken as a result of the inspection\nVIOLATION CODE: Violation associated with the restaurant’s inspection\nVIOLATION DESCRIPTION: Descriprion of the violation associated with a restaurant’s inspection\nCRITICAL FLAG: Indicator of a critical violation as result of inspection\n\nCritical\nNot Critical\nNot Applicaple\n\nSCORE: Numeric Score for the inspection\nGrade: Letter Grade for the Inspection"
-  },
-  {
-    "objectID": "posts/nyc_inspections/NYC_RES_INS.html#summary-statisics-for-nyc_rest_ins",
-    "href": "posts/nyc_inspections/NYC_RES_INS.html#summary-statisics-for-nyc_rest_ins",
-    "title": "NYC Restaurant Inspections",
-    "section": "Summary Statisics for nyc_rest_ins:",
-    "text": "Summary Statisics for nyc_rest_ins:\n\nskim(nyc_rest_ins)\n\n\nData summary\n\n\nName\nnyc_rest_ins\n\n\nNumber of rows\n17633\n\n\nNumber of columns\n12\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n10\n\n\nnumeric\n2\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\nDBA\n0\n1\n1\n75\n0\n13914\n0\n\n\nBORO\n0\n1\n5\n13\n0\n5\n0\n\n\nSTREET\n0\n1\n5\n40\n0\n2038\n0\n\n\nCUISINE.DESCRIPTION\n0\n1\n4\n30\n0\n87\n0\n\n\nINSPECTION.DATE\n0\n1\n10\n10\n0\n751\n0\n\n\nACTION\n0\n1\n33\n47\n0\n2\n0\n\n\nVIOLATION.CODE\n0\n1\n3\n5\n0\n60\n0\n\n\nVIOLATION.DESCRIPTION\n0\n1\n19\n940\n0\n101\n0\n\n\nCRITICAL.FLAG\n0\n1\n8\n12\n0\n2\n0\n\n\nGRADE\n0\n1\n1\n1\n0\n3\n0\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nCAMIS\n0\n1\n47112537.51\n4197913.0\n30191841\n41551354\n50049290\n50094455\n50133690\n▁▁▃▁▇\n\n\nSCORE\n0\n1\n10.44\n5.9\n0\n7\n10\n12\n86\n▇▁▁▁▁"
-  },
-  {
-    "objectID": "posts/nyc_inspections/NYC_RES_INS.html#grade-and-boro",
-    "href": "posts/nyc_inspections/NYC_RES_INS.html#grade-and-boro",
-    "title": "NYC Restaurant Inspections",
-    "section": "GRADE and BORO",
-    "text": "GRADE and BORO\nGraphical representation of the proportion of each GRADE value in each of the 5 values in BORO\n\nnyc1 &lt;- nyc_rest_ins %&gt;% \n  group_by(BORO, GRADE) %&gt;% \n  summarise(n = n()) %&gt;% \n  mutate(prop = n/sum(n))\n\nggplot(data = nyc1,\n       mapping = aes(x = GRADE, y = prop))+\n  geom_bar(aes(fill = GRADE), stat = 'identity')+\n  facet_wrap(.~BORO)\n\n\n\n\n\nComments on analyses…\n\nAll five boroughs seem to have around equal proportions of each Grade"
-  },
-  {
-    "objectID": "posts/nyc_inspections/NYC_RES_INS.html#critical-flag-and-boro",
-    "href": "posts/nyc_inspections/NYC_RES_INS.html#critical-flag-and-boro",
-    "title": "NYC Restaurant Inspections",
-    "section": "CRITICAL FLAG and BORO",
-    "text": "CRITICAL FLAG and BORO\nGraphical representation of the count of each value of CRITICAL FLAG per each value of BORO\n\nnyc2 &lt;- nyc_rest_ins %&gt;% \n  group_by(BORO, CRITICAL.FLAG) %&gt;% \n  summarise(n = n()) %&gt;% \n  mutate(prop = n/sum(n))\nView(nyc2)\n\nggplot(data = nyc2,\n       mapping = aes(x = CRITICAL.FLAG, y = n))+\n  geom_bar(aes(fill = CRITICAL.FLAG), stat = 'identity')+\n  facet_wrap(.~BORO)\n\n\n\n\n\nComments on analyses…\n\nThe proportion of each value of CRITICAL.FLAG within each of the values of BORO seems to be about equal\nThis faceted bar chart also gives info about the number of restaurants in each value of BORO within this data set. In order of most to least…\n\nManhattan has the most restaurants\nBrooklyn has the second most\nQueens the third most\nBronx second to last\nStaten Island is last"
-  },
-  {
-    "objectID": "posts/nyc_inspections/NYC_RES_INS.html#grade-and-critical-flag",
-    "href": "posts/nyc_inspections/NYC_RES_INS.html#grade-and-critical-flag",
-    "title": "NYC Restaurant Inspections",
-    "section": "GRADE and CRITICAL FLAG",
-    "text": "GRADE and CRITICAL FLAG\nGraphical representation of the proportion of each value of GRADE per value of CRITICAL FLAG\n\nnyc3 &lt;- nyc_rest_ins %&gt;% \n  group_by(GRADE, CRITICAL.FLAG, BORO) %&gt;% \n  summarise(n = n()) %&gt;% \n  mutate(prop = n/sum(n))\nView(nyc3)\n\nggplot(data = nyc3)+\n  geom_bar(mapping = aes(x = CRITICAL.FLAG, y = prop, fill = GRADE), stat = 'identity', position = 'dodge')\n\n\n\n\n\nComments on analyses…\n\nThe proportion of each value of GRADE seems to be almost equal per value of CRITICAL FLAG\nThe proportion of grade A seems to be slightly less for restaurants with No Critical Flags\nThe proportions of grades B and C appear to be slightly less for restautants with Critical Flags"
-  },
-  {
-    "objectID": "posts/Beer_Mkts/beer_mkts.html#description-of-variables-for-beer-data-frame",
-    "href": "posts/Beer_Mkts/beer_mkts.html#description-of-variables-for-beer-data-frame",
-    "title": "Beer Market Data",
-    "section": "Description of Variables for beer Data Frame:",
-    "text": "Description of Variables for beer Data Frame:\n\nhh: Identification number of the household;\nX_purchase_desc: details of item purchased by hh\nquantity: number of items purchased by hh\nbrand: Brand of beer purchased by hh\n\nBud Light,\nBusch Light,\nCoors Light,\nMiller Lite, or\nNatural Light\n\ndollar_spent: Dollar value total of purchase;\nbeer_floz: volume of beer (fl oz);\nprice_per_floz: price per fl oz\ncontainer: Type of container of beer\npromo: Was the item promoted? (coupon, etc…)\nmarket: Scan-track market (or state if rural);\nOther demographic data is present in further variables as well…"
-  },
-  {
-    "objectID": "posts/Beer_Mkts/beer_mkts.html#summary-statistics-of-beer-data-frame",
-    "href": "posts/Beer_Mkts/beer_mkts.html#summary-statistics-of-beer-data-frame",
-    "title": "Beer Market Data",
-    "section": "Summary Statistics of beer Data Frame:",
-    "text": "Summary Statistics of beer Data Frame:\n\nskim(beer)\n\n\nData summary\n\n\nName\nbeer\n\n\nNumber of rows\n73115\n\n\nNumber of columns\n24\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n13\n\n\nlogical\n6\n\n\nnumeric\n5\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\nX_purchase_desc\n0\n1\n12\n29\n0\n115\n0\n\n\nbrand\n0\n1\n9\n13\n0\n5\n0\n\n\ncontainer\n0\n1\n3\n30\n0\n7\n0\n\n\nmarket\n0\n1\n5\n20\n0\n92\n0\n\n\nbuyertype\n0\n1\n4\n7\n0\n3\n0\n\n\nincome\n0\n1\n5\n8\n0\n5\n0\n\n\nage\n0\n1\n3\n5\n0\n4\n0\n\n\nemployment\n0\n1\n4\n4\n0\n3\n0\n\n\ndegree\n0\n1\n2\n7\n0\n4\n0\n\n\ncow\n0\n1\n4\n25\n0\n4\n0\n\n\nrace\n0\n1\n5\n8\n0\n5\n0\n\n\ntvcable\n0\n1\n4\n7\n0\n3\n0\n\n\nnpeople\n0\n1\n1\n5\n0\n5\n0\n\n\n\nVariable type: logical\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\ncount\n\n\n\n\npromo\n0\n1\n0.20\nFAL: 58563, TRU: 14552\n\n\nchildrenUnder6\n0\n1\n0.07\nFAL: 68109, TRU: 5006\n\n\nchildren6to17\n0\n1\n0.20\nFAL: 58155, TRU: 14960\n\n\nmicrowave\n0\n1\n0.99\nTRU: 72676, FAL: 439\n\n\ndishwasher\n0\n1\n0.73\nTRU: 53258, FAL: 19857\n\n\nsinglefamilyhome\n0\n1\n0.81\nTRU: 59058, FAL: 14057\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nhh\n0\n1\n17407721.61\n11582147.34\n2000235.00\n8223438.00\n8413624.00\n30171315.00\n30440718.00\n▂▇▁▁▇\n\n\nquantity\n0\n1\n1.32\n1.15\n1.00\n1.00\n1.00\n1.00\n48.00\n▇▁▁▁▁\n\n\ndollar_spent\n0\n1\n13.78\n8.72\n0.51\n8.97\n12.99\n16.38\n159.13\n▇▁▁▁▁\n\n\nbeer_floz\n0\n1\n265.93\n199.52\n12.00\n144.00\n216.00\n360.00\n9216.00\n▇▁▁▁▁\n\n\nprice_per_floz\n0\n1\n0.06\n0.01\n0.00\n0.05\n0.06\n0.06\n0.23\n▃▇▁▁▁"
-  },
-  {
-    "objectID": "posts/Beer_Mkts/beer_mkts.html#distribution-of-brand",
-    "href": "posts/Beer_Mkts/beer_mkts.html#distribution-of-brand",
-    "title": "Beer Market Data",
-    "section": "Distribution of brand",
-    "text": "Distribution of brand\n\nbeer1 &lt;- beer %&gt;% \n  group_by(brand) %&gt;% \n  summarise(n = n()) %&gt;% \n  arrange(-n) %&gt;% \n  mutate(prop = n/sum(n),\n         brand_fct = reorder(brand, prop))\n\nggplot(data = beer1)+\n  geom_bar(aes(x = brand_fct, y = prop), stat = 'identity', fill = 'blue')+\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))+\n  labs(title = 'Frequency of Beer Brands',\n       x = 'Brand',\n       y = 'Proportion')\n\n\n\n\n\nComments on analyses…\n\nThe brands above are in an increasing order of proportion among the brands in beer data frame\n\nThe brands are ordered as follows…\n\nBusch Light\nNatural Light\nCoors Light\nMiller Lite\nBud Light"
-  },
-  {
-    "objectID": "posts/Beer_Mkts/beer_mkts.html#brand-and-dollar-spent",
-    "href": "posts/Beer_Mkts/beer_mkts.html#brand-and-dollar-spent",
-    "title": "Beer Market Data",
-    "section": "brand and dollar spent",
-    "text": "brand and dollar spent\n\nbeer2 &lt;- beer %&gt;% \n  group_by(brand) %&gt;% \n  summarise(dollar_spent_tot = sum(dollar_spent)) %&gt;% \n  mutate(brand_fct = reorder(brand, dollar_spent_tot)) %&gt;% \n  arrange(-dollar_spent_tot)\nView(beer2)\n\nggplot(beer2)+\n  geom_bar(aes(x = brand_fct, y = dollar_spent_tot), stat = 'identity', fill = 'red')+\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))+\n  labs(title = 'Dollars Spent Per Brand',\n       x = 'Brand',\n       y = 'Dollars Spent')\n\n\n\n\n\nComments on analyses….\n\nThe order is the same as the distribution of brand within the beer data frame\n\nJust now the y-axis is measuring dollars spent by each value of hh on each brand\n\nBud Light seems to be most popular all around"
-  },
-  {
-    "objectID": "posts/Beer_Mkts/beer_mkts.html#container-and-brand",
-    "href": "posts/Beer_Mkts/beer_mkts.html#container-and-brand",
-    "title": "Beer Market Data",
-    "section": "container and brand",
-    "text": "container and brand\n\nbeer3 &lt;- beer %&gt;% \n  group_by(brand, container) %&gt;% \n  summarise(n = n())\nbeer3.5 &lt;- beer3 %&gt;% \n  group_by(brand) %&gt;% \n  slice_max(order_by = n, n = 2)\nggplot(data = beer3.5)+\n  geom_bar(aes(x = brand, y = n, fill = container), stat = 'identity', position = 'dodge')+\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))+\n  labs(title = 'Frequency of Cans and Bottles for Each Brand',\n       x = 'Brand',\n       y = 'Count')\n\n\n\nView(beer3.5)\n\n\nComments on analyses…\n\nThe bar chart above depicts the frequency of two container types (can or non refillable bottle) per each brand\n\nAll brands seem to sell more cans than bottles\n\nOf them Bud Light sells the most cans\n\nBud light also sells the most bottles"
-  },
-  {
-    "objectID": "data.frames.html",
-    "href": "data.frames.html",
-    "title": "Possible Data Frames",
+    "objectID": "posts/Py_Basics/python_basics_HW1.html",
+    "href": "posts/Py_Basics/python_basics_HW1.html",
+    "title": "Python Basics",
     "section": "",
-    "text": "Below are some possible data frames for use in analysis projects."
-  },
-  {
-    "objectID": "data.frames.html#sleep-health-data",
-    "href": "data.frames.html#sleep-health-data",
-    "title": "Possible Data Frames",
-    "section": "1 Sleep Health Data",
-    "text": "1 Sleep Health Data\nDescribes trends in sleep health/quality\n\nsleephlth &lt;- read.csv(\"~/SUNY Geneseo/Classes/Fall 2023/DANL 200 (Team Pr)/dan-noone.github.io/Sleep_health_and_lifestyle_dataset.csv\")\nnvars &lt;- format(round(ncol(sleephlth), 0), \n                nsmall=0, \n                big.mark=\",\") \nnobs &lt;- format(round(nrow(sleephlth), 0), \n                nsmall=0, \n                big.mark=\",\")\n\nNumber of Variables: 13 Number of Observations: 374\n\n1.1 Description of Variables\n- Person ID: Unique identifier for each individual\n\n- Gender: Gender of the person\n\n- Age: The age of the person in years\n\n- Occupation: Occupation of the person\n\n- Sleep Duration: Length of time person sleeps per day (in hours)\n\n- Quality of Sleep: Subjective rating from 1-10 of quality of sleep\n\n- Physical Activity: Length of time person engages in physical activity per day (minutes per day)\n\n- Stress Level: Subjective rating of stress level experienced by person from 1-10\n\n- BMI Category: BMI category of the person\n  -Underweight\n  -Normal\n  -Overweight\n  \n- Blood Pressure: Blood pressure measurement of the person, systolic over diastolic pressure\n\n- Heart Rate: The resting heart rate of the person in beats per minute\n\n- Daily Steps: The number of steps person takes per day\n\n- Sleep Disorder: The presence or absence of a sleep disorder in the person\n  -None\n  -Insomnia\n  -Sleep Apnea"
-  },
-  {
-    "objectID": "blog-listing.html",
-    "href": "blog-listing.html",
-    "title": "Exploratory Data Analysis",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nWeb Scraping using Beautiful Soup\n\n\nFrom a tutorial on YouTube\n\n\n\n\n\n\nFeb 9, 2024\n\n\nDaniel Noone\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "class_projects.html",
-    "href": "class_projects.html",
-    "title": "Class Projects",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nDANL 200 Project\n\n\nAir Quality Data as per the EPA regarding Criteria Air Pollutants\n\n\n\n\n\n\nJan 28, 2024\n\n\nDaniel Noone\n\n\n14 min\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Daniel A. Noone",
-    "section": "",
-    "text": "Daniel Noone is a Junior at SUNY Geneseo and is majoring in Data Analytics.  He was born and raised in Ontario, New York and loves to spend time outdoors."
-  },
-  {
-    "objectID": "index.html#who-is-daniel-noone",
-    "href": "index.html#who-is-daniel-noone",
-    "title": "Daniel A. Noone",
-    "section": "",
-    "text": "Daniel Noone is a Junior at SUNY Geneseo and is majoring in Data Analytics.  He was born and raised in Ontario, New York and loves to spend time outdoors."
-  },
-  {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Daniel A. Noone",
-    "section": "Education",
-    "text": "Education\nState University of New York at Geneseo | Geneseo, NY  B.S. in Data Analytics | Aug 2022 - May 2025"
-  },
-  {
-    "objectID": "index.html#experience",
-    "href": "index.html#experience",
-    "title": "Daniel A. Noone",
-    "section": "Experience",
-    "text": "Experience\nExperience programming in R, as well as basic level knowledge of Python. Extensive experience with Microsoft Office programs such as Excel, Word, and PowerPoint."
+    "text": "1 Introduction\nThis blog post is meant to give a brief introduction of some of the main topics in basic python programming\n\n\n2 Variables & Assignment\n\nIn python programming, variables are just names for values not actual storage places. \nThese values can be singular such as a numeric value of 10, but there can also be multiple values of the same or varying data types \nan equal sign = is used to assign values to their respective variables (or objects)\n\n\n# Single value\nx = 10\n\n# Multiple values\ny = [1,2,3]\n\n#Multiple types\nz = ['a','b','c',1,2,3]\n\n\n\n3 Data Types in Python\nThere are multiple different data types recognized by the python language.\nThe most basic types are as follows:\n\n# Integer, numeric values with no decimals\nx = 10\n\n# Float, numeric values with decimals\ny = 10.99\n\n# String, character values surrounded by '' or \"\"\nz = 'hello, world' #OR \nz = \"hello, world\"\n\n# Boolean, logical values\nx = True\ny = False\n\n# Nothing, no value\nz = None\n\n# List, data container for any data type (even multiple types at once)\nlist_ = [10, 1.55, 'apple', True, False, None]\n\n# Tuple, non mutable data container\ntup = (2, 3 , 4)\n\n# Set\nset_ = {'a', 'b'}\n\n# Dictionary\ndict_ = {'first': 'a', 'second': 'b'}\n\n\n\n4 Operators\nMathematical operations can also be done in python using preset operators:\n\n# Addition\nx = 5 + 5 # x would have value of 10\ny = x + 5 # y would have value of 15\n\n# Subtraction\nx = 5 - 1 # x would have value of 4\ny = x - 2 # y would have value of 2\n\n# Multiplication and Exponents (* for multiplication, ** for exponents)\nx = 5 * 2**2 # x would have value of 20\ny = x**2 * 5 # y would have value of 2000\n\n# Division and Integer Division (if want int type out of operation, use //)\nx = 4/2 # x would have value of 2.0\ny = x/2 # y would have value of 1.0\n\nx = 8//2 # x would have value of 4 (int type not float)\ny = x//2 # y would have value of 2 (again, int not float)\n\n# Can also perform string concatenation\nstr_one = 'hello,'\nstr_two = ' world'\nstr_ = str_one + str_two # Result of summation is concatenation of str_one and str_two \n                          # = 'hello, world'\n\n\n\n5 Conditionals\nCan perform conditional operations in python\n\nIf statements\nIf else\netc…\n\n\n# Can use if and elif and else to formulate conditional operations\n# For example...\n\nname = 'David'\nscore = 99\n\nif name == 'David' and score &gt;= 90:\n  print('Great job, David!')\nelif name != 'David' and score &gt;= 90:\n  print('Great job, stranger!')\nelif name == 'David' and score &lt; 90:\n  print('You failed, David!')\nelif name != 'David' and score &lt; 90:\n  print('You failed, stranger!')\n\nGreat job, David!\n\n\n-&gt; Here the result is 'Great job, David!' since the name is 'David' and the score is 99\n\n\n6 Casting Variables\nCasting is when we explicitly assign a data type to a variable\n\nstr() will convert to string type\nint() will convert to integer type\nfloat() will convert to float type\n\n\nx = 10 # integer type\ny = '20' # string type\nz = 1.55 # float type\n\nx_ = float(x) # makes 10 into float type = 10.0\ny_ = int(y) # makes '20' into int type = 20\nz_ = int(z) # makes 1.55 into int type = 1 (DOES NOT ROUND)\nx_str = str(x) # makes 10 into str type = '10'\n\n\n\n7 Slicing Methods\n\nPython uses indexing to slice data\nThe index starts at 0, not 1\n\n\n\nAs seen in the image, negative values can also be used\nThe syntax is as follows\n\n[:] - will return the whole value\n[start :] - will return from a starting index value until the end\n[: end] - will return from the start until the end index value\n[start : end] - Will return from start value to end value\n[start : end: step] - will return from start to end by a certain step amount\n\n\n\nstring = 'abcdefghij'\n\nstring[:5] # returns 'abcde' (first 5 characters of string)\nstring[5:] # returns 'fghij' (last 5 characters of string)\nstring[0:5:2] # returns 'ace' (first 5 characters, but in steps of 2)\n\nlist_ = ['apple','banana','pear','strawberry','papaya','pineapple']\n\nlist_[:3] # returns ['apple', 'banana', 'pear'] (first 3 elements of list)\nlist_[3:] # returns ['strawberry', 'papaya', 'pineapple'] (last 3 elements of list)\nlist_[0::2] # returns ['apple', 'pear', 'papaya'] (whole list by steps of 2)\n\n['apple', 'pear', 'papaya']\n\n\n\n\n8 Importing Modules, Packages and Libraries\n\nModule - a bunch of related code saved in a file with extension .py\nPackage - directory of a collection of modules\nLibrary - a collection of packages\nimport is called on a module to be able to use it\n\nThen have to call module along with any functions associated\n\n\n\nimport pandas\n# could then use pandas.read_csv() to read a csv\n\n\nimport as is called on a module to give it a name to make things more efficient\n\n\nimport pandas as pd\n# Then could use pd.read_csv() instead of pandas.read_csv()\n\n\nfrom and import is used to load a specific function from a module\n\n\nfrom pandas import read_csv\n# then can just use read_csv() as if it were a base function\n\n\nIn order to install a module, package or library - have to call pip install in terminal or !pip install if on Google Colab\n\n!pip install is also used for Rstudio\n\n\n\n# !pip install itables"
   },
   {
     "objectID": "posts/DANL 200 HW5 - NFL Data/danl200-hw5-noone-daniel.html",
@@ -259,6 +140,174 @@
     "text": "Q2g\n\nSummarize the resulting data.frame in Q2d, with the following four variables:\n\nposteam: String abbreviation for the team with possession.\npasser: Name of the player who passed a ball to a receiver by initially taking a three-step drop, and backpedaling into the pocket to make a pass. (Mostly, they are quarterbacks.)\nmean_epa: Mean value of epa in 2022 for each passer\nn_pass: Number of observations for each passer\n\nThen find the top 10 NFL passers in 2022 in terms of the mean value of epa, conditioning that n_pass must be greater than or equal to the third quantile level of n_pass.\n\nAnswer:\n\nNFL_2g &lt;- NFL2022_stuffs_EPA %&gt;% \n  group_by(posteam, passer) %&gt;% \n  summarise(mean_epa = mean(epa),\n            n_pass = n())\n\nQ3_n_pass &lt;- quantile(NFL_2g$n_pass, 0.75)\n\nNFL_2g_2 &lt;- NFL_2g %&gt;% \n  filter(n_pass &gt;= Q3_n_pass) %&gt;% \n  arrange(-mean_epa) %&gt;% \n  head(10)"
   },
   {
+    "objectID": "personal_posts/web_scraping1/wep_scrape_tutorial.html",
+    "href": "personal_posts/web_scraping1/wep_scrape_tutorial.html",
+    "title": "Web Scraping using Beautiful Soup",
+    "section": "",
+    "text": "First you have to import the required modules\n\nfrom bs4 import BeautifulSoup\nimport requests\n\n\n\nHave to set the URL to the website and"
+  },
+  {
+    "objectID": "class_projects.html",
+    "href": "class_projects.html",
+    "title": "Class Projects",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nDANL 200 Project\n\n\nAir Quality Data as per the EPA regarding Criteria Air Pollutants\n\n\n\n\n\n\nJan 28, 2024\n\n\nDaniel Noone\n\n\n14 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "blog-listing.html",
+    "href": "blog-listing.html",
+    "title": "Exploratory Data Analysis",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nWeb Scraping using Beautiful Soup\n\n\nFrom a tutorial on YouTube\n\n\n\n\n\n\nFeb 9, 2024\n\n\nDaniel Noone\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "basic-python-intro.html",
+    "href": "basic-python-intro.html",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "Python is a high-level, interpreted programming language. This is a simple Python code:\n\nprint('Hello, World!')"
+  },
+  {
+    "objectID": "basic-python-intro.html#what-is-python",
+    "href": "basic-python-intro.html#what-is-python",
+    "title": "Introduction to Python",
+    "section": "",
+    "text": "Python is a high-level, interpreted programming language. This is a simple Python code:\n\nprint('Hello, World!')"
+  },
+  {
+    "objectID": "basic-python-intro.html#variables-and-data-types",
+    "href": "basic-python-intro.html#variables-and-data-types",
+    "title": "Introduction to Python",
+    "section": "Variables and Data Types",
+    "text": "Variables and Data Types\nIn Python, variables can store data of different types without explicitly declaring the type.\nFor example:\n\ninteger_variable = 10\nstring_variable = 'Hello'\nfloat_variable = 10.5\n\nfloat_variable\n\n10.5"
+  },
+  {
+    "objectID": "basic-python-intro.html#control-structures",
+    "href": "basic-python-intro.html#control-structures",
+    "title": "Introduction to Python",
+    "section": "Control Structures",
+    "text": "Control Structures\nPython supports the usual logical conditions from mathematics:\n\n# Equals: a == b\n# Not Equals: a != b\n# Less than: a &lt; b\n# Less than or equal to: a &lt;= b\n# Greater than: a &gt; b\n# Greater than or equal to: a &gt;= b\n\nThese conditions can be used in several ways, most commonly in ‘if statements’ and loops.\n\n# if statement:\nif 5 &gt; 2:\n    print('Five is greater than two!')"
+  },
+  {
+    "objectID": "basic-python-intro.html#functions",
+    "href": "basic-python-intro.html#functions",
+    "title": "Introduction to Python",
+    "section": "Functions",
+    "text": "Functions\nA function is a block of code which only runs when it is called.\nYou can pass data, known as parameters, into a function.\nA function can return data as a result.\n\n# Defining a function:\ndef my_function():\n    print('Hello from a function')\n\n# Calling a function:\nmy_function()"
+  },
+  {
+    "objectID": "basic-python-intro.html#lists-and-dictionaries",
+    "href": "basic-python-intro.html#lists-and-dictionaries",
+    "title": "Introduction to Python",
+    "section": "Lists and Dictionaries",
+    "text": "Lists and Dictionaries\nA list is a collection which is ordered and changeable.\nA dictionary is a collection which is unordered, changeable and indexed.\n\n# List example:\nmy_list = ['apple', 'banana', 'cherry']\n\n# Dictionary example:\nmy_dict = {'name': 'John', 'age': 36}"
+  },
+  {
+    "objectID": "class_blog.html",
+    "href": "class_blog.html",
+    "title": "Class Blog Posts",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nPython Basics\n\n\nA quick look at the basics of python programming\n\n\n\n\n\n\nFeb 10, 2024\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nSpotify Listener Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nHW5 - NFL Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n6 min\n\n\n\n\n\n\n  \n\n\n\n\nBeer Market Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nNYC Restaurant Inspections\n\n\n\n\n\n\n\n\n\nDec 10, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome All!\n\n\n\n\n\n\n\n\n\nDec 9, 2023\n\n\nDaniel Noone\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Daniel A. Noone",
+    "section": "",
+    "text": "Daniel Noone is a Junior at SUNY Geneseo and is majoring in Data Analytics.  He was born and raised in Ontario, New York and loves to spend time outdoors."
+  },
+  {
+    "objectID": "index.html#who-is-daniel-noone",
+    "href": "index.html#who-is-daniel-noone",
+    "title": "Daniel A. Noone",
+    "section": "",
+    "text": "Daniel Noone is a Junior at SUNY Geneseo and is majoring in Data Analytics.  He was born and raised in Ontario, New York and loves to spend time outdoors."
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Daniel A. Noone",
+    "section": "Education",
+    "text": "Education\nState University of New York at Geneseo | Geneseo, NY  B.S. in Data Analytics | Aug 2022 - May 2025"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Daniel A. Noone",
+    "section": "Experience",
+    "text": "Experience\nExperience programming in R, as well as basic level knowledge of Python. Extensive experience with Microsoft Office programs such as Excel, Word, and PowerPoint."
+  },
+  {
+    "objectID": "posts/Beer_Mkts/beer_mkts.html#description-of-variables-for-beer-data-frame",
+    "href": "posts/Beer_Mkts/beer_mkts.html#description-of-variables-for-beer-data-frame",
+    "title": "Beer Market Data",
+    "section": "Description of Variables for beer Data Frame:",
+    "text": "Description of Variables for beer Data Frame:\n\nhh: Identification number of the household;\nX_purchase_desc: details of item purchased by hh\nquantity: number of items purchased by hh\nbrand: Brand of beer purchased by hh\n\nBud Light,\nBusch Light,\nCoors Light,\nMiller Lite, or\nNatural Light\n\ndollar_spent: Dollar value total of purchase;\nbeer_floz: volume of beer (fl oz);\nprice_per_floz: price per fl oz\ncontainer: Type of container of beer\npromo: Was the item promoted? (coupon, etc…)\nmarket: Scan-track market (or state if rural);\nOther demographic data is present in further variables as well…"
+  },
+  {
+    "objectID": "posts/Beer_Mkts/beer_mkts.html#summary-statistics-of-beer-data-frame",
+    "href": "posts/Beer_Mkts/beer_mkts.html#summary-statistics-of-beer-data-frame",
+    "title": "Beer Market Data",
+    "section": "Summary Statistics of beer Data Frame:",
+    "text": "Summary Statistics of beer Data Frame:\n\nskim(beer)\n\n\nData summary\n\n\nName\nbeer\n\n\nNumber of rows\n73115\n\n\nNumber of columns\n24\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n13\n\n\nlogical\n6\n\n\nnumeric\n5\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\nX_purchase_desc\n0\n1\n12\n29\n0\n115\n0\n\n\nbrand\n0\n1\n9\n13\n0\n5\n0\n\n\ncontainer\n0\n1\n3\n30\n0\n7\n0\n\n\nmarket\n0\n1\n5\n20\n0\n92\n0\n\n\nbuyertype\n0\n1\n4\n7\n0\n3\n0\n\n\nincome\n0\n1\n5\n8\n0\n5\n0\n\n\nage\n0\n1\n3\n5\n0\n4\n0\n\n\nemployment\n0\n1\n4\n4\n0\n3\n0\n\n\ndegree\n0\n1\n2\n7\n0\n4\n0\n\n\ncow\n0\n1\n4\n25\n0\n4\n0\n\n\nrace\n0\n1\n5\n8\n0\n5\n0\n\n\ntvcable\n0\n1\n4\n7\n0\n3\n0\n\n\nnpeople\n0\n1\n1\n5\n0\n5\n0\n\n\n\nVariable type: logical\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\ncount\n\n\n\n\npromo\n0\n1\n0.20\nFAL: 58563, TRU: 14552\n\n\nchildrenUnder6\n0\n1\n0.07\nFAL: 68109, TRU: 5006\n\n\nchildren6to17\n0\n1\n0.20\nFAL: 58155, TRU: 14960\n\n\nmicrowave\n0\n1\n0.99\nTRU: 72676, FAL: 439\n\n\ndishwasher\n0\n1\n0.73\nTRU: 53258, FAL: 19857\n\n\nsinglefamilyhome\n0\n1\n0.81\nTRU: 59058, FAL: 14057\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nhh\n0\n1\n17407721.61\n11582147.34\n2000235.00\n8223438.00\n8413624.00\n30171315.00\n30440718.00\n▂▇▁▁▇\n\n\nquantity\n0\n1\n1.32\n1.15\n1.00\n1.00\n1.00\n1.00\n48.00\n▇▁▁▁▁\n\n\ndollar_spent\n0\n1\n13.78\n8.72\n0.51\n8.97\n12.99\n16.38\n159.13\n▇▁▁▁▁\n\n\nbeer_floz\n0\n1\n265.93\n199.52\n12.00\n144.00\n216.00\n360.00\n9216.00\n▇▁▁▁▁\n\n\nprice_per_floz\n0\n1\n0.06\n0.01\n0.00\n0.05\n0.06\n0.06\n0.23\n▃▇▁▁▁"
+  },
+  {
+    "objectID": "posts/Beer_Mkts/beer_mkts.html#distribution-of-brand",
+    "href": "posts/Beer_Mkts/beer_mkts.html#distribution-of-brand",
+    "title": "Beer Market Data",
+    "section": "Distribution of brand",
+    "text": "Distribution of brand\n\nbeer1 &lt;- beer %&gt;% \n  group_by(brand) %&gt;% \n  summarise(n = n()) %&gt;% \n  arrange(-n) %&gt;% \n  mutate(prop = n/sum(n),\n         brand_fct = reorder(brand, prop))\n\nggplot(data = beer1)+\n  geom_bar(aes(x = brand_fct, y = prop), stat = 'identity', fill = 'blue')+\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))+\n  labs(title = 'Frequency of Beer Brands',\n       x = 'Brand',\n       y = 'Proportion')\n\n\n\n\n\nComments on analyses…\n\nThe brands above are in an increasing order of proportion among the brands in beer data frame\n\nThe brands are ordered as follows…\n\nBusch Light\nNatural Light\nCoors Light\nMiller Lite\nBud Light"
+  },
+  {
+    "objectID": "posts/Beer_Mkts/beer_mkts.html#brand-and-dollar-spent",
+    "href": "posts/Beer_Mkts/beer_mkts.html#brand-and-dollar-spent",
+    "title": "Beer Market Data",
+    "section": "brand and dollar spent",
+    "text": "brand and dollar spent\n\nbeer2 &lt;- beer %&gt;% \n  group_by(brand) %&gt;% \n  summarise(dollar_spent_tot = sum(dollar_spent)) %&gt;% \n  mutate(brand_fct = reorder(brand, dollar_spent_tot)) %&gt;% \n  arrange(-dollar_spent_tot)\nView(beer2)\n\nggplot(beer2)+\n  geom_bar(aes(x = brand_fct, y = dollar_spent_tot), stat = 'identity', fill = 'red')+\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))+\n  labs(title = 'Dollars Spent Per Brand',\n       x = 'Brand',\n       y = 'Dollars Spent')\n\n\n\n\n\nComments on analyses….\n\nThe order is the same as the distribution of brand within the beer data frame\n\nJust now the y-axis is measuring dollars spent by each value of hh on each brand\n\nBud Light seems to be most popular all around"
+  },
+  {
+    "objectID": "posts/Beer_Mkts/beer_mkts.html#container-and-brand",
+    "href": "posts/Beer_Mkts/beer_mkts.html#container-and-brand",
+    "title": "Beer Market Data",
+    "section": "container and brand",
+    "text": "container and brand\n\nbeer3 &lt;- beer %&gt;% \n  group_by(brand, container) %&gt;% \n  summarise(n = n())\nbeer3.5 &lt;- beer3 %&gt;% \n  group_by(brand) %&gt;% \n  slice_max(order_by = n, n = 2)\nggplot(data = beer3.5)+\n  geom_bar(aes(x = brand, y = n, fill = container), stat = 'identity', position = 'dodge')+\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))+\n  labs(title = 'Frequency of Cans and Bottles for Each Brand',\n       x = 'Brand',\n       y = 'Count')\n\n\n\nView(beer3.5)\n\n\nComments on analyses…\n\nThe bar chart above depicts the frequency of two container types (can or non refillable bottle) per each brand\n\nAll brands seem to sell more cans than bottles\n\nOf them Bud Light sells the most cans\n\nBud light also sells the most bottles"
+  },
+  {
+    "objectID": "posts/nyc_inspections/NYC_RES_INS.html#description-of-variables-for-nyc_rest_ins-data-frame",
+    "href": "posts/nyc_inspections/NYC_RES_INS.html#description-of-variables-for-nyc_rest_ins-data-frame",
+    "title": "NYC Restaurant Inspections",
+    "section": "Description of Variables for nyc_rest_ins data frame",
+    "text": "Description of Variables for nyc_rest_ins data frame\n\nCAMIS: A unique identifier number for each restaurant\nDBA: Stands for “doing business as”, name of the restaurant\nBORO: Indentifies the NYC Borough that the restaurant is located in\n\nManhattan\nBronx\nBrooklyn\nQueens\nStaten Island\n\nSTREET: Street address of the restaurant\nCUISINE DESCRIPTION: Type of cuisine the restaurant sells\nINSPECTION DATE: The date the inspection was performed\nACTION: Indicated the action(s) taken as a result of the inspection\nVIOLATION CODE: Violation associated with the restaurant’s inspection\nVIOLATION DESCRIPTION: Descriprion of the violation associated with a restaurant’s inspection\nCRITICAL FLAG: Indicator of a critical violation as result of inspection\n\nCritical\nNot Critical\nNot Applicaple\n\nSCORE: Numeric Score for the inspection\nGrade: Letter Grade for the Inspection"
+  },
+  {
+    "objectID": "posts/nyc_inspections/NYC_RES_INS.html#summary-statisics-for-nyc_rest_ins",
+    "href": "posts/nyc_inspections/NYC_RES_INS.html#summary-statisics-for-nyc_rest_ins",
+    "title": "NYC Restaurant Inspections",
+    "section": "Summary Statisics for nyc_rest_ins:",
+    "text": "Summary Statisics for nyc_rest_ins:\n\nskim(nyc_rest_ins)\n\n\nData summary\n\n\nName\nnyc_rest_ins\n\n\nNumber of rows\n17633\n\n\nNumber of columns\n12\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\ncharacter\n10\n\n\nnumeric\n2\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: character\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\n\n\n\n\nDBA\n0\n1\n1\n75\n0\n13914\n0\n\n\nBORO\n0\n1\n5\n13\n0\n5\n0\n\n\nSTREET\n0\n1\n5\n40\n0\n2038\n0\n\n\nCUISINE.DESCRIPTION\n0\n1\n4\n30\n0\n87\n0\n\n\nINSPECTION.DATE\n0\n1\n10\n10\n0\n751\n0\n\n\nACTION\n0\n1\n33\n47\n0\n2\n0\n\n\nVIOLATION.CODE\n0\n1\n3\n5\n0\n60\n0\n\n\nVIOLATION.DESCRIPTION\n0\n1\n19\n940\n0\n101\n0\n\n\nCRITICAL.FLAG\n0\n1\n8\n12\n0\n2\n0\n\n\nGRADE\n0\n1\n1\n1\n0\n3\n0\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nCAMIS\n0\n1\n47112537.51\n4197913.0\n30191841\n41551354\n50049290\n50094455\n50133690\n▁▁▃▁▇\n\n\nSCORE\n0\n1\n10.44\n5.9\n0\n7\n10\n12\n86\n▇▁▁▁▁"
+  },
+  {
+    "objectID": "posts/nyc_inspections/NYC_RES_INS.html#grade-and-boro",
+    "href": "posts/nyc_inspections/NYC_RES_INS.html#grade-and-boro",
+    "title": "NYC Restaurant Inspections",
+    "section": "GRADE and BORO",
+    "text": "GRADE and BORO\nGraphical representation of the proportion of each GRADE value in each of the 5 values in BORO\n\nnyc1 &lt;- nyc_rest_ins %&gt;% \n  group_by(BORO, GRADE) %&gt;% \n  summarise(n = n()) %&gt;% \n  mutate(prop = n/sum(n))\n\nggplot(data = nyc1,\n       mapping = aes(x = GRADE, y = prop))+\n  geom_bar(aes(fill = GRADE), stat = 'identity')+\n  facet_wrap(.~BORO)\n\n\n\n\n\nComments on analyses…\n\nAll five boroughs seem to have around equal proportions of each Grade"
+  },
+  {
+    "objectID": "posts/nyc_inspections/NYC_RES_INS.html#critical-flag-and-boro",
+    "href": "posts/nyc_inspections/NYC_RES_INS.html#critical-flag-and-boro",
+    "title": "NYC Restaurant Inspections",
+    "section": "CRITICAL FLAG and BORO",
+    "text": "CRITICAL FLAG and BORO\nGraphical representation of the count of each value of CRITICAL FLAG per each value of BORO\n\nnyc2 &lt;- nyc_rest_ins %&gt;% \n  group_by(BORO, CRITICAL.FLAG) %&gt;% \n  summarise(n = n()) %&gt;% \n  mutate(prop = n/sum(n))\nView(nyc2)\n\nggplot(data = nyc2,\n       mapping = aes(x = CRITICAL.FLAG, y = n))+\n  geom_bar(aes(fill = CRITICAL.FLAG), stat = 'identity')+\n  facet_wrap(.~BORO)\n\n\n\n\n\nComments on analyses…\n\nThe proportion of each value of CRITICAL.FLAG within each of the values of BORO seems to be about equal\nThis faceted bar chart also gives info about the number of restaurants in each value of BORO within this data set. In order of most to least…\n\nManhattan has the most restaurants\nBrooklyn has the second most\nQueens the third most\nBronx second to last\nStaten Island is last"
+  },
+  {
+    "objectID": "posts/nyc_inspections/NYC_RES_INS.html#grade-and-critical-flag",
+    "href": "posts/nyc_inspections/NYC_RES_INS.html#grade-and-critical-flag",
+    "title": "NYC Restaurant Inspections",
+    "section": "GRADE and CRITICAL FLAG",
+    "text": "GRADE and CRITICAL FLAG\nGraphical representation of the proportion of each value of GRADE per value of CRITICAL FLAG\n\nnyc3 &lt;- nyc_rest_ins %&gt;% \n  group_by(GRADE, CRITICAL.FLAG, BORO) %&gt;% \n  summarise(n = n()) %&gt;% \n  mutate(prop = n/sum(n))\nView(nyc3)\n\nggplot(data = nyc3)+\n  geom_bar(mapping = aes(x = CRITICAL.FLAG, y = prop, fill = GRADE), stat = 'identity', position = 'dodge')\n\n\n\n\n\nComments on analyses…\n\nThe proportion of each value of GRADE seems to be almost equal per value of CRITICAL FLAG\nThe proportion of grade A seems to be slightly less for restaurants with No Critical Flags\nThe proportions of grades B and C appear to be slightly less for restautants with Critical Flags"
+  },
+  {
     "objectID": "posts/Spotify_all/Spotify_All.html#description-of-variables-for-spotify-data-frame",
     "href": "posts/Spotify_all/Spotify_All.html#description-of-variables-for-spotify-data-frame",
     "title": "Spotify Listener Data",
@@ -298,14 +347,14 @@
     "href": "posts2/DANL200 Project/project.html",
     "title": "DANL 200 Project",
     "section": "",
-    "text": "These data sets were obtained from the EPA website here\nThese data sets (four in total) measure daily levels of four different gases in different locations\n\nThe gases measured are Ozone, SO2 (sulfur dioxide), CO (carbon monoxide), and NO2 (nitrogen dioxide)\nThese gases play a large role in the measurement of the Air Quality Index (AQI)\nThey are considered to be atmospheric pollutants\nMore information on Criteria Air Pollutants can be found here\n\nThis project will take a look at and analyze the measurements of these four atmospheric gases per state\n\nThese measurements were taken from 01/01/2023 to 09/30/2023\n\n\n\n\n\nozone &lt;- read.csv(\"C:\\\\Users\\\\Dan\\\\OneDrive\\\\Documents\\\\SUNY Geneseo\\\\Classes\\\\Fall 2023\\\\DANL 200 (Team Pr)\\\\dan-noone.github.io\\\\ozone_measures.csv\")\nso2 &lt;- read.csv(\"C:\\\\Users\\\\Dan\\\\OneDrive\\\\Documents\\\\SUNY Geneseo\\\\Classes\\\\Fall 2023\\\\DANL 200 (Team Pr)\\\\dan-noone.github.io\\\\so2_measures.csv\")\nco &lt;- read.csv(\"C:\\\\Users\\\\Dan\\\\OneDrive\\\\Documents\\\\SUNY Geneseo\\\\Classes\\\\Fall 2023\\\\DANL 200 (Team Pr)\\\\dan-noone.github.io\\\\co_measures.csv\")\nno2 &lt;- read.csv(\"C:\\\\Users\\\\Dan\\\\OneDrive\\\\Documents\\\\SUNY Geneseo\\\\Classes\\\\Fall 2023\\\\DANL 200 (Team Pr)\\\\dan-noone.github.io\\\\no2_measures.csv\")\n\n\nrmarkdown::paged_table(ozone)\n\n\n\n  \n\n\nrmarkdown::paged_table(so2)\n\n\n\n  \n\n\nrmarkdown::paged_table(co)\n\n\n\n  \n\n\nrmarkdown::paged_table(no2)\n\n\n\n  \n\n\n\n\n\n\n\nThe data sets include a lot of information that is not needed for my analysis\n\nHere I will alter the data sets to include only the information of importance\nThe data sets will then be row bound using rbind() to create a single data set from the four\n\nFor the purpose of continuity, the top 10 most frequent states in ozone data set will also be selected in the other three data sets\n\n\n\n\nst_top10_oz &lt;- ozone %&gt;% \n  group_by(State.Name) %&gt;% \n  summarise(n = n()) %&gt;% \n  arrange(-n) %&gt;% \n  head(10) %&gt;% \n  mutate(state_fct = reorder(State.Name, n))\n\nozone_alt &lt;- ozone %&gt;% \n  select(State.Name, Date.Local, Parameter.Name, Units.of.Measure, Arithmetic.Mean) %&gt;% \n  filter(State.Name %in% st_top10_oz$state_fct) %&gt;% \n  rename(Measure = Arithmetic.Mean)\nView(ozone_alt)\n\n\nThe new data set ozone_alt includes data for only the 10 most prevalent states in the ozone data set\n\n\nrmarkdown::paged_table(st_top10_oz)\n\n\n\n  \n\n\nrmarkdown::paged_table(ozone_alt)\n\n\n\n  \n\n\n\n\n\n\n\nst_top10_so2 &lt;- so2 %&gt;% \n  filter(State.Name %in% st_top10_oz$State.Name) %&gt;%\n  group_by(State.Name) %&gt;% \n  summarise(n = n()) %&gt;% \n  arrange(-n) %&gt;% \n  mutate(state_fct = reorder(State.Name, n))\n\nso2_alt &lt;- so2 %&gt;% \n  select(State.Name, Date.Local, Parameter.Name, Units.of.Measure, Arithmetic.Mean) %&gt;% \n  filter(State.Name %in% st_top10_so2$state_fct) %&gt;% \n  rename(Measure = Arithmetic.Mean)\n\n\nThe new data set so2_alt includes data for again, only the 10 most prevalent states in the ozone data set\n\n\nrmarkdown::paged_table(st_top10_so2)\n\n\n\n  \n\n\nrmarkdown::paged_table(so2_alt)\n\n\n\n  \n\n\n\n\n\n\n\nst_top10_co &lt;- co %&gt;% \n  filter(State.Name %in% st_top10_oz$State.Name) %&gt;% \n  group_by(State.Name) %&gt;% \n  summarise(n = n()) %&gt;% \n  arrange(-n) %&gt;% \n  mutate(state_fct = reorder(State.Name, n))\n\nco_alt &lt;- co %&gt;% \n  select(State.Name, Date.Local, Parameter.Name, Units.of.Measure, Arithmetic.Mean) %&gt;% \n  filter(State.Name %in% st_top10_co$state_fct) %&gt;% \n  rename(Measure = Arithmetic.Mean)\n\n\nrmarkdown::paged_table(st_top10_co)\n\n\n\n  \n\n\nrmarkdown::paged_table(co_alt)\n\n\n\n  \n\n\n\n\n\n\n\nst_top10_no2 &lt;- no2 %&gt;% \n  filter(State.Name %in% st_top10_oz$State.Name) %&gt;% \n  group_by(State.Name) %&gt;% \n  summarise(n = n()) %&gt;% \n  arrange(-n) %&gt;% \n  mutate(state_fct = reorder(State.Name, n))\n\nno2_alt &lt;- no2 %&gt;% \n  select(State.Name, Date.Local, Parameter.Name, Units.of.Measure, Arithmetic.Mean) %&gt;% \n  filter(State.Name %in% st_top10_no2$state_fct) %&gt;% \n  rename(Measure = Arithmetic.Mean)\n\n\nrmarkdown::paged_table(st_top10_no2)\n\n\n\n  \n\n\nrmarkdown::paged_table(no2_alt)\n\n\n\n  \n\n\n\n\n\n\n\n\nSince the variables are the same, all four data sets can be row bound together using rbind()\n\n\nair_qual &lt;- rbind(ozone_alt, so2_alt, co_alt, no2_alt)\nrmarkdown::paged_table(air_qual)"
+    "text": "These data sets were obtained from the EPA website here\nThese data sets (four in total) measure daily levels of four different gases in different locations\n\nThe gases measured are Ozone, SO2 (sulfur dioxide), CO (carbon monoxide), and NO2 (nitrogen dioxide)\nThese gases play a large role in the measurement of the Air Quality Index (AQI)\nThey are considered to be atmospheric pollutants\nMore information on Criteria Air Pollutants can be found here\n\nThis project will take a look at and analyze the measurements of these four atmospheric gases per state\n\nThese measurements were taken from 01/01/2023 to 09/30/2023\n\n\n\n\n\nozone &lt;- read.csv(\"C:\\\\Users\\\\Dan\\\\OneDrive\\\\Documents\\\\dan-noone.github.io\\\\posts2\\\\DANL200 Project\\\\ozone_measures.csv\")\n\nso2 &lt;- read.csv(\"C:\\\\Users\\\\Dan\\\\OneDrive\\\\Documents\\\\dan-noone.github.io\\\\posts2\\\\DANL200 Project\\\\so2_measures.csv\")\n\nco &lt;- read.csv(\"C:\\\\Users\\\\Dan\\\\OneDrive\\\\Documents\\\\dan-noone.github.io\\\\posts2\\\\DANL200 Project\\\\co_measures.csv\")\n\nno2 &lt;- read.csv(\"C:\\\\Users\\\\Dan\\\\OneDrive\\\\Documents\\\\dan-noone.github.io\\\\posts2\\\\DANL200 Project\\\\no2_measures.csv\")\n\n\nrmarkdown::paged_table(ozone)\n\n\n\n  \n\n\nrmarkdown::paged_table(so2)\n\n\n\n  \n\n\nrmarkdown::paged_table(co)\n\n\n\n  \n\n\nrmarkdown::paged_table(no2)\n\n\n\n  \n\n\n\n\n\n\n\nThe data sets include a lot of information that is not needed for my analysis\n\nHere I will alter the data sets to include only the information of importance\nThe data sets will then be row bound using rbind() to create a single data set from the four\n\nFor the purpose of continuity, the top 10 most frequent states in ozone data set will also be selected in the other three data sets\n\n\n\n\nst_top10_oz &lt;- ozone %&gt;% \n  group_by(State.Name) %&gt;% \n  summarise(n = n()) %&gt;% \n  arrange(-n) %&gt;% \n  head(10) %&gt;% \n  mutate(state_fct = reorder(State.Name, n))\n\nozone_alt &lt;- ozone %&gt;% \n  select(State.Name, Date.Local, Parameter.Name, Units.of.Measure, Arithmetic.Mean) %&gt;% \n  filter(State.Name %in% st_top10_oz$state_fct) %&gt;% \n  rename(Measure = Arithmetic.Mean)\nView(ozone_alt)\n\n\nThe new data set ozone_alt includes data for only the 10 most prevalent states in the ozone data set\n\n\nrmarkdown::paged_table(st_top10_oz)\n\n\n\n  \n\n\nrmarkdown::paged_table(ozone_alt)\n\n\n\n  \n\n\n\n\n\n\n\nst_top10_so2 &lt;- so2 %&gt;% \n  filter(State.Name %in% st_top10_oz$State.Name) %&gt;%\n  group_by(State.Name) %&gt;% \n  summarise(n = n()) %&gt;% \n  arrange(-n) %&gt;% \n  mutate(state_fct = reorder(State.Name, n))\n\nso2_alt &lt;- so2 %&gt;% \n  select(State.Name, Date.Local, Parameter.Name, Units.of.Measure, Arithmetic.Mean) %&gt;% \n  filter(State.Name %in% st_top10_so2$state_fct) %&gt;% \n  rename(Measure = Arithmetic.Mean)\n\n\nThe new data set so2_alt includes data for again, only the 10 most prevalent states in the ozone data set\n\n\nrmarkdown::paged_table(st_top10_so2)\n\n\n\n  \n\n\nrmarkdown::paged_table(so2_alt)\n\n\n\n  \n\n\n\n\n\n\n\nst_top10_co &lt;- co %&gt;% \n  filter(State.Name %in% st_top10_oz$State.Name) %&gt;% \n  group_by(State.Name) %&gt;% \n  summarise(n = n()) %&gt;% \n  arrange(-n) %&gt;% \n  mutate(state_fct = reorder(State.Name, n))\n\nco_alt &lt;- co %&gt;% \n  select(State.Name, Date.Local, Parameter.Name, Units.of.Measure, Arithmetic.Mean) %&gt;% \n  filter(State.Name %in% st_top10_co$state_fct) %&gt;% \n  rename(Measure = Arithmetic.Mean)\n\n\nrmarkdown::paged_table(st_top10_co)\n\n\n\n  \n\n\nrmarkdown::paged_table(co_alt)\n\n\n\n  \n\n\n\n\n\n\n\nst_top10_no2 &lt;- no2 %&gt;% \n  filter(State.Name %in% st_top10_oz$State.Name) %&gt;% \n  group_by(State.Name) %&gt;% \n  summarise(n = n()) %&gt;% \n  arrange(-n) %&gt;% \n  mutate(state_fct = reorder(State.Name, n))\n\nno2_alt &lt;- no2 %&gt;% \n  select(State.Name, Date.Local, Parameter.Name, Units.of.Measure, Arithmetic.Mean) %&gt;% \n  filter(State.Name %in% st_top10_no2$state_fct) %&gt;% \n  rename(Measure = Arithmetic.Mean)\n\n\nrmarkdown::paged_table(st_top10_no2)\n\n\n\n  \n\n\nrmarkdown::paged_table(no2_alt)\n\n\n\n  \n\n\n\n\n\n\n\n\nSince the variables are the same, all four data sets can be row bound together using rbind()\n\n\nair_qual &lt;- rbind(ozone_alt, so2_alt, co_alt, no2_alt)\nrmarkdown::paged_table(air_qual)"
   },
   {
     "objectID": "posts2/DANL200 Project/project.html#loading-the-data-sets",
     "href": "posts2/DANL200 Project/project.html#loading-the-data-sets",
     "title": "DANL 200 Project",
     "section": "",
-    "text": "ozone &lt;- read.csv(\"C:\\\\Users\\\\Dan\\\\OneDrive\\\\Documents\\\\SUNY Geneseo\\\\Classes\\\\Fall 2023\\\\DANL 200 (Team Pr)\\\\dan-noone.github.io\\\\ozone_measures.csv\")\nso2 &lt;- read.csv(\"C:\\\\Users\\\\Dan\\\\OneDrive\\\\Documents\\\\SUNY Geneseo\\\\Classes\\\\Fall 2023\\\\DANL 200 (Team Pr)\\\\dan-noone.github.io\\\\so2_measures.csv\")\nco &lt;- read.csv(\"C:\\\\Users\\\\Dan\\\\OneDrive\\\\Documents\\\\SUNY Geneseo\\\\Classes\\\\Fall 2023\\\\DANL 200 (Team Pr)\\\\dan-noone.github.io\\\\co_measures.csv\")\nno2 &lt;- read.csv(\"C:\\\\Users\\\\Dan\\\\OneDrive\\\\Documents\\\\SUNY Geneseo\\\\Classes\\\\Fall 2023\\\\DANL 200 (Team Pr)\\\\dan-noone.github.io\\\\no2_measures.csv\")\n\n\nrmarkdown::paged_table(ozone)\n\n\n\n  \n\n\nrmarkdown::paged_table(so2)\n\n\n\n  \n\n\nrmarkdown::paged_table(co)\n\n\n\n  \n\n\nrmarkdown::paged_table(no2)"
+    "text": "ozone &lt;- read.csv(\"C:\\\\Users\\\\Dan\\\\OneDrive\\\\Documents\\\\dan-noone.github.io\\\\posts2\\\\DANL200 Project\\\\ozone_measures.csv\")\n\nso2 &lt;- read.csv(\"C:\\\\Users\\\\Dan\\\\OneDrive\\\\Documents\\\\dan-noone.github.io\\\\posts2\\\\DANL200 Project\\\\so2_measures.csv\")\n\nco &lt;- read.csv(\"C:\\\\Users\\\\Dan\\\\OneDrive\\\\Documents\\\\dan-noone.github.io\\\\posts2\\\\DANL200 Project\\\\co_measures.csv\")\n\nno2 &lt;- read.csv(\"C:\\\\Users\\\\Dan\\\\OneDrive\\\\Documents\\\\dan-noone.github.io\\\\posts2\\\\DANL200 Project\\\\no2_measures.csv\")\n\n\nrmarkdown::paged_table(ozone)\n\n\n\n  \n\n\nrmarkdown::paged_table(so2)\n\n\n\n  \n\n\nrmarkdown::paged_table(co)\n\n\n\n  \n\n\nrmarkdown::paged_table(no2)"
   },
   {
     "objectID": "posts2/DANL200 Project/project.html#altering-the-four-data-sets",
@@ -369,145 +418,5 @@
     "title": "DANL 200 Project",
     "section": "3.1 What do these levels even mean?",
     "text": "3.1 What do these levels even mean?\n\nThese four gases (Ozone, SO2, CO, and NO2) are considered to be Criteria Air Pollutants by the EPA\n\nBeing Criteria Air Pollutants (along with Lead (Pb), and Particulate Matter (PM)), they pose adverse health and environmental effects.\n\n\n\n\n3.1.1 Ozone\n\nGround-level ozone (as measured in the data), comes from reaction between pollutants\n\nThese pollutants are emitted by industrial facilities, electric utilities, and motor vehicles\n\nThis Ground-level ozone (in contrast with ozone that protects from UV rays), can pose health risks\n\nThese health risks include…\n\nInflammation of lining of the lungs\nReduced lung function\nCough, wheezing, chest pain, shortness of breath\nIncreased susceptibility to respiratory infection, and\nPremature mortality, to name a few.\n\n\n\nAnalyses Pertaining to the Data:\n\nFor the states such as Colorado, Utah, and Arizona some of these health effects could potentially be more frequent\n\nHowever, in states such as Texas, Florida, and California these health effects will most likely not be as prevalent\n\n\n\n\n3.1.2 Sulfur Dioxide (SO2)\n\nThis air pollutant comes primarily from fossil fuel combustion by industrial and electrical facilities\nShort-term exposure by asthmatic individuals may result in…\n\nWheezing\nChest Tightness\nShortness of Breath\nEtc…\n\nMostly affects the respiratory system\n\nAnalyses Pertaining to the Data:\n\nColorado would most likely experience the highest frequency of these health effects as the average measure of SO2 over the time frame is almost double that of Texas (the state with the second highest measurement)\n\nCalifornia is the state with the lowest average level of SO2, and would most likely see the least health effects\n\n\n\n\n3.1.3 Carbon Monoxide (CO)\n\nThe primary source of Carbon Monoxide is found to be fuel propelled means of transportation\nPrimary health risks as a result of exposure are…\n\nDecreased capacity of blood to carry oxygen\n\nWhich can cause myocardial ischemia (reduced oxygen to heart)\nand angina (chest pain)\n\n\n\nAnalyses Pertaining to the Data:\n\nStates such as Indiana, Florida, and Pennsylvania which had the highest average levels of CO, would most likely see the highest frequency of health effects\n\nUtah, which had the lowest average level of CO (almost half the average level of Indiana), would most likely experience the lowest frequency of health effects\n\n\n\n\n3.1.4 Nitrogen Dioxide (NO2)\n\nPrimarily emitted from cars, trucks, buses, power plants, and other engines/equipment\n\nNitrogen Oxide (NO) is emitted first and then rapidly oxidized into NO2 in the atmosphere\n\nHealth risks include mostly respiratory related symptoms and hospital visits\n\nAnalyses Pertaining to the Data:\n\nStates such as Arizona and Illinois had the highest average level of NO2 recorded, so they would most likely experience the highest frequency of these health effects\n\nStates such as Utah and Texas had an average recorded level of NO2 about half that of Arizona and Illinois, and would most likely experience the lowest frequency of health effects"
-  },
-  {
-    "objectID": "class_blog.html",
-    "href": "class_blog.html",
-    "title": "Class Blog Posts",
-    "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nPython Basics\n\n\nA quick look at the basics of python programming\n\n\n\n\n\n\nFeb 10, 2024\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nSpotify Listener Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nHW5 - NFL Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n6 min\n\n\n\n\n\n\n  \n\n\n\n\nBeer Market Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nNYC Restaurant Inspections\n\n\n\n\n\n\n\n\n\nDec 10, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome All!\n\n\n\n\n\n\n\n\n\nDec 9, 2023\n\n\nDaniel Noone\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "danl-210-quarto-reticulate.html",
-    "href": "danl-210-quarto-reticulate.html",
-    "title": "Using Python and R Together",
-    "section": "",
-    "text": "In Python, variables can store data of different types without explicitly declaring the type.\nFor example:\n\ninteger_variable = 10\nstring_variable = 'Hello'\nfloat_variable = 10.5\n\nfloat_variable\n\n10.5\n\n\n\n\n\nPython supports the usual logical conditions from mathematics:\n\n# Equals: a == b\n# Not Equals: a != b\n# Less than: a &lt; b\n# Less than or equal to: a &lt;= b\n# Greater than: a &gt; b\n# Greater than or equal to: a &gt;= b\n\nThese conditions can be used in several ways, most commonly in ‘if statements’ and loops.\n\n# if statement:\nif 5 &gt; 2:\n    print('Five is greater than two!')\n\nFive is greater than two!\n\n\n\n\n\nA function is a block of code which only runs when it is called.\nYou can pass data, known as parameters, into a function.\nA function can return data as a result.\n\n# Defining a function:\ndef my_function():\n    print('Hello from a function')\n\n# Calling a function:\nmy_function()\n\nHello from a function\n\n\n\n\n\nA list is a collection which is ordered and changeable.\nA dictionary is a collection which is unordered, changeable and indexed.\n\n# List example:\nmy_list = ['apple', 'banana', 'cherry']\n\n# Dictionary example:\nmy_dict = {'name': 'John', 'age': 36}"
-  },
-  {
-    "objectID": "danl-210-quarto-reticulate.html#variables-and-data-types",
-    "href": "danl-210-quarto-reticulate.html#variables-and-data-types",
-    "title": "Using Python and R Together",
-    "section": "",
-    "text": "In Python, variables can store data of different types without explicitly declaring the type.\nFor example:\n\ninteger_variable = 10\nstring_variable = 'Hello'\nfloat_variable = 10.5\n\nfloat_variable\n\n10.5"
-  },
-  {
-    "objectID": "danl-210-quarto-reticulate.html#control-structures",
-    "href": "danl-210-quarto-reticulate.html#control-structures",
-    "title": "Using Python and R Together",
-    "section": "",
-    "text": "Python supports the usual logical conditions from mathematics:\n\n# Equals: a == b\n# Not Equals: a != b\n# Less than: a &lt; b\n# Less than or equal to: a &lt;= b\n# Greater than: a &gt; b\n# Greater than or equal to: a &gt;= b\n\nThese conditions can be used in several ways, most commonly in ‘if statements’ and loops.\n\n# if statement:\nif 5 &gt; 2:\n    print('Five is greater than two!')\n\nFive is greater than two!"
-  },
-  {
-    "objectID": "danl-210-quarto-reticulate.html#functions",
-    "href": "danl-210-quarto-reticulate.html#functions",
-    "title": "Using Python and R Together",
-    "section": "",
-    "text": "A function is a block of code which only runs when it is called.\nYou can pass data, known as parameters, into a function.\nA function can return data as a result.\n\n# Defining a function:\ndef my_function():\n    print('Hello from a function')\n\n# Calling a function:\nmy_function()\n\nHello from a function"
-  },
-  {
-    "objectID": "danl-210-quarto-reticulate.html#lists-and-dictionaries",
-    "href": "danl-210-quarto-reticulate.html#lists-and-dictionaries",
-    "title": "Using Python and R Together",
-    "section": "",
-    "text": "A list is a collection which is ordered and changeable.\nA dictionary is a collection which is unordered, changeable and indexed.\n\n# List example:\nmy_list = ['apple', 'banana', 'cherry']\n\n# Dictionary example:\nmy_dict = {'name': 'John', 'age': 36}"
-  },
-  {
-    "objectID": "danl-210-quarto-reticulate.html#import-python-libraries",
-    "href": "danl-210-quarto-reticulate.html#import-python-libraries",
-    "title": "Using Python and R Together",
-    "section": "2.1 Import Python libraries",
-    "text": "2.1 Import Python libraries\n\nimport pandas as pd\n\n\noj = pd.read_csv('https://bcdanl.github.io/data/dominick_oj.csv')\n\n\n\nCode!\noj\n\n\n         sales  price      brand  ad\n0       8256.0   3.87  tropicana   0\n1       6144.0   3.87  tropicana   0\n2       3840.0   3.87  tropicana   0\n3       8000.0   3.87  tropicana   0\n4       8896.0   3.87  tropicana   0\n...        ...    ...        ...  ..\n28942   2944.0   2.00  dominicks   0\n28943   4928.0   1.94  dominicks   0\n28944  13440.0   1.59  dominicks   0\n28945  55680.0   1.49  dominicks   0\n28946   7040.0   1.75  dominicks   0\n\n[28947 rows x 4 columns]\n\n\n\noj.describe()\n\n               sales         price            ad\ncount   28947.000000  28947.000000  28947.000000\nmean    17312.213356      2.282488      0.237261\nstd     27477.660437      0.648001      0.425411\nmin        64.000000      0.520000      0.000000\n25%      4864.000000      1.790000      0.000000\n50%      8384.000000      2.170000      0.000000\n75%     17408.000000      2.730000      0.000000\nmax    716416.000100      3.870000      1.000000"
-  },
-  {
-    "objectID": "danl-210-quarto-reticulate.html#python-r-interaction",
-    "href": "danl-210-quarto-reticulate.html#python-r-interaction",
-    "title": "Using Python and R Together",
-    "section": "2.2 Python-R Interaction",
-    "text": "2.2 Python-R Interaction\nBelow is using Python’s DataFrame oj to visualize using R’s ggplot\n\nlibrary(tidyverse)\n\n# Access the Python pandas DataFrame\noj &lt;- py$oj\n\n# Plot using ggplot2\nggplot(oj, aes(x = log(sales), y = log(price), \n               color = brand)) +\n  geom_point(alpha = .25) +\n  geom_smooth(method = lm) +\n  theme_minimal()\n\n\n\n\n\n2.2.1 Interactive DataFrame with R’s DT Package\n\n\n\n\n\n\n\nIn *.ipynb on Google Colab, we can use itables or just Google Colab’s default to print DataFrame.\n\n# !pip install itables\nfrom itables import init_notebook_mode, show\ninit_notebook_mode(all_interactive=False)\n\noj = pd.read_csv('https://bcdanl.github.io/data/dominick_oj.csv')\nshow(oj)"
-  },
-  {
-    "objectID": "danl-210-quarto-py-only.html",
-    "href": "danl-210-quarto-py-only.html",
-    "title": "Python Basics with Pandas",
-    "section": "",
-    "text": "reticulate::use_condaenv(\"C:\\\\Users\\\\Dan\\\\anaconda3\", required = TRUE)"
-  },
-  {
-    "objectID": "danl-210-quarto-py-only.html#variables-and-data-types",
-    "href": "danl-210-quarto-py-only.html#variables-and-data-types",
-    "title": "Python Basics with Pandas",
-    "section": "1.1 Variables and Data Types",
-    "text": "1.1 Variables and Data Types\nIn Python, variables can store data of different types without explicitly declaring the type.\nFor example:\n\n\nCode\ninteger_variable = 10\nstring_variable = 'Hello'\nfloat_variable = 10.5\n\nfloat_variable\n\n\n10.5"
-  },
-  {
-    "objectID": "danl-210-quarto-py-only.html#control-structures",
-    "href": "danl-210-quarto-py-only.html#control-structures",
-    "title": "Python Basics with Pandas",
-    "section": "1.2 Control Structures",
-    "text": "1.2 Control Structures\nPython supports the usual logical conditions from mathematics:\n\n\nCode\n# Equals: a == b\n# Not Equals: a != b\n# Less than: a &lt; b\n# Less than or equal to: a &lt;= b\n# Greater than: a &gt; b\n# Greater than or equal to: a &gt;= b\n\n\nThese conditions can be used in several ways, most commonly in ‘if statements’ and loops.\n\n\nCode\n# if statement:\nif 5 &gt; 2:\n    print('Five is greater than two!')\n\n\nFive is greater than two!"
-  },
-  {
-    "objectID": "danl-210-quarto-py-only.html#functions",
-    "href": "danl-210-quarto-py-only.html#functions",
-    "title": "Python Basics with Pandas",
-    "section": "1.3 Functions",
-    "text": "1.3 Functions\nA function is a block of code which only runs when it is called.\nYou can pass data, known as parameters, into a function.\nA function can return data as a result.\n\n\nCode\n# Defining a function:\ndef my_function():\n    print('Hello from a function')\n\n# Calling a function:\nmy_function()\n\n\nHello from a function"
-  },
-  {
-    "objectID": "danl-210-quarto-py-only.html#lists-and-dictionaries",
-    "href": "danl-210-quarto-py-only.html#lists-and-dictionaries",
-    "title": "Python Basics with Pandas",
-    "section": "1.4 Lists and Dictionaries",
-    "text": "1.4 Lists and Dictionaries\nA list is a collection which is ordered and changeable.\nA dictionary is a collection which is unordered, changeable and indexed.\n\n\nCode\n# List example:\nmy_list = ['apple', 'banana', 'cherry']\n\n# Dictionary example:\nmy_dict = {'name': 'John', 'age': 36}"
-  },
-  {
-    "objectID": "danl-210-quarto-py-only.html#import-python-libraries",
-    "href": "danl-210-quarto-py-only.html#import-python-libraries",
-    "title": "Python Basics with Pandas",
-    "section": "2.1 Import Python libraries",
-    "text": "2.1 Import Python libraries\n\n\nCode\nimport pandas as pd\n\n\n\n\nCode\noj = pd.read_csv('https://bcdanl.github.io/data/dominick_oj.csv')\n\n\n\n\nCode!\noj\n\n\n\n\n\n\n\n\n\nsales\nprice\nbrand\nad\n\n\n\n\n0\n8256.0\n3.87\ntropicana\n0\n\n\n1\n6144.0\n3.87\ntropicana\n0\n\n\n2\n3840.0\n3.87\ntropicana\n0\n\n\n3\n8000.0\n3.87\ntropicana\n0\n\n\n4\n8896.0\n3.87\ntropicana\n0\n\n\n...\n...\n...\n...\n...\n\n\n28942\n2944.0\n2.00\ndominicks\n0\n\n\n28943\n4928.0\n1.94\ndominicks\n0\n\n\n28944\n13440.0\n1.59\ndominicks\n0\n\n\n28945\n55680.0\n1.49\ndominicks\n0\n\n\n28946\n7040.0\n1.75\ndominicks\n0\n\n\n\n\n28947 rows × 4 columns\n\n\n\n\n\nCode\noj.describe()\n\n\n\n\n\n\n\n\n\nsales\nprice\nad\n\n\n\n\ncount\n28947.000000\n28947.000000\n28947.000000\n\n\nmean\n17312.213356\n2.282488\n0.237261\n\n\nstd\n27477.660437\n0.648001\n0.425411\n\n\nmin\n64.000000\n0.520000\n0.000000\n\n\n25%\n4864.000000\n1.790000\n0.000000\n\n\n50%\n8384.000000\n2.170000\n0.000000\n\n\n75%\n17408.000000\n2.730000\n0.000000\n\n\nmax\n716416.000100\n3.870000\n1.000000\n\n\n\n\n\n\n\n\n2.1.1 Interactive DataFrame with itables library\nIn *.ipynb on Google Colab, we can use itables or just Google Colab’s default to print DataFrame.\n\n\nCode\n# !pip install itables\nfrom itables import init_notebook_mode, show\ninit_notebook_mode(all_interactive=False)\n\nshow(oj)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nsales\nprice\nbrand\nad\n\n\n\n\nLoading... (need help?)"
-  },
-  {
-    "objectID": "personal_posts/web_scraping1/wep_scrape_tutorial.html",
-    "href": "personal_posts/web_scraping1/wep_scrape_tutorial.html",
-    "title": "Web Scraping using Beautiful Soup",
-    "section": "",
-    "text": "First you have to import the required modules\n\nfrom bs4 import BeautifulSoup\nimport requests\n\n\n\nHave to set the URL to the website and"
-  },
-  {
-    "objectID": "posts/Py_Basics/HW1_Python_Basics.html",
-    "href": "posts/Py_Basics/HW1_Python_Basics.html",
-    "title": "Daniel Noone",
-    "section": "",
-    "text": "---\ntitle: 'Python Basics'\nauthor: 'Daniel Noone'\ndate: '02-10-2024'\ncategories: [Python]\n---\n\nSyntaxError: invalid syntax (&lt;ipython-input-1-4b089545c646&gt;, line 1)"
-  },
-  {
-    "objectID": "posts/Py_Basics/python_basics_HW1.html",
-    "href": "posts/Py_Basics/python_basics_HW1.html",
-    "title": "Python Basics",
-    "section": "",
-    "text": "1 Introduction\nThis blog post is meant to give a brief introduction of some of the main topics in basic python programming\n\n\n2 Variables & Assignment\n\nIn python programming, variables are just names for values not actual storage places. \nThese values can be singular such as a numeric value of 10, but there can also be multiple values of the same or varying data types \nan equal sign = is used to assign values to their respective variables (or objects)\n\n\n# Single value\nx = 10\n\n# Multiple values\ny = [1,2,3]\n\n#Multiple types\nz = ['a','b','c',1,2,3]\n\n\n\n3 Data Types in Python\nThere are multiple different data types recognized by the python language.\nThe most basic types are as follows:\n\n# Integer, numeric values with no decimals\nx = 10\n\n# Float, numeric values with decimals\ny = 10.99\n\n# String, character values surrounded by '' or \"\"\nz = 'hello, world' #OR \nz = \"hello, world\"\n\n# Boolean, logical values\nx = True\ny = False\n\n# Nothing, no value\nz = None\n\n# List, data container for any data type (even multiple types at once)\nlist_ = [10, 1.55, 'apple', True, False, None]\n\n# Tuple, non mutable data container\ntup = (2, 3 , 4)\n\n# Set\nset_ = {'a', 'b'}\n\n# Dictionary\ndict_ = {'first': 'a', 'second': 'b'}\n\n\n\n4 Operators\nMathematical operations can also be done in python using preset operators:\n\n# Addition\nx = 5 + 5 # x would have value of 10\ny = x + 5 # y would have value of 15\n\n# Subtraction\nx = 5 - 1 # x would have value of 4\ny = x - 2 # y would have value of 2\n\n# Multiplication and Exponents (* for multiplication, ** for exponents)\nx = 5 * 2**2 # x would have value of 20\ny = x**2 * 5 # y would have value of 2000\n\n# Division and Integer Division (if want int type out of operation, use //)\nx = 4/2 # x would have value of 2.0\ny = x/2 # y would have value of 1.0\n\nx = 8//2 # x would have value of 4 (int type not float)\ny = x//2 # y would have value of 2 (again, int not float)\n\n# Can also perform string concatenation\nstr_one = 'hello,'\nstr_two = ' world'\nstr_ = str_one + str_two # Result of summation is concatenation of str_one and str_two \n                          # = 'hello, world'\n\n\n\n5 Conditionals\nCan perform conditional operations in python\n\nIf statements\nIf else\netc…\n\n\n# Can use if and elif and else to formulate conditional operations\n# For example...\n\nname = 'David'\nscore = 99\n\nif name == 'David' and score &gt;= 90:\n  print('Great job, David!')\nelif name != 'David' and score &gt;= 90:\n  print('Great job, stranger!')\nelif name == 'David' and score &lt; 90:\n  print('You failed, David!')\nelif name != 'David' and score &lt; 90:\n  print('You failed, stranger!')\n\nGreat job, David!\n\n\n-&gt; Here the result is 'Great job, David!' since the name is 'David' and the score is 99\n\n\n6 Casting Variables\nCasting is when we explicitly assign a data type to a variable\n\nstr() will convert to string type\nint() will convert to integer type\nfloat() will convert to float type\n\n\nx = 10 # integer type\ny = '20' # string type\nz = 1.55 # float type\n\nx_ = float(x) # makes 10 into float type = 10.0\ny_ = int(y) # makes '20' into int type = 20\nz_ = int(z) # makes 1.55 into int type = 1 (DOES NOT ROUND)\nx_str = str(x) # makes 10 into str type = '10'\n\n\n\n7 Slicing Methods\n\nPython uses indexing to slice data\nThe index starts at 0, not 1\n\n\n\nAs seen in the image, negative values can also be used\nThe syntax is as follows\n\n[:] - will return the whole value\n[start :] - will return from a starting index value until the end\n[: end] - will return from the start until the end index value\n[start : end] - Will return from start value to end value\n[start : end: step] - will return from start to end by a certain step amount\n\n\n\nstring = 'abcdefghij'\n\nstring[:5] # returns 'abcde' (first 5 characters of string)\nstring[5:] # returns 'fghij' (last 5 characters of string)\nstring[0:5:2] # returns 'ace' (first 5 characters, but in steps of 2)\n\nlist_ = ['apple','banana','pear','strawberry','papaya','pineapple']\n\nlist_[:3] # returns ['apple', 'banana', 'pear'] (first 3 elements of list)\nlist_[3:] # returns ['strawberry', 'papaya', 'pineapple'] (last 3 elements of list)\nlist_[0::2] # returns ['apple', 'pear', 'papaya'] (whole list by steps of 2)\n\n['apple', 'pear', 'papaya']\n\n\n\n\n8 Importing Modules, Packages and Libraries\n\nModule - a bunch of related code saved in a file with extension .py\nPackage - directory of a collection of modules\nLibrary - a collection of packages\nimport is called on a module to be able to use it\n\nThen have to call module along with any functions associated\n\n\n\nimport pandas\n# could then use pandas.read_csv() to read a csv\n\n\nimport as is called on a module to give it a name to make things more efficient\n\n\nimport pandas as pd\n# Then could use pd.read_csv() instead of pandas.read_csv()\n\n\nfrom and import is used to load a specific function from a module\n\n\nfrom pandas import read_csv\n# then can just use read_csv() as if it were a base function\n\n\nIn order to install a module, package or library - have to call pip install in terminal or !pip install if on Google Colab\n\n!pip install is also used for Rstudio\n\n\n\n# !pip install itables"
-  },
-  {
-    "objectID": "posts/Py_Basics/python_basics_HW1.html#variables-assignment",
-    "href": "posts/Py_Basics/python_basics_HW1.html#variables-assignment",
-    "title": "Python Basics",
-    "section": "",
-    "text": "In python programming, variables are just names for values not actual storage places. \nThese values can be singular such as a numeric value of 10, but there can also be multiple values of the same or varying data types \nan equal sign = is used to assign values to their respective variables (or objects)\n\n\n# Single value\nx = 10\n\n# Multiple values\ny = [1,2,3]\n\n#Multiple types\nz = ['a','b','c',1,2,3]"
-  },
-  {
-    "objectID": "posts/Py_Basics/python_basics_HW1.html#operators",
-    "href": "posts/Py_Basics/python_basics_HW1.html#operators",
-    "title": "Python Basics",
-    "section": "3.1 Operators",
-    "text": "3.1 Operators\nMathematical operations can also be done in python using preset operators:\n\n# Addition\nx = 5 + 5 # x would have value of 10\ny = x + 5 # y would have value of 15\n\n# Subtraction\nx = 5 - 1 # x would have value of 4\ny = x - 2 # y would have value of 2\n\n# Multiplication and Exponents (* for multiplication, ** for exponents)\nx = 5 * 2**2 # x would have value of 20\ny = x**2 * 5 # y would have value of 2000\n\n# Division and Integer Division (if want int type out of operation, use //)\nx = 4/2 # x would have value of 2.0\ny = x/2 # y would have value of 1.0\n\nx = 8//2 # x would have value of 4 (int type not float)\ny = x//2 # y would have value of 2 (again, int not float)\n\n# Can also perform string concatenation\nstr_one = 'hello,'\nstr_two = ' world'\nstr = str_one + str_two # Result of summation is concatenation of str_one and str_two \n                          # = 'hello, world'"
-  },
-  {
-    "objectID": "posts/Py_Basics/python_basics_HW1.html#conditions",
-    "href": "posts/Py_Basics/python_basics_HW1.html#conditions",
-    "title": "Python Basics",
-    "section": "3.2 Conditions",
-    "text": "3.2 Conditions\nCan perform conditional operations in python * If statements * If else * etc…"
   }
 ]
