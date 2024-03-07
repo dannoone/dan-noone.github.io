@@ -1,0 +1,37 @@
+---
+title: "Spotify HW2"
+author: "Daniel Noone"
+date: "2024-03-05"
+categories: [python, data exploration]
+image: spot.jfif
+
+highlight-style: monokai
+---
+
+```{python}
+import pandas as pd
+spotify = pd.read_csv('https://bcdanl.github.io/data/spotify_all.csv')
+```
+
+# Introduction
+
+```{python}
+spotify.info()
+```
+
+## Description of Variables
+
+  * `pid` - A unique id number for each playlist
+  * `playlist_name` - A name given to each playlist
+  * `pos` - The position of song in the playlist
+  * `artist_name` - Name of the artist of the song
+  * `track_name` - Name of the song
+  * `duration_ms` - The length of the song in miliseconds
+  * `album_name` - Name of album the song is in
+
+# Filtering the Data Set
+```{python}
+
+```
+
+
