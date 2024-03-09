@@ -1,8 +1,14 @@
 [
   {
-    "listing": "/class_projects.html",
+    "listing": "/class_blog.html",
     "items": [
-      "/posts2/DANL200 Project/project.html"
+      "/posts/Spotify_HW2_DANL 210/spotify_hw2_danl210.html",
+      "/posts/Py_Basics/python_basics_HW1.html",
+      "/posts/Spotify_all/Spotify_All.html",
+      "/posts/DANL 200 HW5 - NFL Data/danl200-hw5-noone-daniel.html",
+      "/posts/Beer_Mkts/beer_mkts.html",
+      "/posts/nyc_inspections/NYC_RES_INS.html",
+      "/posts/welcome/index.html"
     ]
   },
   {
@@ -12,16 +18,9 @@
     ]
   },
   {
-    "listing": "/class_blog.html",
+    "listing": "/class_projects.html",
     "items": [
-      "/posts/pandas/Pandas_Basics.html",
-      "/posts/Spotify_HW2_DANL 210/spotify_hw2.html",
-      "/posts/Py_Basics/python_basics_HW1.html",
-      "/posts/Spotify_all/Spotify_All.html",
-      "/posts/DANL 200 HW5 - NFL Data/danl200-hw5-noone-daniel.html",
-      "/posts/Beer_Mkts/beer_mkts.html",
-      "/posts/nyc_inspections/NYC_RES_INS.html",
-      "/posts/welcome/index.html"
+      "/posts2/DANL200 Project/project.html"
     ]
   }
 ]
