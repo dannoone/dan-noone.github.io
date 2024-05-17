@@ -1,5 +1,19 @@
 [
   {
+    "listing": "/class_projects.html",
+    "items": [
+      "/posts2/DANL210 Project/project_210.html",
+      "/posts2/DANL200 Project/project.html"
+    ]
+  },
+  {
+    "listing": "/blog-listing.html",
+    "items": [
+      "/personal_posts/New Post/Cancer_DF_Post.html",
+      "/personal_posts/web_scraping1/wep_scrape_tutorial.html"
+    ]
+  },
+  {
     "listing": "/class_blog.html",
     "items": [
       "/posts/Spotify_HW2_DANL 210/spotify_hw2_danl210.html",
@@ -9,18 +23,6 @@
       "/posts/Beer_Mkts/beer_mkts.html",
       "/posts/nyc_inspections/NYC_RES_INS.html",
       "/posts/welcome/index.html"
-    ]
-  },
-  {
-    "listing": "/blog-listing.html",
-    "items": [
-      "/personal_posts/web_scraping1/wep_scrape_tutorial.html"
-    ]
-  },
-  {
-    "listing": "/class_projects.html",
-    "items": [
-      "/posts2/DANL200 Project/project.html"
     ]
   }
 ]

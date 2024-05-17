@@ -1,0 +1,5332 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>About - Cancer Data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">About</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../class_projects.html" rel="" target="">
+ <span class="menu-text">Class Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog-listing.html" rel="" target="">
+ <span class="menu-text">Personal Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../class_blog.html" rel="" target="">
+ <span class="menu-text">Class Blog Posts</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Cancer Data</h1>
+<p class="subtitle lead">Data found on kaggle.com (<a href="https://www.kaggle.com/datasets/varunraskar/cancer-regression">here</a>)</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="moduleslibs" class="level1">
+<h1>Modules/Libs</h1>
+<div class="cell" data-outputid="63337e98-1cf1-4322-8e9e-d16531867479" data-execution_count="137">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google.colab <span class="im">import</span> data_table</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>data_table.enable_dataframe_formatter()</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>plt.style.available</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="137">
+<pre><code>['Solarize_Light2',
+ '_classic_test_patch',
+ '_mpl-gallery',
+ '_mpl-gallery-nogrid',
+ 'bmh',
+ 'classic',
+ 'dark_background',
+ 'fast',
+ 'fivethirtyeight',
+ 'ggplot',
+ 'grayscale',
+ 'seaborn-v0_8',
+ 'seaborn-v0_8-bright',
+ 'seaborn-v0_8-colorblind',
+ 'seaborn-v0_8-dark',
+ 'seaborn-v0_8-dark-palette',
+ 'seaborn-v0_8-darkgrid',
+ 'seaborn-v0_8-deep',
+ 'seaborn-v0_8-muted',
+ 'seaborn-v0_8-notebook',
+ 'seaborn-v0_8-paper',
+ 'seaborn-v0_8-pastel',
+ 'seaborn-v0_8-poster',
+ 'seaborn-v0_8-talk',
+ 'seaborn-v0_8-ticks',
+ 'seaborn-v0_8-white',
+ 'seaborn-v0_8-whitegrid',
+ 'tableau-colorblind10']</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="138">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'seaborn-v0_8-darkgrid'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="loading-the-data" class="level1">
+<h1>Loading the Data</h1>
+<div class="cell" data-outputid="b7406995-655b-4b84-bc99-e91304a7d319" data-execution_count="50">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>avg_hh_size <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/dan-noone/dan-noone.github.io/main/avg-household-size.csv'</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>avg_hh_size</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="50">
+
+  <div id="df-0de38a53-771b-4090-b76c-c6eccb824e61" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">statefips</th>
+<th data-quarto-table-cell-role="th">countyfips</th>
+<th data-quarto-table-cell-role="th">avghouseholdsize</th>
+<th data-quarto-table-cell-role="th">geography</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>2</td>
+<td>13</td>
+<td>2.43</td>
+<td>Aleutians East Borough, Alaska</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>16</td>
+<td>3.59</td>
+<td>Aleutians West Census Area, Alaska</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2</td>
+<td>20</td>
+<td>2.77</td>
+<td>Anchorage Municipality, Alaska</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>2</td>
+<td>50</td>
+<td>3.86</td>
+<td>Bethel Census Area, Alaska</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>2</td>
+<td>60</td>
+<td>2.50</td>
+<td>Bristol Bay Borough, Alaska</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3215</td>
+<td>56</td>
+<td>37</td>
+<td>2.64</td>
+<td>Sweetwater County, Wyoming</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3216</td>
+<td>56</td>
+<td>39</td>
+<td>2.63</td>
+<td>Teton County, Wyoming</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3217</td>
+<td>56</td>
+<td>41</td>
+<td>2.76</td>
+<td>Uinta County, Wyoming</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3218</td>
+<td>56</td>
+<td>43</td>
+<td>2.34</td>
+<td>Washakie County, Wyoming</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3219</td>
+<td>56</td>
+<td>45</td>
+<td>2.27</td>
+<td>Weston County, Wyoming</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>3220 rows × 4 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-0de38a53-771b-4090-b76c-c6eccb824e61')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-0de38a53-771b-4090-b76c-c6eccb824e61 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-0de38a53-771b-4090-b76c-c6eccb824e61');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-d332ac7e-ae2a-435f-87e7-1006ced5e987">
+  <button class="colab-df-quickchart" onclick="quickchart('df-d332ac7e-ae2a-435f-87e7-1006ced5e987')" title="Suggest charts" style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-d332ac7e-ae2a-435f-87e7-1006ced5e987 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="cell" data-outputid="fcab4608-5ff0-46e8-d2b9-90cb2dc00f55" data-execution_count="51">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>avg_hh_size.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 3220 entries, 0 to 3219
+Data columns (total 4 columns):
+ #   Column            Non-Null Count  Dtype  
+---  ------            --------------  -----  
+ 0   statefips         3220 non-null   int64  
+ 1   countyfips        3220 non-null   int64  
+ 2   avghouseholdsize  3220 non-null   float64
+ 3   geography         3220 non-null   object 
+dtypes: float64(1), int64(2), object(1)
+memory usage: 100.8+ KB</code></pre>
+</div>
+</div>
+<div class="cell" data-outputid="87aad6b6-2bca-4199-d427-4cf7a02fe10a" data-execution_count="52">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>avg_hh_size.describe(include<span class="op">=</span><span class="st">'all'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="52">
+
+  <div id="df-5a007842-e9c5-49cb-ab26-cf295f23f3db" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">statefips</th>
+<th data-quarto-table-cell-role="th">countyfips</th>
+<th data-quarto-table-cell-role="th">avghouseholdsize</th>
+<th data-quarto-table-cell-role="th">geography</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">count</td>
+<td>3220.000000</td>
+<td>3220.000000</td>
+<td>3220.000000</td>
+<td>3220</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">unique</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>3220</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">top</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Aleutians East Borough, Alaska</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">freq</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">mean</td>
+<td>31.290683</td>
+<td>102.922050</td>
+<td>2.540755</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">std</td>
+<td>16.277207</td>
+<td>106.693846</td>
+<td>0.267654</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">min</td>
+<td>1.000000</td>
+<td>1.000000</td>
+<td>1.370000</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">25%</td>
+<td>19.000000</td>
+<td>35.000000</td>
+<td>2.380000</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">50%</td>
+<td>30.000000</td>
+<td>79.000000</td>
+<td>2.510000</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">75%</td>
+<td>46.000000</td>
+<td>133.000000</td>
+<td>2.650000</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">max</td>
+<td>72.000000</td>
+<td>840.000000</td>
+<td>4.730000</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-5a007842-e9c5-49cb-ab26-cf295f23f3db')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-5a007842-e9c5-49cb-ab26-cf295f23f3db button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-5a007842-e9c5-49cb-ab26-cf295f23f3db');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-a16869c2-2127-45e9-bda5-4e3322e97c13">
+  <button class="colab-df-quickchart" onclick="quickchart('df-a16869c2-2127-45e9-bda5-4e3322e97c13')" title="Suggest charts" style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-a16869c2-2127-45e9-bda5-4e3322e97c13 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="cell" data-outputid="42c89813-beef-4970-e700-93272f68ed99" data-execution_count="53">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>avg_hh_size.columns</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable Descriptions</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># statefips: The FIPS code representing the state.</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># countyfips: The FIPS code representing the county or census area within the state.</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># avghouseholdsize: The average household size in the region.</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># geography: The geographical location, typically represented as the county or census area name followed by the state name.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="53">
+<pre><code>Index(['statefips', 'countyfips', 'avghouseholdsize', 'geography'], dtype='object')</code></pre>
+</div>
+</div>
+<div class="cell" data-outputid="279bd790-a8af-493d-fd9c-6ac4b9ab5c31" data-execution_count="74">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>can_reg <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/dan-noone/dan-noone.github.io/main/cancer_reg.csv'</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>can_reg <span class="op">=</span> can_reg[[col <span class="cf">for</span> col <span class="kw">in</span> can_reg.columns <span class="cf">if</span> col <span class="op">!=</span> <span class="st">'geography'</span>] <span class="op">+</span> [<span class="st">'geography'</span>]] <span class="co"># To move geography var to end to be able to view easier</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>can_reg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Warning: Total number of columns (33) exceeds max_columns (20). Falling back to pandas display.</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="74">
+
+  <div id="df-79a8a04e-d00c-4579-a469-7bfc31dc5a61" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">avganncount</th>
+<th data-quarto-table-cell-role="th">avgdeathsperyear</th>
+<th data-quarto-table-cell-role="th">target_deathrate</th>
+<th data-quarto-table-cell-role="th">incidencerate</th>
+<th data-quarto-table-cell-role="th">medincome</th>
+<th data-quarto-table-cell-role="th">popest2015</th>
+<th data-quarto-table-cell-role="th">povertypercent</th>
+<th data-quarto-table-cell-role="th">studypercap</th>
+<th data-quarto-table-cell-role="th">binnedinc</th>
+<th data-quarto-table-cell-role="th">medianage</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">pctempprivcoverage</th>
+<th data-quarto-table-cell-role="th">pctpubliccoverage</th>
+<th data-quarto-table-cell-role="th">pctpubliccoveragealone</th>
+<th data-quarto-table-cell-role="th">pctwhite</th>
+<th data-quarto-table-cell-role="th">pctblack</th>
+<th data-quarto-table-cell-role="th">pctasian</th>
+<th data-quarto-table-cell-role="th">pctotherrace</th>
+<th data-quarto-table-cell-role="th">pctmarriedhouseholds</th>
+<th data-quarto-table-cell-role="th">birthrate</th>
+<th data-quarto-table-cell-role="th">geography</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1397.000000</td>
+<td>469</td>
+<td>164.9</td>
+<td>489.800000</td>
+<td>61898</td>
+<td>260131</td>
+<td>11.2</td>
+<td>499.748204</td>
+<td>(61494.5, 125635]</td>
+<td>39.3</td>
+<td>...</td>
+<td>41.6</td>
+<td>32.9</td>
+<td>14.0</td>
+<td>81.780529</td>
+<td>2.594728</td>
+<td>4.821857</td>
+<td>1.843479</td>
+<td>52.856076</td>
+<td>6.118831</td>
+<td>Kitsap County, Washington</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>173.000000</td>
+<td>70</td>
+<td>161.3</td>
+<td>411.600000</td>
+<td>48127</td>
+<td>43269</td>
+<td>18.6</td>
+<td>23.111234</td>
+<td>(48021.6, 51046.4]</td>
+<td>33.0</td>
+<td>...</td>
+<td>43.6</td>
+<td>31.1</td>
+<td>15.3</td>
+<td>89.228509</td>
+<td>0.969102</td>
+<td>2.246233</td>
+<td>3.741352</td>
+<td>45.372500</td>
+<td>4.333096</td>
+<td>Kittitas County, Washington</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>102.000000</td>
+<td>50</td>
+<td>174.7</td>
+<td>349.700000</td>
+<td>49348</td>
+<td>21026</td>
+<td>14.6</td>
+<td>47.560164</td>
+<td>(48021.6, 51046.4]</td>
+<td>45.0</td>
+<td>...</td>
+<td>34.9</td>
+<td>42.1</td>
+<td>21.1</td>
+<td>90.922190</td>
+<td>0.739673</td>
+<td>0.465898</td>
+<td>2.747358</td>
+<td>54.444868</td>
+<td>3.729488</td>
+<td>Klickitat County, Washington</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>427.000000</td>
+<td>202</td>
+<td>194.8</td>
+<td>430.400000</td>
+<td>44243</td>
+<td>75882</td>
+<td>17.1</td>
+<td>342.637253</td>
+<td>(42724.4, 45201]</td>
+<td>42.8</td>
+<td>...</td>
+<td>35.0</td>
+<td>45.3</td>
+<td>25.0</td>
+<td>91.744686</td>
+<td>0.782626</td>
+<td>1.161359</td>
+<td>1.362643</td>
+<td>51.021514</td>
+<td>4.603841</td>
+<td>Lewis County, Washington</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>57.000000</td>
+<td>26</td>
+<td>144.4</td>
+<td>350.100000</td>
+<td>49955</td>
+<td>10321</td>
+<td>12.5</td>
+<td>0.000000</td>
+<td>(48021.6, 51046.4]</td>
+<td>48.3</td>
+<td>...</td>
+<td>35.1</td>
+<td>44.0</td>
+<td>22.7</td>
+<td>94.104024</td>
+<td>0.270192</td>
+<td>0.665830</td>
+<td>0.492135</td>
+<td>54.027460</td>
+<td>6.796657</td>
+<td>Lincoln County, Washington</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3042</td>
+<td>1962.667684</td>
+<td>15</td>
+<td>149.6</td>
+<td>453.549422</td>
+<td>46961</td>
+<td>6343</td>
+<td>12.4</td>
+<td>0.000000</td>
+<td>(45201, 48021.6]</td>
+<td>44.2</td>
+<td>...</td>
+<td>44.6</td>
+<td>31.7</td>
+<td>13.2</td>
+<td>90.280811</td>
+<td>3.837754</td>
+<td>0.327613</td>
+<td>1.700468</td>
+<td>51.063830</td>
+<td>7.773512</td>
+<td>Ellsworth County, Kansas</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3043</td>
+<td>1962.667684</td>
+<td>43</td>
+<td>150.1</td>
+<td>453.549422</td>
+<td>48609</td>
+<td>37118</td>
+<td>18.8</td>
+<td>377.175494</td>
+<td>(48021.6, 51046.4]</td>
+<td>30.4</td>
+<td>...</td>
+<td>48.6</td>
+<td>28.8</td>
+<td>17.7</td>
+<td>75.706245</td>
+<td>2.326771</td>
+<td>4.044920</td>
+<td>14.130288</td>
+<td>52.007937</td>
+<td>8.186470</td>
+<td>Finney County, Kansas</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3044</td>
+<td>1962.667684</td>
+<td>46</td>
+<td>153.9</td>
+<td>453.549422</td>
+<td>51144</td>
+<td>34536</td>
+<td>15.0</td>
+<td>1968.959926</td>
+<td>(51046.4, 54545.6]</td>
+<td>30.9</td>
+<td>...</td>
+<td>47.8</td>
+<td>26.6</td>
+<td>16.8</td>
+<td>87.961629</td>
+<td>2.313188</td>
+<td>1.316472</td>
+<td>5.680705</td>
+<td>55.153949</td>
+<td>7.809192</td>
+<td>Ford County, Kansas</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3045</td>
+<td>1962.667684</td>
+<td>52</td>
+<td>175.0</td>
+<td>453.549422</td>
+<td>50745</td>
+<td>25609</td>
+<td>13.3</td>
+<td>0.000000</td>
+<td>(48021.6, 51046.4]</td>
+<td>39.0</td>
+<td>...</td>
+<td>49.6</td>
+<td>29.5</td>
+<td>14.0</td>
+<td>92.905681</td>
+<td>1.176562</td>
+<td>0.244632</td>
+<td>2.131790</td>
+<td>58.484232</td>
+<td>7.582938</td>
+<td>Franklin County, Kansas</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3046</td>
+<td>1962.667684</td>
+<td>48</td>
+<td>213.6</td>
+<td>453.549422</td>
+<td>41193</td>
+<td>37030</td>
+<td>13.9</td>
+<td>0.000000</td>
+<td>(40362.7, 42724.4]</td>
+<td>26.2</td>
+<td>...</td>
+<td>22.9</td>
+<td>25.1</td>
+<td>12.6</td>
+<td>70.098132</td>
+<td>16.590100</td>
+<td>3.177753</td>
+<td>1.356457</td>
+<td>56.040242</td>
+<td>8.981723</td>
+<td>Geary County, Kansas</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>3047 rows × 33 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-79a8a04e-d00c-4579-a469-7bfc31dc5a61')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-79a8a04e-d00c-4579-a469-7bfc31dc5a61 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-79a8a04e-d00c-4579-a469-7bfc31dc5a61');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-75b7a880-3f1d-4fec-b7b6-8011f84a6f95">
+  <button class="colab-df-quickchart" onclick="quickchart('df-75b7a880-3f1d-4fec-b7b6-8011f84a6f95')" title="Suggest charts" style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-75b7a880-3f1d-4fec-b7b6-8011f84a6f95 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="cell" data-outputid="b363a378-cd71-4275-8696-041f65d572fd" data-execution_count="55">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>can_reg.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 3047 entries, 0 to 3046
+Data columns (total 33 columns):
+ #   Column                   Non-Null Count  Dtype  
+---  ------                   --------------  -----  
+ 0   avganncount              3047 non-null   float64
+ 1   avgdeathsperyear         3047 non-null   int64  
+ 2   target_deathrate         3047 non-null   float64
+ 3   incidencerate            3047 non-null   float64
+ 4   medincome                3047 non-null   int64  
+ 5   popest2015               3047 non-null   int64  
+ 6   povertypercent           3047 non-null   float64
+ 7   studypercap              3047 non-null   float64
+ 8   binnedinc                3047 non-null   object 
+ 9   medianage                3047 non-null   float64
+ 10  medianagemale            3047 non-null   float64
+ 11  medianagefemale          3047 non-null   float64
+ 12  percentmarried           3047 non-null   float64
+ 13  pctnohs18_24             3047 non-null   float64
+ 14  pcths18_24               3047 non-null   float64
+ 15  pctsomecol18_24          762 non-null    float64
+ 16  pctbachdeg18_24          3047 non-null   float64
+ 17  pcths25_over             3047 non-null   float64
+ 18  pctbachdeg25_over        3047 non-null   float64
+ 19  pctemployed16_over       2895 non-null   float64
+ 20  pctunemployed16_over     3047 non-null   float64
+ 21  pctprivatecoverage       3047 non-null   float64
+ 22  pctprivatecoveragealone  2438 non-null   float64
+ 23  pctempprivcoverage       3047 non-null   float64
+ 24  pctpubliccoverage        3047 non-null   float64
+ 25  pctpubliccoveragealone   3047 non-null   float64
+ 26  pctwhite                 3047 non-null   float64
+ 27  pctblack                 3047 non-null   float64
+ 28  pctasian                 3047 non-null   float64
+ 29  pctotherrace             3047 non-null   float64
+ 30  pctmarriedhouseholds     3047 non-null   float64
+ 31  birthrate                3047 non-null   float64
+ 32  geography                3047 non-null   object 
+dtypes: float64(28), int64(3), object(2)
+memory usage: 785.7+ KB</code></pre>
+</div>
+</div>
+<div class="cell" data-outputid="3098fb76-73fd-4315-b779-5e136cc3f023" data-execution_count="56">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>can_reg.describe(include <span class="op">=</span> <span class="st">'all'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Warning: Total number of columns (33) exceeds max_columns (20). Falling back to pandas display.</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="56">
+
+  <div id="df-7561f5f9-4d30-48db-a5c5-0237fb062d19" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">avganncount</th>
+<th data-quarto-table-cell-role="th">avgdeathsperyear</th>
+<th data-quarto-table-cell-role="th">target_deathrate</th>
+<th data-quarto-table-cell-role="th">incidencerate</th>
+<th data-quarto-table-cell-role="th">medincome</th>
+<th data-quarto-table-cell-role="th">popest2015</th>
+<th data-quarto-table-cell-role="th">povertypercent</th>
+<th data-quarto-table-cell-role="th">studypercap</th>
+<th data-quarto-table-cell-role="th">binnedinc</th>
+<th data-quarto-table-cell-role="th">medianage</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">pctempprivcoverage</th>
+<th data-quarto-table-cell-role="th">pctpubliccoverage</th>
+<th data-quarto-table-cell-role="th">pctpubliccoveragealone</th>
+<th data-quarto-table-cell-role="th">pctwhite</th>
+<th data-quarto-table-cell-role="th">pctblack</th>
+<th data-quarto-table-cell-role="th">pctasian</th>
+<th data-quarto-table-cell-role="th">pctotherrace</th>
+<th data-quarto-table-cell-role="th">pctmarriedhouseholds</th>
+<th data-quarto-table-cell-role="th">birthrate</th>
+<th data-quarto-table-cell-role="th">geography</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">count</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3.047000e+03</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047</td>
+<td>3047.000000</td>
+<td>...</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">unique</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>10</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>3047</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">top</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>(54545.6, 61494.5]</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Kitsap County, Washington</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">freq</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>306</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">mean</td>
+<td>606.338544</td>
+<td>185.965868</td>
+<td>178.664063</td>
+<td>448.268586</td>
+<td>47063.281917</td>
+<td>1.026374e+05</td>
+<td>16.878175</td>
+<td>155.399415</td>
+<td>NaN</td>
+<td>45.272333</td>
+<td>...</td>
+<td>41.196324</td>
+<td>36.252642</td>
+<td>19.240072</td>
+<td>83.645286</td>
+<td>9.107978</td>
+<td>1.253965</td>
+<td>1.983523</td>
+<td>51.243872</td>
+<td>5.640306</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">std</td>
+<td>1416.356223</td>
+<td>504.134286</td>
+<td>27.751511</td>
+<td>54.560733</td>
+<td>12040.090836</td>
+<td>3.290592e+05</td>
+<td>6.409087</td>
+<td>529.628366</td>
+<td>NaN</td>
+<td>45.304480</td>
+<td>...</td>
+<td>9.447687</td>
+<td>7.841741</td>
+<td>6.113041</td>
+<td>16.380025</td>
+<td>14.534538</td>
+<td>2.610276</td>
+<td>3.517710</td>
+<td>6.572814</td>
+<td>1.985816</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">min</td>
+<td>6.000000</td>
+<td>3.000000</td>
+<td>59.700000</td>
+<td>201.300000</td>
+<td>22640.000000</td>
+<td>8.270000e+02</td>
+<td>3.200000</td>
+<td>0.000000</td>
+<td>NaN</td>
+<td>22.300000</td>
+<td>...</td>
+<td>13.500000</td>
+<td>11.200000</td>
+<td>2.600000</td>
+<td>10.199155</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>22.992490</td>
+<td>0.000000</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">25%</td>
+<td>76.000000</td>
+<td>28.000000</td>
+<td>161.200000</td>
+<td>420.300000</td>
+<td>38882.500000</td>
+<td>1.168400e+04</td>
+<td>12.150000</td>
+<td>0.000000</td>
+<td>NaN</td>
+<td>37.700000</td>
+<td>...</td>
+<td>34.500000</td>
+<td>30.900000</td>
+<td>14.850000</td>
+<td>77.296180</td>
+<td>0.620675</td>
+<td>0.254199</td>
+<td>0.295172</td>
+<td>47.763063</td>
+<td>4.521419</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">50%</td>
+<td>171.000000</td>
+<td>61.000000</td>
+<td>178.100000</td>
+<td>453.549422</td>
+<td>45207.000000</td>
+<td>2.664300e+04</td>
+<td>15.900000</td>
+<td>0.000000</td>
+<td>NaN</td>
+<td>41.000000</td>
+<td>...</td>
+<td>41.100000</td>
+<td>36.300000</td>
+<td>18.800000</td>
+<td>90.059774</td>
+<td>2.247576</td>
+<td>0.549812</td>
+<td>0.826185</td>
+<td>51.669941</td>
+<td>5.381478</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">75%</td>
+<td>518.000000</td>
+<td>149.000000</td>
+<td>195.200000</td>
+<td>480.850000</td>
+<td>52492.000000</td>
+<td>6.867100e+04</td>
+<td>20.400000</td>
+<td>83.650776</td>
+<td>NaN</td>
+<td>44.000000</td>
+<td>...</td>
+<td>47.700000</td>
+<td>41.550000</td>
+<td>23.100000</td>
+<td>95.451693</td>
+<td>10.509732</td>
+<td>1.221037</td>
+<td>2.177960</td>
+<td>55.395132</td>
+<td>6.493677</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">max</td>
+<td>38150.000000</td>
+<td>14010.000000</td>
+<td>362.800000</td>
+<td>1206.900000</td>
+<td>125635.000000</td>
+<td>1.017029e+07</td>
+<td>47.400000</td>
+<td>9762.308998</td>
+<td>NaN</td>
+<td>624.000000</td>
+<td>...</td>
+<td>70.700000</td>
+<td>65.100000</td>
+<td>46.600000</td>
+<td>100.000000</td>
+<td>85.947799</td>
+<td>42.619425</td>
+<td>41.930251</td>
+<td>78.075397</td>
+<td>21.326165</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>11 rows × 33 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-7561f5f9-4d30-48db-a5c5-0237fb062d19')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-7561f5f9-4d30-48db-a5c5-0237fb062d19 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-7561f5f9-4d30-48db-a5c5-0237fb062d19');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-500fb775-2a76-435b-8c02-020bb654c7b4">
+  <button class="colab-df-quickchart" onclick="quickchart('df-500fb775-2a76-435b-8c02-020bb654c7b4')" title="Suggest charts" style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-500fb775-2a76-435b-8c02-020bb654c7b4 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="cell" data-outputid="51336fb1-2ef2-4aed-d0fe-f2fff8a3d7af" data-execution_count="57">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>can_reg.columns</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable Descriptions</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># avganncount: Average number of cancer cases diagnosed annually.</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># avgdeathsperyear: Average number of deaths due to cancer per year.</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># target_deathrate: Target death rate due to cancer.</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># incidencerate: Incidence rate of cancer.</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># medincome: Median income in the region.</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># popest2015: Estimated population in 2015.</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># povertypercent: Percentage of population below the poverty line.</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># studypercap: Per capita number of cancer-related clinical trials conducted.</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># binnedinc: Binned median income.</span></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># medianage: Median age in the region.</span></span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># pctprivatecoveragealone: Percentage of population covered by private health insurance alone.</span></span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># pctempprivcoverage: Percentage of population covered by employee-provided private health insurance.</span></span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># pctpubliccoverage: Percentage of population covered by public health insurance.</span></span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># pctpubliccoveragealone: Percentage of population covered by public health insurance only.</span></span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># pctwhite: Percentage of White population.</span></span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># pctblack: Percentage of Black population.</span></span>
+<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a>    <span class="co"># pctasian: Percentage of Asian population.</span></span>
+<span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a>    <span class="co"># pctotherrace: Percentage of population belonging to other races.</span></span>
+<span id="cb16-39"><a href="#cb16-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-40"><a href="#cb16-40" aria-hidden="true" tabindex="-1"></a>    <span class="co"># pctmarriedhouseholds: Percentage of married households.</span></span>
+<span id="cb16-41"><a href="#cb16-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-42"><a href="#cb16-42" aria-hidden="true" tabindex="-1"></a>    <span class="co"># birthrate: Birth rate in the region.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="57">
+<pre><code>Index(['avganncount', 'avgdeathsperyear', 'target_deathrate', 'incidencerate',
+       'medincome', 'popest2015', 'povertypercent', 'studypercap', 'binnedinc',
+       'medianage', 'medianagemale', 'medianagefemale', 'percentmarried',
+       'pctnohs18_24', 'pcths18_24', 'pctsomecol18_24', 'pctbachdeg18_24',
+       'pcths25_over', 'pctbachdeg25_over', 'pctemployed16_over',
+       'pctunemployed16_over', 'pctprivatecoverage', 'pctprivatecoveragealone',
+       'pctempprivcoverage', 'pctpubliccoverage', 'pctpubliccoveragealone',
+       'pctwhite', 'pctblack', 'pctasian', 'pctotherrace',
+       'pctmarriedhouseholds', 'birthrate', 'geography'],
+      dtype='object')</code></pre>
+</div>
+</div>
+</section>
+<section id="data-transformation-wrangling" class="level1">
+<h1>Data Transformation / Wrangling</h1>
+<section id="normalizing-the-geographic-locations" class="level2">
+<h2 class="anchored" data-anchor-id="normalizing-the-geographic-locations">Normalizing the geographic locations</h2>
+<div class="cell" data-execution_count="58">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Below I normalized the geographic locations since there are a number of them that are in avg_hh_size, but not in can_reg</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># So below I have filtered the avg_hh_size df to only include those in the can_reg df, so that any analyses are going off of the same number of observations</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-outputid="691443d5-34c6-4db5-db1c-bdcfe6bb85e0" data-execution_count="59">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>can_reg_locs <span class="op">=</span> can_reg[<span class="st">'geography'</span>]</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>can_reg_locs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="59">
+<pre><code>0          Kitsap County, Washington
+1        Kittitas County, Washington
+2       Klickitat County, Washington
+3           Lewis County, Washington
+4         Lincoln County, Washington
+                    ...             
+3042        Ellsworth County, Kansas
+3043           Finney County, Kansas
+3044             Ford County, Kansas
+3045         Franklin County, Kansas
+3046            Geary County, Kansas
+Name: geography, Length: 3047, dtype: object</code></pre>
+</div>
+</div>
+<div class="cell" data-outputid="bb8d7943-5be2-412b-ca82-457e98f6e7ff" data-execution_count="60">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>avg_hh_size[<span class="st">'geography'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="60">
+<pre><code>0           Aleutians East Borough, Alaska
+1       Aleutians West Census Area, Alaska
+2           Anchorage Municipality, Alaska
+3               Bethel Census Area, Alaska
+4              Bristol Bay Borough, Alaska
+                       ...                
+3215            Sweetwater County, Wyoming
+3216                 Teton County, Wyoming
+3217                 Uinta County, Wyoming
+3218              Washakie County, Wyoming
+3219                Weston County, Wyoming
+Name: geography, Length: 3220, dtype: object</code></pre>
+</div>
+</div>
+<div class="cell" data-outputid="c034240a-1602-471e-c0cb-f641cfcc9305" data-execution_count="61">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>geo_cond <span class="op">=</span> avg_hh_size[<span class="st">'geography'</span>].isin(can_reg_locs)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>avg_hh_size_adj <span class="op">=</span> avg_hh_size[geo_cond]</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>avg_hh_size_adj[<span class="st">'geography'</span>].nunique() <span class="co"># Now have done this to normalize</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="61">
+<pre><code>3047</code></pre>
+</div>
+</div>
+</section>
+<section id="splitting-the-geography-variable-in-each-df" class="level2">
+<h2 class="anchored" data-anchor-id="splitting-the-geography-variable-in-each-df">Splitting the geography variable in each df</h2>
+<div class="cell" data-execution_count="62">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Within each df there is a variable `geography`, which is a combination of county and state, separated by a comma</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># If I want to do any county/state level analyses independently, this format is not great</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># So I have split this var in each df to create two separate `state` and `county` variables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-outputid="1a3b9b43-a239-46c8-8e24-ef97cf23c00d" data-execution_count="63">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>avg_hh_size_adj <span class="op">=</span> (</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    avg_hh_size_adj</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    .assign(</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>        county <span class="op">=</span> <span class="kw">lambda</span> x: x[<span class="st">'geography'</span>].<span class="bu">str</span>.split(<span class="st">', '</span>).<span class="bu">str</span>[<span class="dv">0</span>],</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>        state <span class="op">=</span> <span class="kw">lambda</span> x: x[<span class="st">'geography'</span>].<span class="bu">str</span>.split(<span class="st">', '</span>).<span class="bu">str</span>[<span class="dv">1</span>]</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    .drop(columns <span class="op">=</span> <span class="st">'geography'</span>)</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>avg_hh_size_adj.sort_values([<span class="st">'state'</span>,<span class="st">'county'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="63">
+
+  <div id="df-d14d21f6-50c7-4650-8118-b3d6fad23948" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">statefips</th>
+<th data-quarto-table-cell-role="th">countyfips</th>
+<th data-quarto-table-cell-role="th">avghouseholdsize</th>
+<th data-quarto-table-cell-role="th">county</th>
+<th data-quarto-table-cell-role="th">state</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">29</td>
+<td>1</td>
+<td>1</td>
+<td>2.68</td>
+<td>Autauga County</td>
+<td>Alabama</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">30</td>
+<td>1</td>
+<td>3</td>
+<td>2.60</td>
+<td>Baldwin County</td>
+<td>Alabama</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">31</td>
+<td>1</td>
+<td>5</td>
+<td>2.61</td>
+<td>Barbour County</td>
+<td>Alabama</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">32</td>
+<td>1</td>
+<td>7</td>
+<td>2.95</td>
+<td>Bibb County</td>
+<td>Alabama</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">33</td>
+<td>1</td>
+<td>9</td>
+<td>2.74</td>
+<td>Blount County</td>
+<td>Alabama</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3215</td>
+<td>56</td>
+<td>37</td>
+<td>2.64</td>
+<td>Sweetwater County</td>
+<td>Wyoming</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3216</td>
+<td>56</td>
+<td>39</td>
+<td>2.63</td>
+<td>Teton County</td>
+<td>Wyoming</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3217</td>
+<td>56</td>
+<td>41</td>
+<td>2.76</td>
+<td>Uinta County</td>
+<td>Wyoming</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3218</td>
+<td>56</td>
+<td>43</td>
+<td>2.34</td>
+<td>Washakie County</td>
+<td>Wyoming</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3219</td>
+<td>56</td>
+<td>45</td>
+<td>2.27</td>
+<td>Weston County</td>
+<td>Wyoming</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>3047 rows × 5 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-d14d21f6-50c7-4650-8118-b3d6fad23948')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-d14d21f6-50c7-4650-8118-b3d6fad23948 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-d14d21f6-50c7-4650-8118-b3d6fad23948');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-7ea684b6-f4ab-405d-b214-7545bdd4bd60">
+  <button class="colab-df-quickchart" onclick="quickchart('df-7ea684b6-f4ab-405d-b214-7545bdd4bd60')" title="Suggest charts" style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-7ea684b6-f4ab-405d-b214-7545bdd4bd60 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="cell" data-outputid="8c59fa55-19d3-473d-e5b9-bf0a45a21657" data-execution_count="64">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>can_reg_adj <span class="op">=</span> (</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    can_reg</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    .assign(</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>        county <span class="op">=</span> <span class="kw">lambda</span> x: x[<span class="st">'geography'</span>].<span class="bu">str</span>.split(<span class="st">', '</span>).<span class="bu">str</span>[<span class="dv">0</span>],</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>        state <span class="op">=</span> <span class="kw">lambda</span> x: x[<span class="st">'geography'</span>].<span class="bu">str</span>.split(<span class="st">', '</span>).<span class="bu">str</span>[<span class="dv">1</span>] <span class="co"># Had an issue with merging at first since I failed to put a space after the comma here as I did in the adj above.</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    .drop(columns <span class="op">=</span> <span class="st">'geography'</span>)</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>can_reg_adj.sort_values([<span class="st">'state'</span>,<span class="st">'county'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Warning: Total number of columns (34) exceeds max_columns (20). Falling back to pandas display.</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="64">
+
+  <div id="df-dfc9782c-2d46-43de-8a12-d5c913af5f68" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">avganncount</th>
+<th data-quarto-table-cell-role="th">avgdeathsperyear</th>
+<th data-quarto-table-cell-role="th">target_deathrate</th>
+<th data-quarto-table-cell-role="th">incidencerate</th>
+<th data-quarto-table-cell-role="th">medincome</th>
+<th data-quarto-table-cell-role="th">popest2015</th>
+<th data-quarto-table-cell-role="th">povertypercent</th>
+<th data-quarto-table-cell-role="th">studypercap</th>
+<th data-quarto-table-cell-role="th">binnedinc</th>
+<th data-quarto-table-cell-role="th">medianage</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">pctpubliccoverage</th>
+<th data-quarto-table-cell-role="th">pctpubliccoveragealone</th>
+<th data-quarto-table-cell-role="th">pctwhite</th>
+<th data-quarto-table-cell-role="th">pctblack</th>
+<th data-quarto-table-cell-role="th">pctasian</th>
+<th data-quarto-table-cell-role="th">pctotherrace</th>
+<th data-quarto-table-cell-role="th">pctmarriedhouseholds</th>
+<th data-quarto-table-cell-role="th">birthrate</th>
+<th data-quarto-table-cell-role="th">county</th>
+<th data-quarto-table-cell-role="th">state</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">500</td>
+<td>266.0</td>
+<td>99</td>
+<td>178.3</td>
+<td>475.0</td>
+<td>54366</td>
+<td>55347</td>
+<td>13.1</td>
+<td>0.000000</td>
+<td>(51046.4, 54545.6]</td>
+<td>37.7</td>
+<td>...</td>
+<td>30.0</td>
+<td>14.3</td>
+<td>77.399902</td>
+<td>18.679488</td>
+<td>0.967023</td>
+<td>0.925373</td>
+<td>56.069818</td>
+<td>5.872131</td>
+<td>Autauga County</td>
+<td>Alabama</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">501</td>
+<td>1072.0</td>
+<td>424</td>
+<td>174.3</td>
+<td>454.6</td>
+<td>49626</td>
+<td>203709</td>
+<td>13.0</td>
+<td>14.726890</td>
+<td>(48021.6, 51046.4]</td>
+<td>42.2</td>
+<td>...</td>
+<td>33.7</td>
+<td>17.5</td>
+<td>86.431496</td>
+<td>9.601734</td>
+<td>0.669841</td>
+<td>0.958380</td>
+<td>53.935010</td>
+<td>5.381478</td>
+<td>Baldwin County</td>
+<td>Alabama</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1007</td>
+<td>155.0</td>
+<td>62</td>
+<td>192.7</td>
+<td>477.5</td>
+<td>34971</td>
+<td>26489</td>
+<td>25.4</td>
+<td>0.000000</td>
+<td>(34218.1, 37413.8]</td>
+<td>38.8</td>
+<td>...</td>
+<td>46.6</td>
+<td>26.5</td>
+<td>47.363731</td>
+<td>46.765929</td>
+<td>0.905985</td>
+<td>3.445715</td>
+<td>43.276946</td>
+<td>6.266977</td>
+<td>Barbour County</td>
+<td>Alabama</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1416</td>
+<td>125.0</td>
+<td>53</td>
+<td>212.4</td>
+<td>494.6</td>
+<td>39546</td>
+<td>22583</td>
+<td>18.1</td>
+<td>929.903024</td>
+<td>(37413.8, 40362.7]</td>
+<td>38.9</td>
+<td>...</td>
+<td>39.4</td>
+<td>22.7</td>
+<td>76.654574</td>
+<td>21.438683</td>
+<td>0.092904</td>
+<td>0.030968</td>
+<td>57.335990</td>
+<td>4.179861</td>
+<td>Bibb County</td>
+<td>Alabama</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2684</td>
+<td>291.0</td>
+<td>120</td>
+<td>175.4</td>
+<td>429.9</td>
+<td>45567</td>
+<td>57673</td>
+<td>17.5</td>
+<td>0.000000</td>
+<td>(45201, 48021.6]</td>
+<td>40.7</td>
+<td>...</td>
+<td>35.9</td>
+<td>19.0</td>
+<td>95.097903</td>
+<td>1.531797</td>
+<td>0.143823</td>
+<td>0.961705</td>
+<td>59.439854</td>
+<td>6.894123</td>
+<td>Blount County</td>
+<td>Alabama</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1189</td>
+<td>155.0</td>
+<td>49</td>
+<td>141.1</td>
+<td>403.5</td>
+<td>72604</td>
+<td>44626</td>
+<td>9.8</td>
+<td>0.000000</td>
+<td>(61494.5, 125635]</td>
+<td>33.6</td>
+<td>...</td>
+<td>21.9</td>
+<td>11.3</td>
+<td>92.133476</td>
+<td>0.866613</td>
+<td>0.857679</td>
+<td>1.684088</td>
+<td>54.385755</td>
+<td>8.929776</td>
+<td>Sweetwater County</td>
+<td>Wyoming</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1190</td>
+<td>83.0</td>
+<td>23</td>
+<td>136.9</td>
+<td>402.7</td>
+<td>75348</td>
+<td>23125</td>
+<td>7.7</td>
+<td>0.000000</td>
+<td>(61494.5, 125635]</td>
+<td>38.0</td>
+<td>...</td>
+<td>14.4</td>
+<td>5.5</td>
+<td>93.160325</td>
+<td>0.322711</td>
+<td>1.900408</td>
+<td>2.783380</td>
+<td>50.580188</td>
+<td>1.745232</td>
+<td>Teton County</td>
+<td>Wyoming</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1191</td>
+<td>68.0</td>
+<td>24</td>
+<td>132.8</td>
+<td>359.3</td>
+<td>56800</td>
+<td>20822</td>
+<td>10.0</td>
+<td>0.000000</td>
+<td>(54545.6, 61494.5]</td>
+<td>34.6</td>
+<td>...</td>
+<td>24.4</td>
+<td>13.0</td>
+<td>94.233158</td>
+<td>0.195891</td>
+<td>0.119446</td>
+<td>1.538462</td>
+<td>57.451346</td>
+<td>6.918372</td>
+<td>Uinta County</td>
+<td>Wyoming</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1192</td>
+<td>50.0</td>
+<td>21</td>
+<td>182.3</td>
+<td>448.0</td>
+<td>50802</td>
+<td>8328</td>
+<td>12.6</td>
+<td>0.000000</td>
+<td>(48021.6, 51046.4]</td>
+<td>43.4</td>
+<td>...</td>
+<td>32.2</td>
+<td>13.9</td>
+<td>91.238095</td>
+<td>0.678571</td>
+<td>0.166667</td>
+<td>4.142857</td>
+<td>51.708428</td>
+<td>5.370370</td>
+<td>Washakie County</td>
+<td>Wyoming</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1193</td>
+<td>37.0</td>
+<td>17</td>
+<td>182.6</td>
+<td>397.1</td>
+<td>55520</td>
+<td>7234</td>
+<td>13.2</td>
+<td>0.000000</td>
+<td>(54545.6, 61494.5]</td>
+<td>42.1</td>
+<td>...</td>
+<td>29.4</td>
+<td>12.4</td>
+<td>94.728747</td>
+<td>0.209732</td>
+<td>0.531320</td>
+<td>0.069911</td>
+<td>52.344273</td>
+<td>17.401046</td>
+<td>Weston County</td>
+<td>Wyoming</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>3047 rows × 34 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-dfc9782c-2d46-43de-8a12-d5c913af5f68')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-dfc9782c-2d46-43de-8a12-d5c913af5f68 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-dfc9782c-2d46-43de-8a12-d5c913af5f68');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-ddca917a-aa0e-4e48-b72f-636e3c1c1faa">
+  <button class="colab-df-quickchart" onclick="quickchart('df-ddca917a-aa0e-4e48-b72f-636e3c1c1faa')" title="Suggest charts" style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-ddca917a-aa0e-4e48-b72f-636e3c1c1faa button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<section id="merging-the-two-dfs-together" class="level2">
+<h2 class="anchored" data-anchor-id="merging-the-two-dfs-together">Merging the two DFs together</h2>
+<div class="cell" data-execution_count="65">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># These two dfs have two key variables now, 'state', and 'county'</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Using these two keys, a merge can now be performed</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-outputid="4b961c4d-0e99-48c6-f334-d1159e3a64a6" data-execution_count="66">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>can_reg_adj[<span class="st">'county'</span>].value_counts().to_frame()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="66">
+
+  <div id="df-08b9310f-a958-435f-b546-1dbdea81cab2" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">count</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">county</th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Washington County</td>
+<td>30</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Jefferson County</td>
+<td>25</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Lincoln County</td>
+<td>23</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Franklin County</td>
+<td>23</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Jackson County</td>
+<td>21</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Amelia County</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Albemarle County</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Accomack County</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Windsor County</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Geary County</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>1819 rows × 1 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-08b9310f-a958-435f-b546-1dbdea81cab2')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-08b9310f-a958-435f-b546-1dbdea81cab2 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-08b9310f-a958-435f-b546-1dbdea81cab2');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-78971904-e1f9-4dee-acc9-d7c6b4c3b4d4">
+  <button class="colab-df-quickchart" onclick="quickchart('df-78971904-e1f9-4dee-acc9-d7c6b4c3b4d4')" title="Suggest charts" style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-78971904-e1f9-4dee-acc9-d7c6b4c3b4d4 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="cell" data-outputid="ac328317-e25d-4a69-c8e6-04f40b799116" data-execution_count="67">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>avg_hh_size_adj[<span class="st">'county'</span>].value_counts().to_frame()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="67">
+
+  <div id="df-33b8275d-7c3f-44dd-936a-28805e081424" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">count</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">county</th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Washington County</td>
+<td>30</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Jefferson County</td>
+<td>25</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Lincoln County</td>
+<td>23</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Franklin County</td>
+<td>23</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Jackson County</td>
+<td>21</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Winn Parish</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">West Feliciana Parish</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">West Carroll Parish</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">West Baton Rouge Parish</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Weston County</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>1819 rows × 1 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-33b8275d-7c3f-44dd-936a-28805e081424')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-33b8275d-7c3f-44dd-936a-28805e081424 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-33b8275d-7c3f-44dd-936a-28805e081424');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-097622f7-3d5b-4911-a825-53f4f0969adc">
+  <button class="colab-df-quickchart" onclick="quickchart('df-097622f7-3d5b-4911-a825-53f4f0969adc')" title="Suggest charts" style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-097622f7-3d5b-4911-a825-53f4f0969adc button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="cell" data-outputid="d3540f2e-a224-4905-9061-82db7ab499c0" data-execution_count="68">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>can_reg_w_avg_hh_size <span class="op">=</span> can_reg_adj.merge(avg_hh_size_adj, on <span class="op">=</span> [<span class="st">'county'</span>, <span class="st">'state'</span>], how <span class="op">=</span> <span class="st">'left'</span>)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>can_reg_w_avg_hh_size <span class="co"># This is now the aggregate data frame of both the two obtained from the kaggle page</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co"># The only difference now is that the cancer data includes average household size per each geographic area now, allowing for analyses to be made with that variable as well</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Warning: Total number of columns (37) exceeds max_columns (20). Falling back to pandas display.</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="68">
+
+  <div id="df-513ae700-3b70-466b-9200-bebc92a98569" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">avganncount</th>
+<th data-quarto-table-cell-role="th">avgdeathsperyear</th>
+<th data-quarto-table-cell-role="th">target_deathrate</th>
+<th data-quarto-table-cell-role="th">incidencerate</th>
+<th data-quarto-table-cell-role="th">medincome</th>
+<th data-quarto-table-cell-role="th">popest2015</th>
+<th data-quarto-table-cell-role="th">povertypercent</th>
+<th data-quarto-table-cell-role="th">studypercap</th>
+<th data-quarto-table-cell-role="th">binnedinc</th>
+<th data-quarto-table-cell-role="th">medianage</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">pctblack</th>
+<th data-quarto-table-cell-role="th">pctasian</th>
+<th data-quarto-table-cell-role="th">pctotherrace</th>
+<th data-quarto-table-cell-role="th">pctmarriedhouseholds</th>
+<th data-quarto-table-cell-role="th">birthrate</th>
+<th data-quarto-table-cell-role="th">county</th>
+<th data-quarto-table-cell-role="th">state</th>
+<th data-quarto-table-cell-role="th">statefips</th>
+<th data-quarto-table-cell-role="th">countyfips</th>
+<th data-quarto-table-cell-role="th">avghouseholdsize</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1397.000000</td>
+<td>469</td>
+<td>164.9</td>
+<td>489.800000</td>
+<td>61898</td>
+<td>260131</td>
+<td>11.2</td>
+<td>499.748204</td>
+<td>(61494.5, 125635]</td>
+<td>39.3</td>
+<td>...</td>
+<td>2.594728</td>
+<td>4.821857</td>
+<td>1.843479</td>
+<td>52.856076</td>
+<td>6.118831</td>
+<td>Kitsap County</td>
+<td>Washington</td>
+<td>53</td>
+<td>35</td>
+<td>2.54</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>173.000000</td>
+<td>70</td>
+<td>161.3</td>
+<td>411.600000</td>
+<td>48127</td>
+<td>43269</td>
+<td>18.6</td>
+<td>23.111234</td>
+<td>(48021.6, 51046.4]</td>
+<td>33.0</td>
+<td>...</td>
+<td>0.969102</td>
+<td>2.246233</td>
+<td>3.741352</td>
+<td>45.372500</td>
+<td>4.333096</td>
+<td>Kittitas County</td>
+<td>Washington</td>
+<td>53</td>
+<td>37</td>
+<td>2.34</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>102.000000</td>
+<td>50</td>
+<td>174.7</td>
+<td>349.700000</td>
+<td>49348</td>
+<td>21026</td>
+<td>14.6</td>
+<td>47.560164</td>
+<td>(48021.6, 51046.4]</td>
+<td>45.0</td>
+<td>...</td>
+<td>0.739673</td>
+<td>0.465898</td>
+<td>2.747358</td>
+<td>54.444868</td>
+<td>3.729488</td>
+<td>Klickitat County</td>
+<td>Washington</td>
+<td>53</td>
+<td>39</td>
+<td>2.62</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>427.000000</td>
+<td>202</td>
+<td>194.8</td>
+<td>430.400000</td>
+<td>44243</td>
+<td>75882</td>
+<td>17.1</td>
+<td>342.637253</td>
+<td>(42724.4, 45201]</td>
+<td>42.8</td>
+<td>...</td>
+<td>0.782626</td>
+<td>1.161359</td>
+<td>1.362643</td>
+<td>51.021514</td>
+<td>4.603841</td>
+<td>Lewis County</td>
+<td>Washington</td>
+<td>53</td>
+<td>41</td>
+<td>2.52</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>57.000000</td>
+<td>26</td>
+<td>144.4</td>
+<td>350.100000</td>
+<td>49955</td>
+<td>10321</td>
+<td>12.5</td>
+<td>0.000000</td>
+<td>(48021.6, 51046.4]</td>
+<td>48.3</td>
+<td>...</td>
+<td>0.270192</td>
+<td>0.665830</td>
+<td>0.492135</td>
+<td>54.027460</td>
+<td>6.796657</td>
+<td>Lincoln County</td>
+<td>Washington</td>
+<td>53</td>
+<td>43</td>
+<td>2.34</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3042</td>
+<td>1962.667684</td>
+<td>15</td>
+<td>149.6</td>
+<td>453.549422</td>
+<td>46961</td>
+<td>6343</td>
+<td>12.4</td>
+<td>0.000000</td>
+<td>(45201, 48021.6]</td>
+<td>44.2</td>
+<td>...</td>
+<td>3.837754</td>
+<td>0.327613</td>
+<td>1.700468</td>
+<td>51.063830</td>
+<td>7.773512</td>
+<td>Ellsworth County</td>
+<td>Kansas</td>
+<td>20</td>
+<td>53</td>
+<td>2.08</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3043</td>
+<td>1962.667684</td>
+<td>43</td>
+<td>150.1</td>
+<td>453.549422</td>
+<td>48609</td>
+<td>37118</td>
+<td>18.8</td>
+<td>377.175494</td>
+<td>(48021.6, 51046.4]</td>
+<td>30.4</td>
+<td>...</td>
+<td>2.326771</td>
+<td>4.044920</td>
+<td>14.130288</td>
+<td>52.007937</td>
+<td>8.186470</td>
+<td>Finney County</td>
+<td>Kansas</td>
+<td>20</td>
+<td>55</td>
+<td>2.90</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3044</td>
+<td>1962.667684</td>
+<td>46</td>
+<td>153.9</td>
+<td>453.549422</td>
+<td>51144</td>
+<td>34536</td>
+<td>15.0</td>
+<td>1968.959926</td>
+<td>(51046.4, 54545.6]</td>
+<td>30.9</td>
+<td>...</td>
+<td>2.313188</td>
+<td>1.316472</td>
+<td>5.680705</td>
+<td>55.153949</td>
+<td>7.809192</td>
+<td>Ford County</td>
+<td>Kansas</td>
+<td>20</td>
+<td>57</td>
+<td>3.04</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3045</td>
+<td>1962.667684</td>
+<td>52</td>
+<td>175.0</td>
+<td>453.549422</td>
+<td>50745</td>
+<td>25609</td>
+<td>13.3</td>
+<td>0.000000</td>
+<td>(48021.6, 51046.4]</td>
+<td>39.0</td>
+<td>...</td>
+<td>1.176562</td>
+<td>0.244632</td>
+<td>2.131790</td>
+<td>58.484232</td>
+<td>7.582938</td>
+<td>Franklin County</td>
+<td>Kansas</td>
+<td>20</td>
+<td>59</td>
+<td>2.56</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">3046</td>
+<td>1962.667684</td>
+<td>48</td>
+<td>213.6</td>
+<td>453.549422</td>
+<td>41193</td>
+<td>37030</td>
+<td>13.9</td>
+<td>0.000000</td>
+<td>(40362.7, 42724.4]</td>
+<td>26.2</td>
+<td>...</td>
+<td>16.590100</td>
+<td>3.177753</td>
+<td>1.356457</td>
+<td>56.040242</td>
+<td>8.981723</td>
+<td>Geary County</td>
+<td>Kansas</td>
+<td>20</td>
+<td>61</td>
+<td>2.83</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>3047 rows × 37 columns</p>
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-513ae700-3b70-466b-9200-bebc92a98569')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-513ae700-3b70-466b-9200-bebc92a98569 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-513ae700-3b70-466b-9200-bebc92a98569');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-d0f4a6ca-73ab-4771-bef1-346d2636bdb5">
+  <button class="colab-df-quickchart" onclick="quickchart('df-d0f4a6ca-73ab-4771-bef1-346d2636bdb5')" title="Suggest charts" style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-d0f4a6ca-73ab-4771-bef1-346d2636bdb5 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+</section>
+<section id="general-analyses" class="level1">
+<h1>General Analyses</h1>
+<section id="summary-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="summary-statistics">Summary Statistics</h2>
+<div class="cell" data-execution_count="69">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>num_only <span class="op">=</span> can_reg_w_avg_hh_size.select_dtypes(exclude <span class="op">=</span> <span class="st">'object'</span>) <span class="co"># Separation of DF by data type</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>nonnum_only <span class="op">=</span> can_reg_w_avg_hh_size.select_dtypes(include <span class="op">=</span> <span class="st">'object'</span>)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>num_only_first17 <span class="op">=</span> num_only.iloc[:, <span class="dv">0</span>:<span class="dv">17</span>]</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>num_only_last17 <span class="op">=</span> num_only.iloc[:, <span class="dv">17</span>:] <span class="co"># Done to allow the pandas DF to fully display the summary stats</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="numeric-variables-only" class="level3">
+<h3 class="anchored" data-anchor-id="numeric-variables-only">Numeric Variables Only</h3>
+<ul>
+<li>Separated into two DFs with 17 variables each</li>
+</ul>
+<div class="cell" data-outputid="304d01ca-edb5-4ba0-c08d-4658120ffc77" data-execution_count="70">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>num_only_first17.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="70">
+
+  <div id="df-363a2f54-dc08-414e-bc4f-bcb2cab30138" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">avganncount</th>
+<th data-quarto-table-cell-role="th">avgdeathsperyear</th>
+<th data-quarto-table-cell-role="th">target_deathrate</th>
+<th data-quarto-table-cell-role="th">incidencerate</th>
+<th data-quarto-table-cell-role="th">medincome</th>
+<th data-quarto-table-cell-role="th">popest2015</th>
+<th data-quarto-table-cell-role="th">povertypercent</th>
+<th data-quarto-table-cell-role="th">studypercap</th>
+<th data-quarto-table-cell-role="th">medianage</th>
+<th data-quarto-table-cell-role="th">medianagemale</th>
+<th data-quarto-table-cell-role="th">medianagefemale</th>
+<th data-quarto-table-cell-role="th">percentmarried</th>
+<th data-quarto-table-cell-role="th">pctnohs18_24</th>
+<th data-quarto-table-cell-role="th">pcths18_24</th>
+<th data-quarto-table-cell-role="th">pctsomecol18_24</th>
+<th data-quarto-table-cell-role="th">pctbachdeg18_24</th>
+<th data-quarto-table-cell-role="th">pcths25_over</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">count</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3.047000e+03</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>762.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">mean</td>
+<td>606.338544</td>
+<td>185.965868</td>
+<td>178.664063</td>
+<td>448.268586</td>
+<td>47063.281917</td>
+<td>1.026374e+05</td>
+<td>16.878175</td>
+<td>155.399415</td>
+<td>45.272333</td>
+<td>39.570725</td>
+<td>42.145323</td>
+<td>51.773679</td>
+<td>18.224450</td>
+<td>35.002068</td>
+<td>40.977034</td>
+<td>6.158287</td>
+<td>34.804660</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">std</td>
+<td>1416.356223</td>
+<td>504.134286</td>
+<td>27.751511</td>
+<td>54.560733</td>
+<td>12040.090836</td>
+<td>3.290592e+05</td>
+<td>6.409087</td>
+<td>529.628366</td>
+<td>45.304480</td>
+<td>5.226017</td>
+<td>5.292849</td>
+<td>6.896928</td>
+<td>8.093064</td>
+<td>9.069722</td>
+<td>11.115805</td>
+<td>4.529059</td>
+<td>7.034924</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">min</td>
+<td>6.000000</td>
+<td>3.000000</td>
+<td>59.700000</td>
+<td>201.300000</td>
+<td>22640.000000</td>
+<td>8.270000e+02</td>
+<td>3.200000</td>
+<td>0.000000</td>
+<td>22.300000</td>
+<td>22.400000</td>
+<td>22.300000</td>
+<td>23.100000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>7.100000</td>
+<td>0.000000</td>
+<td>7.500000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">25%</td>
+<td>76.000000</td>
+<td>28.000000</td>
+<td>161.200000</td>
+<td>420.300000</td>
+<td>38882.500000</td>
+<td>1.168400e+04</td>
+<td>12.150000</td>
+<td>0.000000</td>
+<td>37.700000</td>
+<td>36.350000</td>
+<td>39.100000</td>
+<td>47.750000</td>
+<td>12.800000</td>
+<td>29.200000</td>
+<td>34.000000</td>
+<td>3.100000</td>
+<td>30.400000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">50%</td>
+<td>171.000000</td>
+<td>61.000000</td>
+<td>178.100000</td>
+<td>453.549422</td>
+<td>45207.000000</td>
+<td>2.664300e+04</td>
+<td>15.900000</td>
+<td>0.000000</td>
+<td>41.000000</td>
+<td>39.600000</td>
+<td>42.400000</td>
+<td>52.400000</td>
+<td>17.100000</td>
+<td>34.700000</td>
+<td>40.400000</td>
+<td>5.400000</td>
+<td>35.300000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">75%</td>
+<td>518.000000</td>
+<td>149.000000</td>
+<td>195.200000</td>
+<td>480.850000</td>
+<td>52492.000000</td>
+<td>6.867100e+04</td>
+<td>20.400000</td>
+<td>83.650776</td>
+<td>44.000000</td>
+<td>42.500000</td>
+<td>45.300000</td>
+<td>56.400000</td>
+<td>22.700000</td>
+<td>40.700000</td>
+<td>46.400000</td>
+<td>8.200000</td>
+<td>39.650000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">max</td>
+<td>38150.000000</td>
+<td>14010.000000</td>
+<td>362.800000</td>
+<td>1206.900000</td>
+<td>125635.000000</td>
+<td>1.017029e+07</td>
+<td>47.400000</td>
+<td>9762.308998</td>
+<td>624.000000</td>
+<td>64.700000</td>
+<td>65.700000</td>
+<td>72.500000</td>
+<td>64.100000</td>
+<td>72.500000</td>
+<td>79.000000</td>
+<td>51.800000</td>
+<td>54.800000</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-363a2f54-dc08-414e-bc4f-bcb2cab30138')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-363a2f54-dc08-414e-bc4f-bcb2cab30138 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-363a2f54-dc08-414e-bc4f-bcb2cab30138');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-e0625bd7-9651-49ef-8e2a-81d1b48f4dab">
+  <button class="colab-df-quickchart" onclick="quickchart('df-e0625bd7-9651-49ef-8e2a-81d1b48f4dab')" title="Suggest charts" style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-e0625bd7-9651-49ef-8e2a-81d1b48f4dab button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="cell" data-outputid="8d5abe4e-486f-4f87-b911-83d06ee4108b" data-execution_count="71">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>num_only_last17.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="71">
+
+  <div id="df-109b92ba-f29f-477d-8a4c-51c047608fa4" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">pctbachdeg25_over</th>
+<th data-quarto-table-cell-role="th">pctemployed16_over</th>
+<th data-quarto-table-cell-role="th">pctunemployed16_over</th>
+<th data-quarto-table-cell-role="th">pctprivatecoverage</th>
+<th data-quarto-table-cell-role="th">pctprivatecoveragealone</th>
+<th data-quarto-table-cell-role="th">pctempprivcoverage</th>
+<th data-quarto-table-cell-role="th">pctpubliccoverage</th>
+<th data-quarto-table-cell-role="th">pctpubliccoveragealone</th>
+<th data-quarto-table-cell-role="th">pctwhite</th>
+<th data-quarto-table-cell-role="th">pctblack</th>
+<th data-quarto-table-cell-role="th">pctasian</th>
+<th data-quarto-table-cell-role="th">pctotherrace</th>
+<th data-quarto-table-cell-role="th">pctmarriedhouseholds</th>
+<th data-quarto-table-cell-role="th">birthrate</th>
+<th data-quarto-table-cell-role="th">statefips</th>
+<th data-quarto-table-cell-role="th">countyfips</th>
+<th data-quarto-table-cell-role="th">avghouseholdsize</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">count</td>
+<td>3047.000000</td>
+<td>2895.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>2438.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+<td>3047.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">mean</td>
+<td>13.282015</td>
+<td>54.152642</td>
+<td>7.852412</td>
+<td>64.354939</td>
+<td>48.453774</td>
+<td>41.196324</td>
+<td>36.252642</td>
+<td>19.240072</td>
+<td>83.645286</td>
+<td>9.107978</td>
+<td>1.253965</td>
+<td>1.983523</td>
+<td>51.243872</td>
+<td>5.640306</td>
+<td>30.272071</td>
+<td>101.802429</td>
+<td>2.529682</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">std</td>
+<td>5.394756</td>
+<td>8.315064</td>
+<td>3.452371</td>
+<td>10.647057</td>
+<td>10.083006</td>
+<td>9.447687</td>
+<td>7.841741</td>
+<td>6.113041</td>
+<td>16.380025</td>
+<td>14.534538</td>
+<td>2.610276</td>
+<td>3.517710</td>
+<td>6.572814</td>
+<td>1.985816</td>
+<td>15.054873</td>
+<td>104.315612</td>
+<td>0.248449</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">min</td>
+<td>2.500000</td>
+<td>17.600000</td>
+<td>0.400000</td>
+<td>22.300000</td>
+<td>15.700000</td>
+<td>13.500000</td>
+<td>11.200000</td>
+<td>2.600000</td>
+<td>10.199155</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>0.000000</td>
+<td>22.992490</td>
+<td>0.000000</td>
+<td>1.000000</td>
+<td>1.000000</td>
+<td>1.860000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">25%</td>
+<td>9.400000</td>
+<td>48.600000</td>
+<td>5.500000</td>
+<td>57.200000</td>
+<td>41.000000</td>
+<td>34.500000</td>
+<td>30.900000</td>
+<td>14.850000</td>
+<td>77.296180</td>
+<td>0.620675</td>
+<td>0.254199</td>
+<td>0.295172</td>
+<td>47.763063</td>
+<td>4.521419</td>
+<td>19.000000</td>
+<td>35.000000</td>
+<td>2.380000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">50%</td>
+<td>12.300000</td>
+<td>54.500000</td>
+<td>7.600000</td>
+<td>65.100000</td>
+<td>48.700000</td>
+<td>41.100000</td>
+<td>36.300000</td>
+<td>18.800000</td>
+<td>90.059774</td>
+<td>2.247576</td>
+<td>0.549812</td>
+<td>0.826185</td>
+<td>51.669941</td>
+<td>5.381478</td>
+<td>29.000000</td>
+<td>79.000000</td>
+<td>2.500000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">75%</td>
+<td>16.100000</td>
+<td>60.300000</td>
+<td>9.700000</td>
+<td>72.100000</td>
+<td>55.600000</td>
+<td>47.700000</td>
+<td>41.550000</td>
+<td>23.100000</td>
+<td>95.451693</td>
+<td>10.509732</td>
+<td>1.221037</td>
+<td>2.177960</td>
+<td>55.395132</td>
+<td>6.493677</td>
+<td>45.000000</td>
+<td>133.000000</td>
+<td>2.640000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">max</td>
+<td>42.200000</td>
+<td>80.100000</td>
+<td>29.400000</td>
+<td>92.300000</td>
+<td>78.900000</td>
+<td>70.700000</td>
+<td>65.100000</td>
+<td>46.600000</td>
+<td>100.000000</td>
+<td>85.947799</td>
+<td>42.619425</td>
+<td>41.930251</td>
+<td>78.075397</td>
+<td>21.326165</td>
+<td>56.000000</td>
+<td>840.000000</td>
+<td>3.970000</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-109b92ba-f29f-477d-8a4c-51c047608fa4')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-109b92ba-f29f-477d-8a4c-51c047608fa4 button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-109b92ba-f29f-477d-8a4c-51c047608fa4');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-1951c5f5-244c-4055-9511-f08be9edd965">
+  <button class="colab-df-quickchart" onclick="quickchart('df-1951c5f5-244c-4055-9511-f08be9edd965')" title="Suggest charts" style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-1951c5f5-244c-4055-9511-f08be9edd965 button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<section id="non-numeric-variables-only" class="level3">
+<h3 class="anchored" data-anchor-id="non-numeric-variables-only">Non-Numeric Variables Only</h3>
+<div class="cell" data-outputid="0f6b42fc-dd28-41fc-a097-cbb154bf2860" data-execution_count="73">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>nonnum_only.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="73">
+
+  <div id="df-ad7cbf3b-ba07-4428-a7de-ae961046709a" class="colab-df-container">
+    <div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">binnedinc</th>
+<th data-quarto-table-cell-role="th">county</th>
+<th data-quarto-table-cell-role="th">state</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">count</td>
+<td>3047</td>
+<td>3047</td>
+<td>3047</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">unique</td>
+<td>10</td>
+<td>1819</td>
+<td>51</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">top</td>
+<td>(54545.6, 61494.5]</td>
+<td>Washington County</td>
+<td>Texas</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">freq</td>
+<td>306</td>
+<td>30</td>
+<td>233</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+    <div class="colab-df-buttons">
+
+  <div class="colab-df-container">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-ad7cbf3b-ba07-4428-a7de-ae961046709a')" title="Convert this dataframe to an interactive table." style="display:none;">
+
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
+    <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
+  </svg>
+    </button>
+
+  <style>
+    .colab-df-container {
+      display:flex;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    .colab-df-buttons div {
+      margin-bottom: 4px;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+    <script>
+      const buttonEl =
+        document.querySelector('#df-ad7cbf3b-ba07-4428-a7de-ae961046709a button.colab-df-convert');
+      buttonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+      async function convertToInteractive(key) {
+        const element = document.querySelector('#df-ad7cbf3b-ba07-4428-a7de-ae961046709a');
+        const dataTable =
+          await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                    [key], {});
+        if (!dataTable) return;
+
+        const docLinkHtml = 'Like what you see? Visit the ' +
+          '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+          + ' to learn more about interactive tables.';
+        element.innerHTML = '';
+        dataTable['output_type'] = 'display_data';
+        await google.colab.output.renderOutput(dataTable, element);
+        const docLink = document.createElement('div');
+        docLink.innerHTML = docLinkHtml;
+        element.appendChild(docLink);
+      }
+    </script>
+  </div>
+
+
+<div id="df-6b8275d6-dd80-406e-a6d0-34dca0e5617a">
+  <button class="colab-df-quickchart" onclick="quickchart('df-6b8275d6-dd80-406e-a6d0-34dca0e5617a')" title="Suggest charts" style="display:none;">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
+    <g>
+        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"></path>
+    </g>
+</svg>
+  </button>
+
+<style>
+  .colab-df-quickchart {
+      --bg-color: #E8F0FE;
+      --fill-color: #1967D2;
+      --hover-bg-color: #E2EBFA;
+      --hover-fill-color: #174EA6;
+      --disabled-fill-color: #AAA;
+      --disabled-bg-color: #DDD;
+  }
+
+  [theme=dark] .colab-df-quickchart {
+      --bg-color: #3B4455;
+      --fill-color: #D2E3FC;
+      --hover-bg-color: #434B5C;
+      --hover-fill-color: #FFFFFF;
+      --disabled-bg-color: #3B4455;
+      --disabled-fill-color: #666;
+  }
+
+  .colab-df-quickchart {
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    fill: var(--fill-color);
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
+  .colab-df-quickchart:hover {
+    background-color: var(--hover-bg-color);
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    fill: var(--button-hover-fill-color);
+  }
+
+  .colab-df-quickchart-complete:disabled,
+  .colab-df-quickchart-complete:disabled:hover {
+    background-color: var(--disabled-bg-color);
+    fill: var(--disabled-fill-color);
+    box-shadow: none;
+  }
+
+  .colab-df-spinner {
+    border: 2px solid var(--fill-color);
+    border-color: transparent;
+    border-bottom-color: var(--fill-color);
+    animation:
+      spin 1s steps(1) infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+      border-left-color: var(--fill-color);
+    }
+    20% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    30% {
+      border-color: transparent;
+      border-left-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+      border-right-color: var(--fill-color);
+    }
+    40% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-top-color: var(--fill-color);
+    }
+    60% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+    }
+    80% {
+      border-color: transparent;
+      border-right-color: var(--fill-color);
+      border-bottom-color: var(--fill-color);
+    }
+    90% {
+      border-color: transparent;
+      border-bottom-color: var(--fill-color);
+    }
+  }
+</style>
+
+  <script>
+    async function quickchart(key) {
+      const quickchartButtonEl =
+        document.querySelector('#' + key + ' button');
+      quickchartButtonEl.disabled = true;  // To prevent multiple clicks.
+      quickchartButtonEl.classList.add('colab-df-spinner');
+      try {
+        const charts = await google.colab.kernel.invokeFunction(
+            'suggestCharts', [key], {});
+      } catch (error) {
+        console.error('Error during call to suggestCharts:', error);
+      }
+      quickchartButtonEl.classList.remove('colab-df-spinner');
+      quickchartButtonEl.classList.add('colab-df-quickchart-complete');
+    }
+    (() => {
+      let quickchartButtonEl =
+        document.querySelector('#df-6b8275d6-dd80-406e-a6d0-34dca0e5617a button');
+      quickchartButtonEl.style.display =
+        google.colab.kernel.accessAllowed ? 'block' : 'none';
+    })();
+  </script>
+</div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+</section>
+<section id="frequency-of-each-state-in-the-data-frame" class="level2">
+<h2 class="anchored" data-anchor-id="frequency-of-each-state-in-the-data-frame">Frequency of Each State in the Data Frame</h2>
+<div class="cell" data-execution_count="121">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>states <span class="op">=</span> (</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    nonnum_only</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    .groupby(<span class="st">'state'</span>)</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>    .agg(</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>        n <span class="op">=</span> (<span class="st">'state'</span>, <span class="st">'size'</span>)</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>    .sort_values(<span class="st">'n'</span>, ascending <span class="op">=</span> <span class="va">True</span>)</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>states_order <span class="op">=</span> states.index</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-outputid="4b51790c-8608-42fd-e16c-cdee716ff4f7" data-execution_count="141">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>sns.countplot(data <span class="op">=</span> nonnum_only,</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>              x <span class="op">=</span> <span class="st">'state'</span>,</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>              order <span class="op">=</span> states_order)</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation <span class="op">=</span> <span class="dv">90</span>)</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize <span class="op">=</span> (<span class="dv">10</span>, <span class="dv">50</span>))</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Cancer_DF_Post_files/figure-html/cell-28-output-1.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-display">
+<pre><code>&lt;Figure size 1000x5000 with 0 Axes&gt;</code></pre>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script type="text/javascript" src="links.js"></script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">Powered with GitHub, Quarto and Rstudio<br>© Daniel Noone, 2023</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

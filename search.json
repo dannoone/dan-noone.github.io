@@ -168,39 +168,60 @@
     "text": "container and brand\n\nbeer3 &lt;- beer %&gt;% \n  group_by(brand, container) %&gt;% \n  summarise(n = n())\nbeer3.5 &lt;- beer3 %&gt;% \n  group_by(brand) %&gt;% \n  slice_max(order_by = n, n = 2)\nggplot(data = beer3.5)+\n  geom_bar(aes(x = brand, y = n, fill = container), stat = 'identity', position = 'dodge')+\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))+\n  labs(title = 'Frequency of Cans and Bottles for Each Brand',\n       x = 'Brand',\n       y = 'Count')\n\n\n\nView(beer3.5)\n\n\nComments on analyses…\n\nThe bar chart above depicts the frequency of two container types (can or non refillable bottle) per each brand\n\nAll brands seem to sell more cans than bottles\n\nOf them Bud Light sells the most cans\n\nBud light also sells the most bottles"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Daniel A. Noone",
+    "objectID": "personal_posts/New Post/Cancer_DF_Post.html",
+    "href": "personal_posts/New Post/Cancer_DF_Post.html",
+    "title": "Cancer Data",
     "section": "",
-    "text": "Daniel Noone is a Junior at SUNY Geneseo and is majoring in Data Analytics.  He was born and raised in Ontario, New York and loves to spend time outdoors."
+    "text": "import pandas as pd\nfrom google.colab import data_table\ndata_table.enable_dataframe_formatter()\nimport seaborn as sns\nimport matplotlib.pyplot as plt\nplt.style.available\n\n['Solarize_Light2',\n '_classic_test_patch',\n '_mpl-gallery',\n '_mpl-gallery-nogrid',\n 'bmh',\n 'classic',\n 'dark_background',\n 'fast',\n 'fivethirtyeight',\n 'ggplot',\n 'grayscale',\n 'seaborn-v0_8',\n 'seaborn-v0_8-bright',\n 'seaborn-v0_8-colorblind',\n 'seaborn-v0_8-dark',\n 'seaborn-v0_8-dark-palette',\n 'seaborn-v0_8-darkgrid',\n 'seaborn-v0_8-deep',\n 'seaborn-v0_8-muted',\n 'seaborn-v0_8-notebook',\n 'seaborn-v0_8-paper',\n 'seaborn-v0_8-pastel',\n 'seaborn-v0_8-poster',\n 'seaborn-v0_8-talk',\n 'seaborn-v0_8-ticks',\n 'seaborn-v0_8-white',\n 'seaborn-v0_8-whitegrid',\n 'tableau-colorblind10']\n\n\n\nplt.style.use('seaborn-v0_8-darkgrid')"
   },
   {
-    "objectID": "index.html#who-is-daniel-noone",
-    "href": "index.html#who-is-daniel-noone",
-    "title": "Daniel A. Noone",
+    "objectID": "personal_posts/New Post/Cancer_DF_Post.html#normalizing-the-geographic-locations",
+    "href": "personal_posts/New Post/Cancer_DF_Post.html#normalizing-the-geographic-locations",
+    "title": "Cancer Data",
+    "section": "Normalizing the geographic locations",
+    "text": "Normalizing the geographic locations\n\n# Below I normalized the geographic locations since there are a number of them that are in avg_hh_size, but not in can_reg\n  # So below I have filtered the avg_hh_size df to only include those in the can_reg df, so that any analyses are going off of the same number of observations\n\n\ncan_reg_locs = can_reg['geography']\ncan_reg_locs\n\n0          Kitsap County, Washington\n1        Kittitas County, Washington\n2       Klickitat County, Washington\n3           Lewis County, Washington\n4         Lincoln County, Washington\n                    ...             \n3042        Ellsworth County, Kansas\n3043           Finney County, Kansas\n3044             Ford County, Kansas\n3045         Franklin County, Kansas\n3046            Geary County, Kansas\nName: geography, Length: 3047, dtype: object\n\n\n\navg_hh_size['geography']\n\n0           Aleutians East Borough, Alaska\n1       Aleutians West Census Area, Alaska\n2           Anchorage Municipality, Alaska\n3               Bethel Census Area, Alaska\n4              Bristol Bay Borough, Alaska\n                       ...                \n3215            Sweetwater County, Wyoming\n3216                 Teton County, Wyoming\n3217                 Uinta County, Wyoming\n3218              Washakie County, Wyoming\n3219                Weston County, Wyoming\nName: geography, Length: 3220, dtype: object\n\n\n\ngeo_cond = avg_hh_size['geography'].isin(can_reg_locs)\navg_hh_size_adj = avg_hh_size[geo_cond]\navg_hh_size_adj['geography'].nunique() # Now have done this to normalize\n\n3047"
+  },
+  {
+    "objectID": "personal_posts/New Post/Cancer_DF_Post.html#splitting-the-geography-variable-in-each-df",
+    "href": "personal_posts/New Post/Cancer_DF_Post.html#splitting-the-geography-variable-in-each-df",
+    "title": "Cancer Data",
+    "section": "Splitting the geography variable in each df",
+    "text": "Splitting the geography variable in each df\n\n# Within each df there is a variable `geography`, which is a combination of county and state, separated by a comma\n  # If I want to do any county/state level analyses independently, this format is not great\n    # So I have split this var in each df to create two separate `state` and `county` variables\n\n\navg_hh_size_adj = (\n    avg_hh_size_adj\n    .assign(\n        county = lambda x: x['geography'].str.split(', ').str[0],\n        state = lambda x: x['geography'].str.split(', ').str[1]\n    )\n    .drop(columns = 'geography')\n)\n\navg_hh_size_adj.sort_values(['state','county'])\n\n\n  \n    \n\n\n\n\n\n\nstatefips\ncountyfips\navghouseholdsize\ncounty\nstate\n\n\n\n\n29\n1\n1\n2.68\nAutauga County\nAlabama\n\n\n30\n1\n3\n2.60\nBaldwin County\nAlabama\n\n\n31\n1\n5\n2.61\nBarbour County\nAlabama\n\n\n32\n1\n7\n2.95\nBibb County\nAlabama\n\n\n33\n1\n9\n2.74\nBlount County\nAlabama\n\n\n...\n...\n...\n...\n...\n...\n\n\n3215\n56\n37\n2.64\nSweetwater County\nWyoming\n\n\n3216\n56\n39\n2.63\nTeton County\nWyoming\n\n\n3217\n56\n41\n2.76\nUinta County\nWyoming\n\n\n3218\n56\n43\n2.34\nWashakie County\nWyoming\n\n\n3219\n56\n45\n2.27\nWeston County\nWyoming\n\n\n\n\n\n3047 rows × 5 columns\n\n    \n\n  \n    \n\n  \n    \n  \n    \n\n  \n\n    \n  \n\n\n\n  \n\n\n    \n        \n    \n\n  \n\n\n\n  \n\n    \n  \n\n\n\ncan_reg_adj = (\n    can_reg\n    .assign(\n        county = lambda x: x['geography'].str.split(', ').str[0],\n        state = lambda x: x['geography'].str.split(', ').str[1] # Had an issue with merging at first since I failed to put a space after the comma here as I did in the adj above.\n    )\n    .drop(columns = 'geography')\n)\n\ncan_reg_adj.sort_values(['state','county'])\n\nWarning: Total number of columns (34) exceeds max_columns (20). Falling back to pandas display.\n\n\n\n  \n    \n\n\n\n\n\n\navganncount\navgdeathsperyear\ntarget_deathrate\nincidencerate\nmedincome\npopest2015\npovertypercent\nstudypercap\nbinnedinc\nmedianage\n...\npctpubliccoverage\npctpubliccoveragealone\npctwhite\npctblack\npctasian\npctotherrace\npctmarriedhouseholds\nbirthrate\ncounty\nstate\n\n\n\n\n500\n266.0\n99\n178.3\n475.0\n54366\n55347\n13.1\n0.000000\n(51046.4, 54545.6]\n37.7\n...\n30.0\n14.3\n77.399902\n18.679488\n0.967023\n0.925373\n56.069818\n5.872131\nAutauga County\nAlabama\n\n\n501\n1072.0\n424\n174.3\n454.6\n49626\n203709\n13.0\n14.726890\n(48021.6, 51046.4]\n42.2\n...\n33.7\n17.5\n86.431496\n9.601734\n0.669841\n0.958380\n53.935010\n5.381478\nBaldwin County\nAlabama\n\n\n1007\n155.0\n62\n192.7\n477.5\n34971\n26489\n25.4\n0.000000\n(34218.1, 37413.8]\n38.8\n...\n46.6\n26.5\n47.363731\n46.765929\n0.905985\n3.445715\n43.276946\n6.266977\nBarbour County\nAlabama\n\n\n1416\n125.0\n53\n212.4\n494.6\n39546\n22583\n18.1\n929.903024\n(37413.8, 40362.7]\n38.9\n...\n39.4\n22.7\n76.654574\n21.438683\n0.092904\n0.030968\n57.335990\n4.179861\nBibb County\nAlabama\n\n\n2684\n291.0\n120\n175.4\n429.9\n45567\n57673\n17.5\n0.000000\n(45201, 48021.6]\n40.7\n...\n35.9\n19.0\n95.097903\n1.531797\n0.143823\n0.961705\n59.439854\n6.894123\nBlount County\nAlabama\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n1189\n155.0\n49\n141.1\n403.5\n72604\n44626\n9.8\n0.000000\n(61494.5, 125635]\n33.6\n...\n21.9\n11.3\n92.133476\n0.866613\n0.857679\n1.684088\n54.385755\n8.929776\nSweetwater County\nWyoming\n\n\n1190\n83.0\n23\n136.9\n402.7\n75348\n23125\n7.7\n0.000000\n(61494.5, 125635]\n38.0\n...\n14.4\n5.5\n93.160325\n0.322711\n1.900408\n2.783380\n50.580188\n1.745232\nTeton County\nWyoming\n\n\n1191\n68.0\n24\n132.8\n359.3\n56800\n20822\n10.0\n0.000000\n(54545.6, 61494.5]\n34.6\n...\n24.4\n13.0\n94.233158\n0.195891\n0.119446\n1.538462\n57.451346\n6.918372\nUinta County\nWyoming\n\n\n1192\n50.0\n21\n182.3\n448.0\n50802\n8328\n12.6\n0.000000\n(48021.6, 51046.4]\n43.4\n...\n32.2\n13.9\n91.238095\n0.678571\n0.166667\n4.142857\n51.708428\n5.370370\nWashakie County\nWyoming\n\n\n1193\n37.0\n17\n182.6\n397.1\n55520\n7234\n13.2\n0.000000\n(54545.6, 61494.5]\n42.1\n...\n29.4\n12.4\n94.728747\n0.209732\n0.531320\n0.069911\n52.344273\n17.401046\nWeston County\nWyoming\n\n\n\n\n\n3047 rows × 34 columns"
+  },
+  {
+    "objectID": "personal_posts/New Post/Cancer_DF_Post.html#merging-the-two-dfs-together",
+    "href": "personal_posts/New Post/Cancer_DF_Post.html#merging-the-two-dfs-together",
+    "title": "Cancer Data",
+    "section": "Merging the two DFs together",
+    "text": "Merging the two DFs together\n\n# These two dfs have two key variables now, 'state', and 'county'\n  # Using these two keys, a merge can now be performed\n\n\ncan_reg_adj['county'].value_counts().to_frame()\n\n\n  \n    \n\n\n\n\n\n\ncount\n\n\ncounty\n\n\n\n\n\nWashington County\n30\n\n\nJefferson County\n25\n\n\nLincoln County\n23\n\n\nFranklin County\n23\n\n\nJackson County\n21\n\n\n...\n...\n\n\nAmelia County\n1\n\n\nAlbemarle County\n1\n\n\nAccomack County\n1\n\n\nWindsor County\n1\n\n\nGeary County\n1\n\n\n\n\n\n1819 rows × 1 columns\n\n    \n\n  \n    \n\n  \n    \n  \n    \n\n  \n\n    \n  \n\n\n\n  \n\n\n    \n        \n    \n\n  \n\n\n\n  \n\n    \n  \n\n\n\navg_hh_size_adj['county'].value_counts().to_frame()\n\n\n  \n    \n\n\n\n\n\n\ncount\n\n\ncounty\n\n\n\n\n\nWashington County\n30\n\n\nJefferson County\n25\n\n\nLincoln County\n23\n\n\nFranklin County\n23\n\n\nJackson County\n21\n\n\n...\n...\n\n\nWinn Parish\n1\n\n\nWest Feliciana Parish\n1\n\n\nWest Carroll Parish\n1\n\n\nWest Baton Rouge Parish\n1\n\n\nWeston County\n1\n\n\n\n\n\n1819 rows × 1 columns\n\n    \n\n  \n    \n\n  \n    \n  \n    \n\n  \n\n    \n  \n\n\n\n  \n\n\n    \n        \n    \n\n  \n\n\n\n  \n\n    \n  \n\n\n\ncan_reg_w_avg_hh_size = can_reg_adj.merge(avg_hh_size_adj, on = ['county', 'state'], how = 'left')\ncan_reg_w_avg_hh_size # This is now the aggregate data frame of both the two obtained from the kaggle page\n# The only difference now is that the cancer data includes average household size per each geographic area now, allowing for analyses to be made with that variable as well\n\nWarning: Total number of columns (37) exceeds max_columns (20). Falling back to pandas display.\n\n\n\n  \n    \n\n\n\n\n\n\navganncount\navgdeathsperyear\ntarget_deathrate\nincidencerate\nmedincome\npopest2015\npovertypercent\nstudypercap\nbinnedinc\nmedianage\n...\npctblack\npctasian\npctotherrace\npctmarriedhouseholds\nbirthrate\ncounty\nstate\nstatefips\ncountyfips\navghouseholdsize\n\n\n\n\n0\n1397.000000\n469\n164.9\n489.800000\n61898\n260131\n11.2\n499.748204\n(61494.5, 125635]\n39.3\n...\n2.594728\n4.821857\n1.843479\n52.856076\n6.118831\nKitsap County\nWashington\n53\n35\n2.54\n\n\n1\n173.000000\n70\n161.3\n411.600000\n48127\n43269\n18.6\n23.111234\n(48021.6, 51046.4]\n33.0\n...\n0.969102\n2.246233\n3.741352\n45.372500\n4.333096\nKittitas County\nWashington\n53\n37\n2.34\n\n\n2\n102.000000\n50\n174.7\n349.700000\n49348\n21026\n14.6\n47.560164\n(48021.6, 51046.4]\n45.0\n...\n0.739673\n0.465898\n2.747358\n54.444868\n3.729488\nKlickitat County\nWashington\n53\n39\n2.62\n\n\n3\n427.000000\n202\n194.8\n430.400000\n44243\n75882\n17.1\n342.637253\n(42724.4, 45201]\n42.8\n...\n0.782626\n1.161359\n1.362643\n51.021514\n4.603841\nLewis County\nWashington\n53\n41\n2.52\n\n\n4\n57.000000\n26\n144.4\n350.100000\n49955\n10321\n12.5\n0.000000\n(48021.6, 51046.4]\n48.3\n...\n0.270192\n0.665830\n0.492135\n54.027460\n6.796657\nLincoln County\nWashington\n53\n43\n2.34\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n3042\n1962.667684\n15\n149.6\n453.549422\n46961\n6343\n12.4\n0.000000\n(45201, 48021.6]\n44.2\n...\n3.837754\n0.327613\n1.700468\n51.063830\n7.773512\nEllsworth County\nKansas\n20\n53\n2.08\n\n\n3043\n1962.667684\n43\n150.1\n453.549422\n48609\n37118\n18.8\n377.175494\n(48021.6, 51046.4]\n30.4\n...\n2.326771\n4.044920\n14.130288\n52.007937\n8.186470\nFinney County\nKansas\n20\n55\n2.90\n\n\n3044\n1962.667684\n46\n153.9\n453.549422\n51144\n34536\n15.0\n1968.959926\n(51046.4, 54545.6]\n30.9\n...\n2.313188\n1.316472\n5.680705\n55.153949\n7.809192\nFord County\nKansas\n20\n57\n3.04\n\n\n3045\n1962.667684\n52\n175.0\n453.549422\n50745\n25609\n13.3\n0.000000\n(48021.6, 51046.4]\n39.0\n...\n1.176562\n0.244632\n2.131790\n58.484232\n7.582938\nFranklin County\nKansas\n20\n59\n2.56\n\n\n3046\n1962.667684\n48\n213.6\n453.549422\n41193\n37030\n13.9\n0.000000\n(40362.7, 42724.4]\n26.2\n...\n16.590100\n3.177753\n1.356457\n56.040242\n8.981723\nGeary County\nKansas\n20\n61\n2.83\n\n\n\n\n\n3047 rows × 37 columns"
+  },
+  {
+    "objectID": "personal_posts/New Post/Cancer_DF_Post.html#summary-statistics",
+    "href": "personal_posts/New Post/Cancer_DF_Post.html#summary-statistics",
+    "title": "Cancer Data",
+    "section": "Summary Statistics",
+    "text": "Summary Statistics\n\nnum_only = can_reg_w_avg_hh_size.select_dtypes(exclude = 'object') # Separation of DF by data type\nnonnum_only = can_reg_w_avg_hh_size.select_dtypes(include = 'object')\nnum_only_first17 = num_only.iloc[:, 0:17]\nnum_only_last17 = num_only.iloc[:, 17:] # Done to allow the pandas DF to fully display the summary stats\n\n\nNumeric Variables Only\n\nSeparated into two DFs with 17 variables each\n\n\nnum_only_first17.describe()\n\n\n  \n    \n\n\n\n\n\n\navganncount\navgdeathsperyear\ntarget_deathrate\nincidencerate\nmedincome\npopest2015\npovertypercent\nstudypercap\nmedianage\nmedianagemale\nmedianagefemale\npercentmarried\npctnohs18_24\npcths18_24\npctsomecol18_24\npctbachdeg18_24\npcths25_over\n\n\n\n\ncount\n3047.000000\n3047.000000\n3047.000000\n3047.000000\n3047.000000\n3.047000e+03\n3047.000000\n3047.000000\n3047.000000\n3047.000000\n3047.000000\n3047.000000\n3047.000000\n3047.000000\n762.000000\n3047.000000\n3047.000000\n\n\nmean\n606.338544\n185.965868\n178.664063\n448.268586\n47063.281917\n1.026374e+05\n16.878175\n155.399415\n45.272333\n39.570725\n42.145323\n51.773679\n18.224450\n35.002068\n40.977034\n6.158287\n34.804660\n\n\nstd\n1416.356223\n504.134286\n27.751511\n54.560733\n12040.090836\n3.290592e+05\n6.409087\n529.628366\n45.304480\n5.226017\n5.292849\n6.896928\n8.093064\n9.069722\n11.115805\n4.529059\n7.034924\n\n\nmin\n6.000000\n3.000000\n59.700000\n201.300000\n22640.000000\n8.270000e+02\n3.200000\n0.000000\n22.300000\n22.400000\n22.300000\n23.100000\n0.000000\n0.000000\n7.100000\n0.000000\n7.500000\n\n\n25%\n76.000000\n28.000000\n161.200000\n420.300000\n38882.500000\n1.168400e+04\n12.150000\n0.000000\n37.700000\n36.350000\n39.100000\n47.750000\n12.800000\n29.200000\n34.000000\n3.100000\n30.400000\n\n\n50%\n171.000000\n61.000000\n178.100000\n453.549422\n45207.000000\n2.664300e+04\n15.900000\n0.000000\n41.000000\n39.600000\n42.400000\n52.400000\n17.100000\n34.700000\n40.400000\n5.400000\n35.300000\n\n\n75%\n518.000000\n149.000000\n195.200000\n480.850000\n52492.000000\n6.867100e+04\n20.400000\n83.650776\n44.000000\n42.500000\n45.300000\n56.400000\n22.700000\n40.700000\n46.400000\n8.200000\n39.650000\n\n\nmax\n38150.000000\n14010.000000\n362.800000\n1206.900000\n125635.000000\n1.017029e+07\n47.400000\n9762.308998\n624.000000\n64.700000\n65.700000\n72.500000\n64.100000\n72.500000\n79.000000\n51.800000\n54.800000\n\n\n\n\n\n\n    \n\n  \n    \n\n  \n    \n  \n    \n\n  \n\n    \n  \n\n\n\n  \n\n\n    \n        \n    \n\n  \n\n\n\n  \n\n    \n  \n\n\n\nnum_only_last17.describe()\n\n\n  \n    \n\n\n\n\n\n\npctbachdeg25_over\npctemployed16_over\npctunemployed16_over\npctprivatecoverage\npctprivatecoveragealone\npctempprivcoverage\npctpubliccoverage\npctpubliccoveragealone\npctwhite\npctblack\npctasian\npctotherrace\npctmarriedhouseholds\nbirthrate\nstatefips\ncountyfips\navghouseholdsize\n\n\n\n\ncount\n3047.000000\n2895.000000\n3047.000000\n3047.000000\n2438.000000\n3047.000000\n3047.000000\n3047.000000\n3047.000000\n3047.000000\n3047.000000\n3047.000000\n3047.000000\n3047.000000\n3047.000000\n3047.000000\n3047.000000\n\n\nmean\n13.282015\n54.152642\n7.852412\n64.354939\n48.453774\n41.196324\n36.252642\n19.240072\n83.645286\n9.107978\n1.253965\n1.983523\n51.243872\n5.640306\n30.272071\n101.802429\n2.529682\n\n\nstd\n5.394756\n8.315064\n3.452371\n10.647057\n10.083006\n9.447687\n7.841741\n6.113041\n16.380025\n14.534538\n2.610276\n3.517710\n6.572814\n1.985816\n15.054873\n104.315612\n0.248449\n\n\nmin\n2.500000\n17.600000\n0.400000\n22.300000\n15.700000\n13.500000\n11.200000\n2.600000\n10.199155\n0.000000\n0.000000\n0.000000\n22.992490\n0.000000\n1.000000\n1.000000\n1.860000\n\n\n25%\n9.400000\n48.600000\n5.500000\n57.200000\n41.000000\n34.500000\n30.900000\n14.850000\n77.296180\n0.620675\n0.254199\n0.295172\n47.763063\n4.521419\n19.000000\n35.000000\n2.380000\n\n\n50%\n12.300000\n54.500000\n7.600000\n65.100000\n48.700000\n41.100000\n36.300000\n18.800000\n90.059774\n2.247576\n0.549812\n0.826185\n51.669941\n5.381478\n29.000000\n79.000000\n2.500000\n\n\n75%\n16.100000\n60.300000\n9.700000\n72.100000\n55.600000\n47.700000\n41.550000\n23.100000\n95.451693\n10.509732\n1.221037\n2.177960\n55.395132\n6.493677\n45.000000\n133.000000\n2.640000\n\n\nmax\n42.200000\n80.100000\n29.400000\n92.300000\n78.900000\n70.700000\n65.100000\n46.600000\n100.000000\n85.947799\n42.619425\n41.930251\n78.075397\n21.326165\n56.000000\n840.000000\n3.970000\n\n\n\n\n\n\n    \n\n  \n    \n\n  \n    \n  \n    \n\n  \n\n    \n  \n\n\n\n  \n\n\n    \n        \n    \n\n  \n\n\n\n  \n\n    \n  \n\n\n\n\nNon-Numeric Variables Only\n\nnonnum_only.describe()\n\n\n  \n    \n\n\n\n\n\n\nbinnedinc\ncounty\nstate\n\n\n\n\ncount\n3047\n3047\n3047\n\n\nunique\n10\n1819\n51\n\n\ntop\n(54545.6, 61494.5]\nWashington County\nTexas\n\n\nfreq\n306\n30\n233"
+  },
+  {
+    "objectID": "personal_posts/New Post/Cancer_DF_Post.html#frequency-of-each-state-in-the-data-frame",
+    "href": "personal_posts/New Post/Cancer_DF_Post.html#frequency-of-each-state-in-the-data-frame",
+    "title": "Cancer Data",
+    "section": "Frequency of Each State in the Data Frame",
+    "text": "Frequency of Each State in the Data Frame\n\nstates = (\n    nonnum_only\n    .groupby('state')\n    .agg(\n        n = ('state', 'size')\n    )\n    .sort_values('n', ascending = True)\n)\n\nstates_order = states.index\n\n\nsns.countplot(data = nonnum_only,\n              x = 'state',\n              order = states_order)\nplt.xticks(rotation = 90)\nplt.figure(figsize = (10, 50))\nplt.show()\n\n\n\n\n&lt;Figure size 1000x5000 with 0 Axes&gt;"
+  },
+  {
+    "objectID": "class_projects.html",
+    "href": "class_projects.html",
+    "title": "Class Projects",
     "section": "",
-    "text": "Daniel Noone is a Junior at SUNY Geneseo and is majoring in Data Analytics.  He was born and raised in Ontario, New York and loves to spend time outdoors."
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nDANL 210 Project\n\n\nYfinance Data Collection and ESG Data Exploration\n\n\n\n\n\n\nJan 28, 2024\n\n\nDaniel Noone\n\n\n6 min\n\n\n\n\n\n\n  \n\n\n\n\nDANL 200 Project\n\n\nAir Quality Data as per the EPA regarding Criteria Air Pollutants\n\n\n\n\n\n\nJan 28, 2024\n\n\nDaniel Noone\n\n\n14 min\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Daniel A. Noone",
-    "section": "Education",
-    "text": "Education\nState University of New York at Geneseo | Geneseo, NY  B.S. in Data Analytics | Aug 2022 - May 2025"
-  },
-  {
-    "objectID": "index.html#experience",
-    "href": "index.html#experience",
-    "title": "Daniel A. Noone",
-    "section": "Experience",
-    "text": "Experience\nExperience programming in R, as well as basic level knowledge of Python. Extensive experience with Microsoft Office programs such as Excel, Word, and PowerPoint."
-  },
-  {
-    "objectID": "class_blog.html",
-    "href": "class_blog.html",
-    "title": "Class Blog Posts",
+    "objectID": "blog-listing.html",
+    "href": "blog-listing.html",
+    "title": "Exploratory Data Analysis",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nSpotify HW2\n\n\n\n\n\n\n\n\n\nMar 5, 2024\n\n\nDaniel Noone\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nPython Basics\n\n\nA quick look at the basics of python programming\n\n\n\n\n\n\nFeb 10, 2024\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nSpotify Listener Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nHW5 - NFL Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n6 min\n\n\n\n\n\n\n  \n\n\n\n\nBeer Market Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nNYC Restaurant Inspections\n\n\n\n\n\n\n\n\n\nDec 10, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome All!\n\n\n\n\n\n\n\n\n\nDec 9, 2023\n\n\nDaniel Noone\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nCancer Data\n\n\nData found on kaggle.com (here)\n\n\n\n\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nWeb Scraping using Beautiful Soup\n\n\nFrom a tutorial on YouTube\n\n\n\n\n\n\nFeb 9, 2024\n\n\nDaniel Noone\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "basic-python-intro.html",
@@ -245,18 +266,39 @@
     "text": "Lists and Dictionaries\nA list is a collection which is ordered and changeable.\nA dictionary is a collection which is unordered, changeable and indexed.\n\n# List example:\nmy_list = ['apple', 'banana', 'cherry']\n\n# Dictionary example:\nmy_dict = {'name': 'John', 'age': 36}"
   },
   {
-    "objectID": "blog-listing.html",
-    "href": "blog-listing.html",
-    "title": "Exploratory Data Analysis",
+    "objectID": "class_blog.html",
+    "href": "class_blog.html",
+    "title": "Class Blog Posts",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nWeb Scraping using Beautiful Soup\n\n\nFrom a tutorial on YouTube\n\n\n\n\n\n\nFeb 9, 2024\n\n\nDaniel Noone\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nSpotify HW2\n\n\n\n\n\n\n\n\n\nMar 5, 2024\n\n\nDaniel Noone\n\n\n1 min\n\n\n\n\n\n\n  \n\n\n\n\nPython Basics\n\n\nA quick look at the basics of python programming\n\n\n\n\n\n\nFeb 10, 2024\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nSpotify Listener Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nHW5 - NFL Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n6 min\n\n\n\n\n\n\n  \n\n\n\n\nBeer Market Data\n\n\n\n\n\n\n\n\n\nDec 11, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nNYC Restaurant Inspections\n\n\n\n\n\n\n\n\n\nDec 10, 2023\n\n\nDaniel Noone\n\n\n5 min\n\n\n\n\n\n\n  \n\n\n\n\nWelcome All!\n\n\n\n\n\n\n\n\n\nDec 9, 2023\n\n\nDaniel Noone\n\n\n1 min\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "class_projects.html",
-    "href": "class_projects.html",
-    "title": "Class Projects",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Daniel A. Noone",
     "section": "",
-    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n  \n\n\n\n\nDANL 200 Project\n\n\nAir Quality Data as per the EPA regarding Criteria Air Pollutants\n\n\n\n\n\n\nJan 28, 2024\n\n\nDaniel Noone\n\n\n14 min\n\n\n\n\n\n\nNo matching items"
+    "text": "Daniel Noone is a Junior at SUNY Geneseo and is majoring in Data Analytics.  He was born and raised in Ontario, New York and loves to spend time outdoors."
+  },
+  {
+    "objectID": "index.html#who-is-daniel-noone",
+    "href": "index.html#who-is-daniel-noone",
+    "title": "Daniel A. Noone",
+    "section": "",
+    "text": "Daniel Noone is a Junior at SUNY Geneseo and is majoring in Data Analytics.  He was born and raised in Ontario, New York and loves to spend time outdoors."
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Daniel A. Noone",
+    "section": "Education",
+    "text": "Education\nState University of New York at Geneseo | Geneseo, NY  B.S. in Data Analytics | Aug 2022 - May 2025"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Daniel A. Noone",
+    "section": "Experience",
+    "text": "Experience\nExperience programming in R, as well as basic level knowledge of Python. Extensive experience with Microsoft Office programs such as Excel, Word, and PowerPoint."
   },
   {
     "objectID": "personal_posts/web_scraping1/wep_scrape_tutorial.html",
@@ -453,5 +495,89 @@
     "title": "DANL 200 Project",
     "section": "3.1 What do these levels even mean?",
     "text": "3.1 What do these levels even mean?\n\nThese four gases (Ozone, SO2, CO, and NO2) are considered to be Criteria Air Pollutants by the EPA\n\nBeing Criteria Air Pollutants (along with Lead (Pb), and Particulate Matter (PM)), they pose adverse health and environmental effects.\n\n\n\n\n3.1.1 Ozone\n\nGround-level ozone (as measured in the data), comes from reaction between pollutants\n\nThese pollutants are emitted by industrial facilities, electric utilities, and motor vehicles\n\nThis Ground-level ozone (in contrast with ozone that protects from UV rays), can pose health risks\n\nThese health risks include…\n\nInflammation of lining of the lungs\nReduced lung function\nCough, wheezing, chest pain, shortness of breath\nIncreased susceptibility to respiratory infection, and\nPremature mortality, to name a few.\n\n\n\nAnalyses Pertaining to the Data:\n\nFor the states such as Colorado, Utah, and Arizona some of these health effects could potentially be more frequent\n\nHowever, in states such as Texas, Florida, and California these health effects will most likely not be as prevalent\n\n\n\n\n3.1.2 Sulfur Dioxide (SO2)\n\nThis air pollutant comes primarily from fossil fuel combustion by industrial and electrical facilities\nShort-term exposure by asthmatic individuals may result in…\n\nWheezing\nChest Tightness\nShortness of Breath\nEtc…\n\nMostly affects the respiratory system\n\nAnalyses Pertaining to the Data:\n\nColorado would most likely experience the highest frequency of these health effects as the average measure of SO2 over the time frame is almost double that of Texas (the state with the second highest measurement)\n\nCalifornia is the state with the lowest average level of SO2, and would most likely see the least health effects\n\n\n\n\n3.1.3 Carbon Monoxide (CO)\n\nThe primary source of Carbon Monoxide is found to be fuel propelled means of transportation\nPrimary health risks as a result of exposure are…\n\nDecreased capacity of blood to carry oxygen\n\nWhich can cause myocardial ischemia (reduced oxygen to heart)\nand angina (chest pain)\n\n\n\nAnalyses Pertaining to the Data:\n\nStates such as Indiana, Florida, and Pennsylvania which had the highest average levels of CO, would most likely see the highest frequency of health effects\n\nUtah, which had the lowest average level of CO (almost half the average level of Indiana), would most likely experience the lowest frequency of health effects\n\n\n\n\n3.1.4 Nitrogen Dioxide (NO2)\n\nPrimarily emitted from cars, trucks, buses, power plants, and other engines/equipment\n\nNitrogen Oxide (NO) is emitted first and then rapidly oxidized into NO2 in the atmosphere\n\nHealth risks include mostly respiratory related symptoms and hospital visits\n\nAnalyses Pertaining to the Data:\n\nStates such as Arizona and Illinois had the highest average level of NO2 recorded, so they would most likely experience the highest frequency of these health effects\n\nStates such as Utah and Texas had an average recorded level of NO2 about half that of Arizona and Illinois, and would most likely experience the lowest frequency of health effects"
+  },
+  {
+    "objectID": "posts2/DANL210 Project/project_210.html",
+    "href": "posts2/DANL210 Project/project_210.html",
+    "title": "DANL 210 Project",
+    "section": "",
+    "text": "This project is an exploration into the relationships between esg data for a slew of firms, and their respective financial data. This exploration will allow for greater insights into the connections that may be present between these two areas.\n\n\nBelow the data frames including esg data, historical financial data, income statement data, and balance sheet data will be loaded for use.\n\nesg = pd.read_csv(\"C:/Users\\Dan\\OneDrive\\Documents\\dan-noone.github.io\\Data\\esg_complete.csv\")\nhist = pd.read_csv(\"C:/Users\\Dan\\OneDrive\\Documents\\dan-noone.github.io\\Data\\yfinance-history.csv\")\ninc = pd.read_csv(\"C:/Users\\Dan\\OneDrive\\Documents\\dan-noone.github.io\\Data\\yfinance-income-stmt.csv\")\nbal = pd.read_csv(\"C:/Users\\Dan\\OneDrive\\Documents\\dan-noone.github.io\\Data\\yfinance-balance-sheets.csv\")"
+  },
+  {
+    "objectID": "posts2/DANL210 Project/project_210.html#below-the-data-frames-including-esg-data-historical-financial-data-income-statement-data-and-balance-sheet-data-will-be-loaded-for-use.",
+    "href": "posts2/DANL210 Project/project_210.html#below-the-data-frames-including-esg-data-historical-financial-data-income-statement-data-and-balance-sheet-data-will-be-loaded-for-use.",
+    "title": "DANL 210 Project",
+    "section": "",
+    "text": "esg = pd.read_csv(\"C:/Users\\Dan\\OneDrive\\Documents\\dan-noone.github.io\\Data\\danl_210_yfin_data_FINAL.csv\")\nhist = pd.read_csv(\"C:/Users\\Dan\\OneDrive\\Documents\\dan-noone.github.io\\Data\\yfinance-history.csv\")\ninc = pd.read_csv(\"C:/Users\\Dan\\OneDrive\\Documents\\dan-noone.github.io\\Data\\yfinance-income-stmt.csv\")\nbal = pd.read_csv(\"C:/Users\\Dan\\OneDrive\\Documents\\dan-noone.github.io\\Data\\yfinance-balance-sheets.csv\")\n\nesg['tot_ESG'] = esg['ERS'] + esg['SRS'] + esg['GRS']"
+  },
+  {
+    "objectID": "posts2/DANL210 Project/project_210.html#esg-stats",
+    "href": "posts2/DANL210 Project/project_210.html#esg-stats",
+    "title": "DANL 210 Project",
+    "section": "2.1 ESG Stats",
+    "text": "2.1 ESG Stats\n\n2.1.1 General\n\nesg.describe()\n\n\n\n\n\n\n\n\nMarket Cap\nERS\nSRS\nGRS\nCL\ntot_esg\n\n\n\n\ncount\n6.360000e+02\n612.000000\n612.000000\n612.000000\n580.000000\n612.000000\n\n\nmean\n7.161278e+10\n5.819281\n9.016176\n6.826961\n1.956897\n21.662418\n\n\nstd\n2.268143e+11\n5.318299\n3.566610\n2.395565\n0.797148\n6.985062\n\n\nmin\n1.986640e+08\n0.000000\n0.800000\n2.400000\n0.000000\n6.700000\n\n\n25%\n1.099163e+10\n1.775000\n6.700000\n5.200000\n1.000000\n16.400000\n\n\n50%\n2.397381e+10\n4.000000\n8.900000\n6.300000\n2.000000\n21.250000\n\n\n75%\n5.889363e+10\n9.000000\n11.125000\n7.900000\n2.000000\n26.025000\n\n\nmax\n3.019135e+12\n27.300000\n22.500000\n19.400000\n5.000000\n44.900000\n\n\n\n\n\n\n\n\n\n2.1.2 Distribution Plots of Differing ESG Scores and Market Capitalization\n\nsns.histplot(data =esg, x = 'ERS')\nplt.title('Distribution of Envt Risk Score')\n\nText(0.5, 1.0, 'Distribution of Envt Risk Score')\n\n\n\n\n\nComments: One can see here that the occurrence of high ERS is very low in the firms evaluated, low ERS values are much more common\n\nsns.histplot(data =esg, x = 'SRS')\nplt.title('Distribution of Social Risk Score')\n\nText(0.5, 1.0, 'Distribution of Social Risk Score')\n\n\n\n\n\nComments: One can see here that the values of SRS are centered around 10, which makes the distribution of SRS values look similar to a normal curve\n\nsns.histplot(data =esg, x = 'GRS')\nplt.title('Distribution of Gov Risk Score')\n\nText(0.5, 1.0, 'Distribution of Gov Risk Score')\n\n\n\n\n\nComments: One can see here that the values of GRS are centered around 6, which makes its distribution also look similar to a normal curve\n\nsns.histplot(data =esg, x = 'CL')\nplt.title('Distribution of Controversy Level')\n\nText(0.5, 1.0, 'Distribution of Controversy Level')\n\n\n\n\n\nComments: One can see here that CL values of 2 are most common, with values of 1 and 5 being almost nonexistant\n\nsns.histplot(data =esg, x = 'Market Cap', bins = 50)\nplt.title('Distribution of Market Capitalization')\n\nText(0.5, 1.0, 'Distribution of Market Capitalization')\n\n\n\n\n\nComments: One can see here that market capitalization values are more frequently on the lower end (when compared with all of the firms in the data frame)"
+  },
+  {
+    "objectID": "posts2/DANL210 Project/project_210.html#loading-the-data-frames",
+    "href": "posts2/DANL210 Project/project_210.html#loading-the-data-frames",
+    "title": "DANL 210 Project",
+    "section": "",
+    "text": "Below the data frames including esg data, historical financial data, income statement data, and balance sheet data will be loaded for use.\n\nesg = pd.read_csv(\"C:/Users\\Dan\\OneDrive\\Documents\\dan-noone.github.io\\Data\\esg_complete.csv\")\nhist = pd.read_csv(\"C:/Users\\Dan\\OneDrive\\Documents\\dan-noone.github.io\\Data\\yfinance-history.csv\")\ninc = pd.read_csv(\"C:/Users\\Dan\\OneDrive\\Documents\\dan-noone.github.io\\Data\\yfinance-income-stmt.csv\")\nbal = pd.read_csv(\"C:/Users\\Dan\\OneDrive\\Documents\\dan-noone.github.io\\Data\\yfinance-balance-sheets.csv\")"
+  },
+  {
+    "objectID": "posts2/DANL210 Project/project_210.html#income-stats",
+    "href": "posts2/DANL210 Project/project_210.html#income-stats",
+    "title": "DANL 210 Project",
+    "section": "2.2 Income Stats",
+    "text": "2.2 Income Stats\nHere I am selecting certain income data points since there are too many in the original data frame\n\ninc = inc[['EBIT', 'Net Income', 'Total Revenue', 'Total Expenses']]\n\n\n2.2.1 General\n\ninc.describe()\n\n\n\n\n\n\n\n\nEBIT\nNet Income\nTotal Revenue\nTotal Expenses\n\n\n\n\ncount\n2.530000e+03\n2.736000e+03\n2.736000e+03\n2.539000e+03\n\n\nmean\n9.715337e+08\n7.368192e+08\n6.590925e+09\n5.686589e+09\n\n\nstd\n2.524586e+09\n2.196511e+09\n1.331325e+10\n1.214236e+10\n\n\nmin\n-1.109100e+10\n-1.191100e+10\n-8.031840e+08\n-1.029000e+09\n\n\n25%\n1.754510e+08\n1.086375e+08\n1.277048e+09\n1.049772e+09\n\n\n50%\n3.884395e+08\n2.658860e+08\n2.679200e+09\n2.141600e+09\n\n\n75%\n9.485000e+08\n7.060000e+08\n5.580721e+09\n4.450818e+09\n\n\nmax\n4.037300e+10\n3.391600e+10\n1.699610e+11\n1.567520e+11\n\n\n\n\n\n\n\n\n\n2.2.2 Distribution Plots\n\nsns.histplot(data =inc, x = 'EBIT', bins = 50)\nplt.title('Distribution of EBIT')\n\nText(0.5, 1.0, 'Distribution of EBIT')\n\n\n\n\n\n\nsns.histplot(data =inc, x = 'Net Income', bins = 50)\nplt.title('Distribution of Net Income')\n\nText(0.5, 1.0, 'Distribution of Net Income')\n\n\n\n\n\n\nsns.histplot(data =inc, x = 'Total Revenue', bins = 50)\nplt.title('Distribution of Total Revenue')\n\nText(0.5, 1.0, 'Distribution of Total Revenue')\n\n\n\n\n\n\nsns.histplot(data =inc, x = 'Total Expenses', bins = 50)\nplt.title('Distribution of Total Expenses')\n\nText(0.5, 1.0, 'Distribution of Total Expenses')\n\n\n\n\n\nComments:"
+  },
+  {
+    "objectID": "posts2/DANL210 Project/project_210.html#income-statement-stats",
+    "href": "posts2/DANL210 Project/project_210.html#income-statement-stats",
+    "title": "DANL 210 Project",
+    "section": "2.2 Income Statement Stats",
+    "text": "2.2 Income Statement Stats\nHere I am selecting certain income data points since there are too many in the original data frame\n\ninc = inc[['ticker','EBIT', 'Net Income', 'Total Revenue', 'Total Expenses']]\n\n\n2.2.1 General\n\ninc.describe()\n\n\n\n\n\n\n\n\nEBIT\nNet Income\nTotal Revenue\nTotal Expenses\n\n\n\n\ncount\n2.530000e+03\n2.736000e+03\n2.736000e+03\n2.539000e+03\n\n\nmean\n9.715337e+08\n7.368192e+08\n6.590925e+09\n5.686589e+09\n\n\nstd\n2.524586e+09\n2.196511e+09\n1.331325e+10\n1.214236e+10\n\n\nmin\n-1.109100e+10\n-1.191100e+10\n-8.031840e+08\n-1.029000e+09\n\n\n25%\n1.754510e+08\n1.086375e+08\n1.277048e+09\n1.049772e+09\n\n\n50%\n3.884395e+08\n2.658860e+08\n2.679200e+09\n2.141600e+09\n\n\n75%\n9.485000e+08\n7.060000e+08\n5.580721e+09\n4.450818e+09\n\n\nmax\n4.037300e+10\n3.391600e+10\n1.699610e+11\n1.567520e+11\n\n\n\n\n\n\n\n\n\n2.2.2 Distribution Plots\n\nsns.histplot(data =inc, x = 'EBIT', bins = 50)\nplt.title('Distribution of EBIT')\n\nText(0.5, 1.0, 'Distribution of EBIT')\n\n\n\n\n\n\nsns.histplot(data =inc, x = 'Net Income', bins = 50)\nplt.title('Distribution of Net Income')\n\nText(0.5, 1.0, 'Distribution of Net Income')\n\n\n\n\n\n\nsns.histplot(data =inc, x = 'Total Revenue', bins = 50)\nplt.title('Distribution of Total Revenue')\n\nText(0.5, 1.0, 'Distribution of Total Revenue')\n\n\n\n\n\n\nsns.histplot(data =inc, x = 'Total Expenses', bins = 50)\nplt.title('Distribution of Total Expenses')\n\nText(0.5, 1.0, 'Distribution of Total Expenses')"
+  },
+  {
+    "objectID": "posts2/DANL210 Project/project_210.html#balance-sheet-stats",
+    "href": "posts2/DANL210 Project/project_210.html#balance-sheet-stats",
+    "title": "DANL 210 Project",
+    "section": "2.3 Balance Sheet Stats",
+    "text": "2.3 Balance Sheet Stats\nHere I will also select a few data points to focus on\n\nbal = bal[['ticker','Total Debt', 'Common Stock', 'Total Assets']]\n\n\n2.3.1 General\n\nbal.describe()\n\n\n\n\n\n\n\n\nTotal Debt\nCommon Stock\nTotal Assets\n\n\n\n\ncount\n2.705000e+03\n2.714000e+03\n2.738000e+03\n\n\nmean\n1.890101e+10\n2.647317e+09\n9.027200e+10\n\n\nstd\n4.175898e+10\n9.641319e+09\n2.906681e+11\n\n\nmin\n1.404000e+06\n0.000000e+00\n1.891360e+08\n\n\n25%\n3.227232e+09\n1.529250e+06\n1.055588e+10\n\n\n50%\n7.030000e+09\n8.100000e+06\n2.435150e+10\n\n\n75%\n1.723300e+10\n3.710000e+08\n6.271950e+10\n\n\nmax\n4.421400e+11\n9.919300e+10\n4.090727e+12\n\n\n\n\n\n\n\n\nsns.histplot(data =bal, x = 'Total Debt', bins = 50)\nplt.title('Distribution of Total Debt')\n\nText(0.5, 1.0, 'Distribution of Total Debt')\n\n\n\n\n\n\nsns.histplot(data =bal, x = 'Common Stock', bins = 50)\nplt.title('Distribution of Common Stock')\n\nText(0.5, 1.0, 'Distribution of Common Stock')\n\n\n\n\n\n\nsns.histplot(data =bal, x = 'Total Assets', bins = 50)\nplt.title('Distribution of Total Assets')\n\nText(0.5, 1.0, 'Distribution of Total Assets')"
+  },
+  {
+    "objectID": "posts2/DANL210 Project/project_210.html#historical-stats",
+    "href": "posts2/DANL210 Project/project_210.html#historical-stats",
+    "title": "DANL 210 Project",
+    "section": "2.4 Historical Stats",
+    "text": "2.4 Historical Stats\n\nhist = hist[['Close', 'Volume']]\n\n\n2.4.1 General\n\nhist.describe()\n\n\n\n\n\n\n\n\nClose\nVolume\n\n\n\n\ncount\n197796.000000\n1.977960e+05\n\n\nmean\n149.424528\n4.134482e+06\n\n\nstd\n330.094224\n9.289442e+06\n\n\nmin\n0.980000\n0.000000e+00\n\n\n25%\n40.010676\n8.323000e+05\n\n\n50%\n82.121376\n1.707600e+06\n\n\n75%\n155.078556\n3.854425e+06\n\n\nmax\n8099.959961\n3.160112e+08\n\n\n\n\n\n\n\n\n\n2.4.2 Distribution Plots\n\nsns.histplot(data =hist, x = 'Close', bins = 50)\nplt.title('Distribution of Close')\n\nText(0.5, 1.0, 'Distribution of Close')\n\n\n\n\n\n\nsns.histplot(data =hist, x = 'Volume', bins = 50)\nplt.title('Distribution of Volume')\n\nText(0.5, 1.0, 'Distribution of Volume')"
+  },
+  {
+    "objectID": "posts2/DANL210 Project/project_210.html#total-esg-score-by-sector",
+    "href": "posts2/DANL210 Project/project_210.html#total-esg-score-by-sector",
+    "title": "DANL 210 Project",
+    "section": "3.1 Total ESG Score by Sector",
+    "text": "3.1 Total ESG Score by Sector\nFirst, the esg data frame has to be filtered for the chosen sectors to analyze\n\nsectors = ['Consumer Discretionary', 'Industrials','Financial Services']\nesg_ = esg[esg['Sector'].isin(sectors)]\n\n\nsns.FacetGrid(data = esg_, row = 'Sector').map(sns.histplot, 'tot_esg')\n\n\n\n\n\n3.1.1 Comments\nFrom these plots of total ESG score by sector,  one can see that industrials has a lower average total ESG score than both consumer discretionary and financial services, as well as a more varied total ESG score."
+  },
+  {
+    "objectID": "posts2/DANL210 Project/project_210.html#relationship-between-total-expenses-and-total-esg-score",
+    "href": "posts2/DANL210 Project/project_210.html#relationship-between-total-expenses-and-total-esg-score",
+    "title": "DANL 210 Project",
+    "section": "3.2 Relationship between Total Expenses and Total ESG Score",
+    "text": "3.2 Relationship between Total Expenses and Total ESG Score\nFirst, the data frames containint income statement data and esg data have to be joined together\n\ninc_esg = esg_.merge(inc, on = 'ticker', how = 'left')\n\n\nsns.lmplot(data = inc_esg, x = 'tot_esg', y = 'Total Expenses')\n\n\n\n\n\n3.2.1 Comments\nThere seems to be a slight positive relationship present between Total ESG Score and Total Expenses. Meaning that as Total Expenses increase, so does Total ESG Score.\n\n\n3.2.2 Relationship by Sector\n\nsns.lmplot(data = inc_esg, x = 'tot_esg', y = 'Total Expenses', row = 'Sector')\n\n\n\n\n\n3.2.2.1 Comments\nThere seems to be very insignificant relationships in both industrials and financial services sectors. Howver, there is a relatively significant positive relationship in the consumer discretionary sector."
+  },
+  {
+    "objectID": "posts2/DANL210 Project/project_210.html#relationship-by-sector",
+    "href": "posts2/DANL210 Project/project_210.html#relationship-by-sector",
+    "title": "DANL 210 Project",
+    "section": "3.3 Relationship by Sector",
+    "text": "3.3 Relationship by Sector\n\nsns.lmplot(data = inc_esg, x = 'tot_esg', y = 'Total Expenses', row = 'Sector')"
+  },
+  {
+    "objectID": "posts2/DANL210 Project/project_210.html#relationship-between-total-assets-and-total-esg-score",
+    "href": "posts2/DANL210 Project/project_210.html#relationship-between-total-assets-and-total-esg-score",
+    "title": "DANL 210 Project",
+    "section": "3.3 Relationship between Total Assets and Total ESG Score",
+    "text": "3.3 Relationship between Total Assets and Total ESG Score\nFirst, the data frames have to again be joined. This time, the data frame containing balance sheet data and esg data are joined.\n\nbal_esg = esg_.merge(bal, on = 'ticker', how = 'left')\n\n\nsns.lmplot(data = bal_esg, x = 'tot_esg', y = 'Total Assets')\n\n\n\n\n\n3.3.1 Comments\nThere seems to also be a slight positive relationship between Total Assets and Total ESG Score. One that is more significant that the relationship between Total Expenses and Total ESG Score.\n\n\n3.3.2 Relationship by Sector\n\nsns.lmplot(data = bal_esg, x = 'tot_esg', y = 'Total Assets', row = 'Sector')\n\n\n\n\n\n3.3.2.1 Comments\nThere seems to be no significant relationship in the Industrials or Consumer Discretionary sectors. However there is a significant positive relationship in the Financial Services Sector"
   }
 ]
