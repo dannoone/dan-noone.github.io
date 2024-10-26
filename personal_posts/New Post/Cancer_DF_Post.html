@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
@@ -78,7 +78,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -87,13 +93,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
@@ -104,9 +111,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">About</span>
     </a>
@@ -118,21 +125,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../class_projects.html" rel="" target="">
- <span class="menu-text">Class Projects</span></a>
+    <a class="nav-link" href="../../class_projects.html"> 
+<span class="menu-text">Class Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog-listing.html" rel="" target="">
- <span class="menu-text">Personal Projects</span></a>
+    <a class="nav-link" href="../../blog-listing.html"> 
+<span class="menu-text">Personal Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../class_blog.html" rel="" target="">
- <span class="menu-text">Class Blog Posts</span></a>
+    <a class="nav-link" href="../../class_blog.html"> 
+<span class="menu-text">Class Blog Posts</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -160,11 +167,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
+
 
 <section id="moduleslibs" class="level1">
 <h1>Modules/Libs</h1>
-<div class="cell" data-outputid="63337e98-1cf1-4322-8e9e-d16531867479" data-execution_count="137">
+<div id="cell-2" class="cell" data-outputid="63337e98-1cf1-4322-8e9e-d16531867479" data-execution_count="137">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google.colab <span class="im">import</span> data_table</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>data_table.enable_dataframe_formatter()</span>
@@ -202,13 +211,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  'tableau-colorblind10']</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="138">
+<div id="cell-3" class="cell" data-execution_count="138">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.style.use(<span class="st">'seaborn-v0_8-darkgrid'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="loading-the-data" class="level1">
 <h1>Loading the Data</h1>
-<div class="cell" data-outputid="b7406995-655b-4b84-bc99-e91304a7d319" data-execution_count="50">
+<div id="cell-5" class="cell" data-outputid="b7406995-655b-4b84-bc99-e91304a7d319" data-execution_count="50">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>avg_hh_size <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/dan-noone/dan-noone.github.io/main/avg-household-size.csv'</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>avg_hh_size</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="50">
@@ -217,7 +226,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -307,7 +316,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-
 
 <p>3220 rows × 4 columns</p>
 </div>
@@ -516,7 +524,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </div>
 </div>
-<div class="cell" data-outputid="fcab4608-5ff0-46e8-d2b9-90cb2dc00f55" data-execution_count="51">
+<div id="cell-6" class="cell" data-outputid="fcab4608-5ff0-46e8-d2b9-90cb2dc00f55" data-execution_count="51">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>avg_hh_size.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -532,7 +540,7 @@ dtypes: float64(1), int64(2), object(1)
 memory usage: 100.8+ KB</code></pre>
 </div>
 </div>
-<div class="cell" data-outputid="87aad6b6-2bca-4199-d427-4cf7a02fe10a" data-execution_count="52">
+<div id="cell-7" class="cell" data-outputid="87aad6b6-2bca-4199-d427-4cf7a02fe10a" data-execution_count="52">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>avg_hh_size.describe(include<span class="op">=</span><span class="st">'all'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="52">
 
@@ -540,7 +548,7 @@ memory usage: 100.8+ KB</code></pre>
     <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -630,7 +638,6 @@ memory usage: 100.8+ KB</code></pre>
 </tr>
 </tbody>
 </table>
-
 
 </div>
     <div class="colab-df-buttons">
@@ -838,7 +845,7 @@ memory usage: 100.8+ KB</code></pre>
   </div>
 </div>
 </div>
-<div class="cell" data-outputid="42c89813-beef-4970-e700-93272f68ed99" data-execution_count="53">
+<div id="cell-8" class="cell" data-outputid="42c89813-beef-4970-e700-93272f68ed99" data-execution_count="53">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>avg_hh_size.columns</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable Descriptions</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -853,7 +860,7 @@ memory usage: 100.8+ KB</code></pre>
 <pre><code>Index(['statefips', 'countyfips', 'avghouseholdsize', 'geography'], dtype='object')</code></pre>
 </div>
 </div>
-<div class="cell" data-outputid="279bd790-a8af-493d-fd9c-6ac4b9ab5c31" data-execution_count="74">
+<div id="cell-9" class="cell" data-outputid="279bd790-a8af-493d-fd9c-6ac4b9ab5c31" data-execution_count="74">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>can_reg <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/dan-noone/dan-noone.github.io/main/cancer_reg.csv'</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>can_reg <span class="op">=</span> can_reg[[col <span class="cf">for</span> col <span class="kw">in</span> can_reg.columns <span class="cf">if</span> col <span class="op">!=</span> <span class="st">'geography'</span>] <span class="op">+</span> [<span class="st">'geography'</span>]] <span class="co"># To move geography var to end to be able to view easier</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>can_reg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -866,7 +873,7 @@ memory usage: 100.8+ KB</code></pre>
     <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1161,7 +1168,6 @@ memory usage: 100.8+ KB</code></pre>
 </tbody>
 </table>
 
-
 <p>3047 rows × 33 columns</p>
 </div>
     <div class="colab-df-buttons">
@@ -1369,7 +1375,7 @@ memory usage: 100.8+ KB</code></pre>
   </div>
 </div>
 </div>
-<div class="cell" data-outputid="b363a378-cd71-4275-8696-041f65d572fd" data-execution_count="55">
+<div id="cell-10" class="cell" data-outputid="b363a378-cd71-4275-8696-041f65d572fd" data-execution_count="55">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>can_reg.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -1414,7 +1420,7 @@ dtypes: float64(28), int64(3), object(2)
 memory usage: 785.7+ KB</code></pre>
 </div>
 </div>
-<div class="cell" data-outputid="3098fb76-73fd-4315-b779-5e136cc3f023" data-execution_count="56">
+<div id="cell-11" class="cell" data-outputid="3098fb76-73fd-4315-b779-5e136cc3f023" data-execution_count="56">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>can_reg.describe(include <span class="op">=</span> <span class="st">'all'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Warning: Total number of columns (33) exceeds max_columns (20). Falling back to pandas display.</code></pre>
@@ -1425,7 +1431,7 @@ memory usage: 785.7+ KB</code></pre>
     <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1720,7 +1726,6 @@ memory usage: 785.7+ KB</code></pre>
 </tbody>
 </table>
 
-
 <p>11 rows × 33 columns</p>
 </div>
     <div class="colab-df-buttons">
@@ -1928,7 +1933,7 @@ memory usage: 785.7+ KB</code></pre>
   </div>
 </div>
 </div>
-<div class="cell" data-outputid="51336fb1-2ef2-4aed-d0fe-f2fff8a3d7af" data-execution_count="57">
+<div id="cell-12" class="cell" data-outputid="51336fb1-2ef2-4aed-d0fe-f2fff8a3d7af" data-execution_count="57">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>can_reg.columns</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable Descriptions</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1989,11 +1994,11 @@ memory usage: 785.7+ KB</code></pre>
 <h1>Data Transformation / Wrangling</h1>
 <section id="normalizing-the-geographic-locations" class="level2">
 <h2 class="anchored" data-anchor-id="normalizing-the-geographic-locations">Normalizing the geographic locations</h2>
-<div class="cell" data-execution_count="58">
+<div id="cell-15" class="cell" data-execution_count="58">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Below I normalized the geographic locations since there are a number of them that are in avg_hh_size, but not in can_reg</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># So below I have filtered the avg_hh_size df to only include those in the can_reg df, so that any analyses are going off of the same number of observations</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-outputid="691443d5-34c6-4db5-db1c-bdcfe6bb85e0" data-execution_count="59">
+<div id="cell-16" class="cell" data-outputid="691443d5-34c6-4db5-db1c-bdcfe6bb85e0" data-execution_count="59">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>can_reg_locs <span class="op">=</span> can_reg[<span class="st">'geography'</span>]</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>can_reg_locs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="59">
@@ -2011,7 +2016,7 @@ memory usage: 785.7+ KB</code></pre>
 Name: geography, Length: 3047, dtype: object</code></pre>
 </div>
 </div>
-<div class="cell" data-outputid="bb8d7943-5be2-412b-ca82-457e98f6e7ff" data-execution_count="60">
+<div id="cell-17" class="cell" data-outputid="bb8d7943-5be2-412b-ca82-457e98f6e7ff" data-execution_count="60">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>avg_hh_size[<span class="st">'geography'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="60">
 <pre><code>0           Aleutians East Borough, Alaska
@@ -2028,7 +2033,7 @@ Name: geography, Length: 3047, dtype: object</code></pre>
 Name: geography, Length: 3220, dtype: object</code></pre>
 </div>
 </div>
-<div class="cell" data-outputid="c034240a-1602-471e-c0cb-f641cfcc9305" data-execution_count="61">
+<div id="cell-18" class="cell" data-outputid="c034240a-1602-471e-c0cb-f641cfcc9305" data-execution_count="61">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>geo_cond <span class="op">=</span> avg_hh_size[<span class="st">'geography'</span>].isin(can_reg_locs)</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>avg_hh_size_adj <span class="op">=</span> avg_hh_size[geo_cond]</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>avg_hh_size_adj[<span class="st">'geography'</span>].nunique() <span class="co"># Now have done this to normalize</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2039,12 +2044,12 @@ Name: geography, Length: 3220, dtype: object</code></pre>
 </section>
 <section id="splitting-the-geography-variable-in-each-df" class="level2">
 <h2 class="anchored" data-anchor-id="splitting-the-geography-variable-in-each-df">Splitting the geography variable in each df</h2>
-<div class="cell" data-execution_count="62">
+<div id="cell-20" class="cell" data-execution_count="62">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Within each df there is a variable `geography`, which is a combination of county and state, separated by a comma</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># If I want to do any county/state level analyses independently, this format is not great</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># So I have split this var in each df to create two separate `state` and `county` variables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-outputid="1a3b9b43-a239-46c8-8e24-ef97cf23c00d" data-execution_count="63">
+<div id="cell-21" class="cell" data-outputid="1a3b9b43-a239-46c8-8e24-ef97cf23c00d" data-execution_count="63">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>avg_hh_size_adj <span class="op">=</span> (</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    avg_hh_size_adj</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    .assign(</span>
@@ -2061,7 +2066,7 @@ Name: geography, Length: 3220, dtype: object</code></pre>
     <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -2163,7 +2168,6 @@ Name: geography, Length: 3220, dtype: object</code></pre>
 </tr>
 </tbody>
 </table>
-
 
 <p>3047 rows × 5 columns</p>
 </div>
@@ -2372,7 +2376,7 @@ Name: geography, Length: 3220, dtype: object</code></pre>
   </div>
 </div>
 </div>
-<div class="cell" data-outputid="8c59fa55-19d3-473d-e5b9-bf0a45a21657" data-execution_count="64">
+<div id="cell-22" class="cell" data-outputid="8c59fa55-19d3-473d-e5b9-bf0a45a21657" data-execution_count="64">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>can_reg_adj <span class="op">=</span> (</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    can_reg</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    .assign(</span>
@@ -2392,7 +2396,7 @@ Name: geography, Length: 3220, dtype: object</code></pre>
     <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -2687,7 +2691,6 @@ Name: geography, Length: 3220, dtype: object</code></pre>
 </tbody>
 </table>
 
-
 <p>3047 rows × 34 columns</p>
 </div>
     <div class="colab-df-buttons">
@@ -2898,11 +2901,11 @@ Name: geography, Length: 3220, dtype: object</code></pre>
 </section>
 <section id="merging-the-two-dfs-together" class="level2">
 <h2 class="anchored" data-anchor-id="merging-the-two-dfs-together">Merging the two DFs together</h2>
-<div class="cell" data-execution_count="65">
+<div id="cell-24" class="cell" data-execution_count="65">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># These two dfs have two key variables now, 'state', and 'county'</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Using these two keys, a merge can now be performed</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-outputid="4b961c4d-0e99-48c6-f334-d1159e3a64a6" data-execution_count="66">
+<div id="cell-25" class="cell" data-outputid="4b961c4d-0e99-48c6-f334-d1159e3a64a6" data-execution_count="66">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>can_reg_adj[<span class="st">'county'</span>].value_counts().to_frame()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="66">
 
@@ -2910,7 +2913,7 @@ Name: geography, Length: 3220, dtype: object</code></pre>
     <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -2968,7 +2971,6 @@ Name: geography, Length: 3220, dtype: object</code></pre>
 </tr>
 </tbody>
 </table>
-
 
 <p>1819 rows × 1 columns</p>
 </div>
@@ -3177,7 +3179,7 @@ Name: geography, Length: 3220, dtype: object</code></pre>
   </div>
 </div>
 </div>
-<div class="cell" data-outputid="ac328317-e25d-4a69-c8e6-04f40b799116" data-execution_count="67">
+<div id="cell-26" class="cell" data-outputid="ac328317-e25d-4a69-c8e6-04f40b799116" data-execution_count="67">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>avg_hh_size_adj[<span class="st">'county'</span>].value_counts().to_frame()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="67">
 
@@ -3185,7 +3187,7 @@ Name: geography, Length: 3220, dtype: object</code></pre>
     <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -3243,7 +3245,6 @@ Name: geography, Length: 3220, dtype: object</code></pre>
 </tr>
 </tbody>
 </table>
-
 
 <p>1819 rows × 1 columns</p>
 </div>
@@ -3452,7 +3453,7 @@ Name: geography, Length: 3220, dtype: object</code></pre>
   </div>
 </div>
 </div>
-<div class="cell" data-outputid="d3540f2e-a224-4905-9061-82db7ab499c0" data-execution_count="68">
+<div id="cell-27" class="cell" data-outputid="d3540f2e-a224-4905-9061-82db7ab499c0" data-execution_count="68">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>can_reg_w_avg_hh_size <span class="op">=</span> can_reg_adj.merge(avg_hh_size_adj, on <span class="op">=</span> [<span class="st">'county'</span>, <span class="st">'state'</span>], how <span class="op">=</span> <span class="st">'left'</span>)</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>can_reg_w_avg_hh_size <span class="co"># This is now the aggregate data frame of both the two obtained from the kaggle page</span></span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="co"># The only difference now is that the cancer data includes average household size per each geographic area now, allowing for analyses to be made with that variable as well</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -3465,7 +3466,7 @@ Name: geography, Length: 3220, dtype: object</code></pre>
     <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -3760,7 +3761,6 @@ Name: geography, Length: 3220, dtype: object</code></pre>
 </tbody>
 </table>
 
-
 <p>3047 rows × 37 columns</p>
 </div>
     <div class="colab-df-buttons">
@@ -3974,7 +3974,7 @@ Name: geography, Length: 3220, dtype: object</code></pre>
 <h1>General Analyses</h1>
 <section id="summary-statistics" class="level2">
 <h2 class="anchored" data-anchor-id="summary-statistics">Summary Statistics</h2>
-<div class="cell" data-execution_count="69">
+<div id="cell-30" class="cell" data-execution_count="69">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>num_only <span class="op">=</span> can_reg_w_avg_hh_size.select_dtypes(exclude <span class="op">=</span> <span class="st">'object'</span>) <span class="co"># Separation of DF by data type</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>nonnum_only <span class="op">=</span> can_reg_w_avg_hh_size.select_dtypes(include <span class="op">=</span> <span class="st">'object'</span>)</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>num_only_first17 <span class="op">=</span> num_only.iloc[:, <span class="dv">0</span>:<span class="dv">17</span>]</span>
@@ -3985,7 +3985,7 @@ Name: geography, Length: 3220, dtype: object</code></pre>
 <ul>
 <li>Separated into two DFs with 17 variables each</li>
 </ul>
-<div class="cell" data-outputid="304d01ca-edb5-4ba0-c08d-4658120ffc77" data-execution_count="70">
+<div id="cell-32" class="cell" data-outputid="304d01ca-edb5-4ba0-c08d-4658120ffc77" data-execution_count="70">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>num_only_first17.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="70">
 
@@ -3993,7 +3993,7 @@ Name: geography, Length: 3220, dtype: object</code></pre>
     <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -4179,7 +4179,6 @@ Name: geography, Length: 3220, dtype: object</code></pre>
 </tr>
 </tbody>
 </table>
-
 
 </div>
     <div class="colab-df-buttons">
@@ -4387,7 +4386,7 @@ Name: geography, Length: 3220, dtype: object</code></pre>
   </div>
 </div>
 </div>
-<div class="cell" data-outputid="8d5abe4e-486f-4f87-b911-83d06ee4108b" data-execution_count="71">
+<div id="cell-33" class="cell" data-outputid="8d5abe4e-486f-4f87-b911-83d06ee4108b" data-execution_count="71">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>num_only_last17.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="71">
 
@@ -4395,7 +4394,7 @@ Name: geography, Length: 3220, dtype: object</code></pre>
     <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -4581,7 +4580,6 @@ Name: geography, Length: 3220, dtype: object</code></pre>
 </tr>
 </tbody>
 </table>
-
 
 </div>
     <div class="colab-df-buttons">
@@ -4792,7 +4790,7 @@ Name: geography, Length: 3220, dtype: object</code></pre>
 </section>
 <section id="non-numeric-variables-only" class="level3">
 <h3 class="anchored" data-anchor-id="non-numeric-variables-only">Non-Numeric Variables Only</h3>
-<div class="cell" data-outputid="0f6b42fc-dd28-41fc-a097-cbb154bf2860" data-execution_count="73">
+<div id="cell-35" class="cell" data-outputid="0f6b42fc-dd28-41fc-a097-cbb154bf2860" data-execution_count="73">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>nonnum_only.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="73">
 
@@ -4800,7 +4798,7 @@ Name: geography, Length: 3220, dtype: object</code></pre>
     <div>
 
 
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -4836,7 +4834,6 @@ Name: geography, Length: 3220, dtype: object</code></pre>
 </tr>
 </tbody>
 </table>
-
 
 </div>
     <div class="colab-df-buttons">
@@ -5048,7 +5045,7 @@ Name: geography, Length: 3220, dtype: object</code></pre>
 </section>
 <section id="frequency-of-each-state-in-the-data-frame" class="level2">
 <h2 class="anchored" data-anchor-id="frequency-of-each-state-in-the-data-frame">Frequency of Each State in the Data Frame</h2>
-<div class="cell" data-execution_count="121">
+<div id="cell-37" class="cell" data-execution_count="121">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>states <span class="op">=</span> (</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    nonnum_only</span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    .groupby(<span class="st">'state'</span>)</span>
@@ -5060,7 +5057,7 @@ Name: geography, Length: 3220, dtype: object</code></pre>
 <span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>states_order <span class="op">=</span> states.index</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-outputid="4b51790c-8608-42fd-e16c-cdee716ff4f7" data-execution_count="141">
+<div id="cell-38" class="cell" data-outputid="4b51790c-8608-42fd-e16c-cdee716ff4f7" data-execution_count="141">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>sns.countplot(data <span class="op">=</span> nonnum_only,</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>              x <span class="op">=</span> <span class="st">'state'</span>,</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>              order <span class="op">=</span> states_order)</span>
@@ -5068,7 +5065,11 @@ Name: geography, Length: 3220, dtype: object</code></pre>
 <span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize <span class="op">=</span> (<span class="dv">10</span>, <span class="dv">50</span>))</span>
 <span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="Cancer_DF_Post_files/figure-html/cell-28-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="Cancer_DF_Post_files/figure-html/cell-28-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 <div class="cell-output cell-output-display">
 <pre><code>&lt;Figure size 1000x5000 with 0 Axes&gt;</code></pre>
@@ -5160,10 +5161,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -5173,8 +5191,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -5186,7 +5213,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -5230,6 +5380,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -5255,6 +5406,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -5320,12 +5497,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center">Powered with GitHub, Quarto and Rstudio<br>© Daniel Noone, 2023</div>
+    <div class="nav-footer-center">
+<p>Powered with GitHub, Quarto and Rstudio<br>© Daniel Noone, 2023</p>
+</div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 
